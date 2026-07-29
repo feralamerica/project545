@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Project 545 Tracker | Feral America</title>
+<meta name="description" content="A document-based interactive tracker of Israel's Project 545 influence campaign: every FARA registrant, every dollar, every date, every filing linked. Compiled by Feral America.">
+<style>
+  :root{--paper:#F2EDE0;--card:#FBF8EF;--ink:#1E2A38;--red:#B3402E;--amber:#C98A2D;--blue:#3B6B8F;--gray:#5A5548;--faint:#8A857A;--hl:#EFE7D2;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;}
+  .mono{font-family:'Courier New',Courier,monospace;}
+  a{color:var(--blue);}
+  header{background:var(--ink);color:var(--paper);padding:32px 18px 24px;text-align:center;}
+  header h1{font-size:clamp(25px,4.5vw,42px);letter-spacing:1px;}
+  header .sub{font-family:'Courier New',monospace;font-size:13px;color:#D9CDB0;margin-top:8px;}
+  header .tally{display:inline-block;margin-top:13px;border:1.5px solid var(--red);color:#F2EDE0;padding:6px 14px;font-family:'Courier New',monospace;font-size:12.5px;transform:rotate(-1deg);background:rgba(179,64,46,.15);}
+  nav{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:2px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2px;padding:6px;}
+  nav button{background:none;border:none;font-family:'Courier New',monospace;font-size:12.5px;padding:8px 11px;cursor:pointer;color:var(--gray);border-bottom:3px solid transparent;}
+  nav button.active{color:var(--ink);font-weight:bold;border-bottom:3px solid var(--red);}
+  #q{font-family:'Courier New',monospace;font-size:12.5px;border:1.5px solid var(--ink);background:#fff;padding:6px 10px;margin-left:10px;width:190px;}
+  main{max-width:1200px;margin:0 auto;padding:24px 14px 60px;}
+  section{display:none;} section.active{display:block;}
+  h2{font-size:24px;margin:12px 0 6px;}
+  .lede{color:var(--gray);font-size:15px;max-width:860px;margin-bottom:16px;}
+  .note{font-family:'Courier New',monospace;font-size:11.5px;color:var(--faint);margin:8px 0 14px;}
+  .doclink{font-family:'Courier New',monospace;font-size:12px;}
+  .searchhit{outline:2px solid var(--amber);}
+  /* network */
+  #netwrap{display:grid;grid-template-columns:1fr 330px;gap:14px;}
+  @media(max-width:920px){#netwrap{grid-template-columns:1fr;} #detail{position:static;}}
+  #netsvgbox{background:var(--card);border:1.5px solid var(--ink);overflow:auto;}
+  .node{cursor:pointer;} .node:hover rect{stroke-width:3;}
+  .node.sel rect{stroke:var(--red);stroke-width:3;}
+  #detail{background:var(--card);border:1.5px solid var(--ink);padding:16px;min-height:320px;align-self:start;position:sticky;top:60px;max-height:78vh;overflow:auto;}
+  #detail h3{font-size:17px;padding-right:8px;}
+  .stamp{display:inline-block;font-family:'Courier New',monospace;color:var(--red);border:1.5px solid var(--red);padding:1px 7px;font-size:12px;font-weight:bold;transform:rotate(-2deg);margin:6px 0;}
+  #detail p{font-size:13.5px;margin:7px 0;color:var(--gray);}
+  .flag{color:var(--red);} .ok{color:var(--blue);}
+  /* timeline */
+  .tfilters{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;}
+  .tfilters button{font-family:'Courier New',monospace;font-size:12px;border:1.5px solid var(--ink);background:var(--card);padding:5px 11px;cursor:pointer;}
+  .tfilters button.on{background:var(--ink);color:var(--paper);}
+  .tl{border-left:2.5px solid rgba(30,42,56,.35);margin-left:9px;}
+  .tev{position:relative;padding:0 0 6px 26px;cursor:pointer;}
+  .tev .dot{position:absolute;left:-8px;top:5px;width:13px;height:13px;border-radius:50%;border:2px solid var(--paper);}
+  .tev .d{font-family:'Courier New',monospace;font-size:12px;color:var(--gray);}
+  .tev .t{font-weight:bold;font-size:15px;}
+  .tev .t .exp{font-family:'Courier New',monospace;font-size:11px;color:var(--amber);}
+  .tev .x{display:none;background:var(--card);border:1.5px solid var(--ink);padding:10px 12px;margin:7px 0 10px;font-size:13px;color:var(--gray);}
+  .tev.open .x{display:block;}
+  .era{font-family:'Courier New',monospace;letter-spacing:1px;font-size:12.5px;background:var(--ink);color:var(--paper);display:inline-block;padding:5px 12px;margin:16px 0 12px;transform:translateX(-9px);}
+  /* money */
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1.5px solid var(--ink);font-size:13.5px;}
+  th{background:var(--ink);color:var(--paper);font-family:'Courier New',monospace;font-size:12px;text-align:left;padding:9px 10px;}
+  td{padding:9px 10px;border-top:1px solid rgba(30,42,56,.18);vertical-align:top;}
+  td.amt{font-family:'Courier New',monospace;white-space:nowrap;text-align:right;}
+  tr.total td{font-weight:bold;font-family:'Courier New',monospace;border-top:2.5px solid var(--ink);background:var(--hl);}
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px;}
+  /* mobile node picker chips */
+  #chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;}
+  #chips button{font-family:'Courier New',monospace;font-size:11.5px;border:1.5px solid var(--ink);background:var(--card);padding:5px 9px;cursor:pointer;}
+  #chips button.gov{border-color:var(--gray);color:var(--gray);}
+  #chips button.sel{background:var(--ink);color:var(--paper);}
+  .swipehint{display:none;font-family:'Courier New',monospace;font-size:11px;color:var(--amber);margin:4px 0 8px;}
+  @media(max-width:920px){
+    .swipehint{display:block;}
+    #detail{max-height:none;}
+  }
+  @media(max-width:600px){
+    header{padding:24px 12px 18px;}
+    header .tally{font-size:11px;white-space:normal;}
+    nav{padding:4px;}
+    nav button{font-size:11.5px;padding:7px 8px;}
+    #q{width:100%;margin:6px 4px 2px;}
+    main{padding:18px 10px 50px;}
+    h2{font-size:21px;}
+    .lede{font-size:14px;}
+    table{font-size:12.5px;}
+    th,td{padding:7px 7px;}
+    .rc h3{padding-right:80px;font-size:15px;}
+    .era{font-size:11.5px;padding:4px 10px;}
+    .tev .t{font-size:14px;}
+    .method{padding:16px;font-size:14px;}
+  }
+  .rc{background:var(--card);border:1.5px solid var(--ink);padding:16px;position:relative;}
+  .rc .stamp{position:absolute;top:12px;right:12px;transform:rotate(-4deg);margin:0;}
+  .rc h3{font-size:16px;padding-right:95px;}
+  .rc .who{font-size:13px;color:var(--gray);margin:4px 0;}
+  .rc ul{margin:8px 0 0 16px;font-family:'Courier New',monospace;font-size:12.5px;color:var(--gray);}
+  .rc li{margin:3px 0;} .rc li.flag{color:var(--red);} .rc li.ok{color:var(--blue);}
+  .rc .cs{margin-top:10px;font-family:'Courier New',monospace;font-size:11.5px;color:var(--amber);}
+  .rc .dlinks{margin-top:8px;}
+  /* cast */
+  .pcard{background:var(--card);border:1.5px solid var(--ink);padding:14px 16px;margin-bottom:10px;}
+  .pcard h3{font-size:15.5px;display:inline;}
+  .pcard .role{font-family:'Courier New',monospace;font-size:12px;color:var(--red);margin-left:8px;}
+  .pcard p{font-size:13.5px;color:var(--gray);margin:5px 0;}
+  /* docs */
+  .doclist{background:var(--card);border:1.5px solid var(--ink);padding:6px 0;}
+  .docrow{padding:10px 16px;border-top:1px solid rgba(30,42,56,.12);}
+  .docrow:first-child{border-top:none;}
+  .docrow a{font-family:'Courier New',monospace;font-size:13px;text-decoration:none;font-weight:bold;}
+  .docrow .why{font-size:12.5px;color:var(--gray);margin-top:2px;}
+  .docrow:hover{background:var(--hl);}
+  #docfilter{font-family:'Courier New',monospace;font-size:13px;border:1.5px solid var(--ink);padding:7px 10px;width:100%;max-width:420px;margin:6px 0 12px;}
+  /* updates + method */
+  .uentry{background:var(--card);border:1.5px solid var(--ink);padding:12px 16px;margin-bottom:10px;}
+  .uentry .d{font-family:'Courier New',monospace;font-size:12px;color:var(--red);font-weight:bold;}
+  .uentry p{font-size:13.5px;color:var(--gray);margin-top:4px;}
+  .method{background:var(--card);border:1.5px solid var(--ink);padding:22px;max-width:880px;font-size:15px;}
+  .method h3{margin:14px 0 6px;font-size:17px;}
+  .method p{margin:8px 0;color:var(--gray);}
+  footer{background:var(--ink);color:#D9CDB0;text-align:center;padding:26px 16px;font-family:'Courier New',monospace;font-size:12px;line-height:1.9;}
+  footer a{color:#F2EDE0;}
+</style>
+</head>
+<body>
+<header>
+  <h1>THE PROJECT 545 TRACKER</h1>
+  <div class="sub">Israel's ~$145M campaign to shape American opinion, mapped from sworn FARA filings. Every claim links to a document. Click everything.</div>
+  <div class="tally" id="headTally"></div>
+</header>
+<nav id="nav">
+  <button data-s="network" class="active">NETWORK</button>
+  <button data-s="timeline">TIMELINE</button>
+  <button data-s="money">MONEY</button>
+  <button data-s="regs">REGISTRANTS</button>
+  <button data-s="cast">CAST</button>
+  <button data-s="docs">DOCUMENTS</button>
+  <button data-s="updates">UPDATES</button>
+  <button data-s="method">METHODOLOGY</button>
+  <input id="q" placeholder="search the record..." aria-label="search">
+</nav>
+<main>
+
+<section id="network" class="active">
+  <h2>The Pipeline</h2>
+  <p class="lede">Eight registered vehicles, five money routes, one purchasing office. Tap any name below or any box in the map: the panel shows people, flags, comment status, and the documents themselves. Amber route: direct to the ministries. Red dashed: money in no US filing.</p>
+  <div id="chips"></div>
+  <div class="swipehint">↔ swipe the map sideways to explore, or use the buttons above</div>
+  <div id="netwrap"><div id="netsvgbox"></div>
+  <div id="detail"><h3>Select a node</h3><p>Every box is clickable, including the government and intermediary layers. Sharable link updates as you click.</p></div></div>
+</section>
+
+<section id="timeline">
+  <h2>The Paper Timeline</h2>
+  <p class="lede">Click any event to expand its detail and source documents. Filter by category.</p>
+  <div class="tfilters" id="tf">
+    <button data-c="all" class="on">ALL</button><button data-c="money">MONEY</button>
+    <button data-c="reg">FILINGS</button><button data-c="flag">FLAGS</button><button data-c="press">PRESS</button>
+  </div>
+  <div id="tlbox"></div>
+</section>
+
+<section id="money">
+  <h2>Documented Paper</h2>
+  <p class="lede">Contracts, work orders, and sworn receipts, each linked to its source. This is the floor, not the ceiling: three legs disclose no amounts yet.</p>
+  <div style="overflow-x:auto"><table id="moneyT"></table></div>
+  <p class="note">* = Feral America calculation from the filing's own itemized appendix (methodology tab). All other figures are sworn totals or contract values as filed.</p>
+</section>
+
+<section id="regs">
+  <h2>The Eight Legs</h2>
+  <p class="lede">Every registered vehicle: people, route, money, flags in red, compliant conduct in blue, comment status, and direct filing links.</p>
+  <div class="cards" id="cardbox"></div>
+</section>
+
+<section id="cast">
+  <h2>The Cast</h2>
+  <p class="lede">The people the filings name, with the documents that name them. Identifications rest on the linked records; context beyond the filings is credited reporting.</p>
+  <div id="castbox"></div>
+</section>
+
+<section id="docs">
+  <h2>The Documents</h2>
+  <p class="lede">The primary sources, annotated: what each one shows and why it matters. Filter as you type. Then go read them, because that is the entire point of this site.</p>
+  <input id="docfilter" placeholder="filter documents (try: doubled, Sniper, retroactive, Havas)...">
+  <div class="doclist" id="docbox"></div>
+</section>
+
+<section id="updates">
+  <h2>Update Log</h2>
+  <p class="lede">What changed and when. New filings drop constantly; this page is why the tracker exists.</p>
+  <div id="upbox"></div>
+</section>
+
+<section id="method">
+  <h2>Methodology</h2>
+  <div class="method">
+    <h3>Sources and tiers</h3>
+    <p>Tier A: sworn federal filings in DOJ's FARA database, read in full and linked directly throughout this site. Tier B: published reporting, credited by name. Nothing here rests on anonymous sourcing.</p>
+    <h3>Our calculations, labeled as ours</h3>
+    <p>Any figure not printed in a filing is our computation from that filing's own itemized appendix, marked with an asterisk. Principal example: the Show Faith by Works supplemental swears total disbursements of $3,333,191.86; our parse of all 742 appendix lines found every transaction listed an even number of times, zero exceptions, for deduplicated actual spending of exactly $1,666,595.93, precisely half the sworn figure. A clerical origin for the duplication is plausible and is noted wherever the finding appears. The company did not respond to detailed questions by the stated deadline.</p>
+    <h3>What this tracker does not claim</h3>
+    <p>No assertion of candidate advocacy, race targeting, electoral intent, coordination with any US campaign, or unlawful conduct by any person, except where a filing itself discloses a fact. Sequence is not causation; open questions are labeled as questions; lawful conduct (disclosed personal political contributions, commercial registered agents, timely registrations) is identified as lawful.</p>
+    <h3>Comment and corrections</h3>
+    <p>Every registrant receives detailed questions with a stated deadline before coverage naming them publishes; responses are added in full, and non-responses are dated. Documented errors are corrected loudly, not quietly, and logged on the Updates page. Corrections with documentation: [contact email].</p>
+    <h3>Who makes this</h3>
+    <p>Compiled by Sue Selle, Feral America, feralamerica.substack.com. This site is an index of public records and independent journalism about them. Verify before you amplify, always.</p>
+  </div>
+</section>
+
+</main>
+<footer>
+  A Feral America project · <a href="https://feralamerica.substack.com">feralamerica.substack.com</a> · All documents: <a href="https://efile.fara.gov/ords/fara/f?p=1235:10">efile.fara.gov</a><br>
+  Data current as of <span id="asof"></span> · Share any view: the address bar updates as you click.<br>
+  Stay feral.
+</footer>
+
+<script>
+/* ================= DATA ================= */
+const ASOF = "July 18, 2026";
+const D = { // document registry: id -> [label, url, annotation, tags]
+ tcg1:["TCG Exhibit AB, 3/3/25","https://efile.fara.gov/docs/7553-Exhibit-AB-20250303-1.pdf","The origin document: Feb 18, 2025 contract, SKDKnickerbocker payment structure, and the named-booker media blitz logged before registration.","tcg skdk origin booker blitz first"],
+ tcg2:["TCG Exhibit AB, 8/29/25","https://efile.fara.gov/docs/7553-Exhibit-AB-20250829-2.pdf","The re-papering: principal becomes Ministry of Tourism (LAPAM) through Havas USA; Guy Getz named.","tcg havas tourism getz"],
+ tcg3:["TCG retroactive work order, filed 7/2/26","https://efile.fara.gov/docs/7553-Exhibit-AB-20260702-3.pdf","$9,892,336.58 for Sept-Dec 2025 work, papered by an order dated April 27, 2026. Retroactive by up to ten months.","tcg retroactive 9.89 million work order"],
+ g21:["Genesis 21 Registration + Exhibit AB, 8/11/25","https://efile.fara.gov/docs/7631-Registration-Statement-20250811-1.pdf","One-man Israeli-owned Delaware shell, direct ministry principal, influencer outreach, registered the day of its verbal agreement. The pipeline's most compliant filing.","genesis daboush direct influencer compliant"],
+ ctx1:["Clock Tower X Registration, 9/18/25","https://efile.fara.gov/docs/7649-Registration-Statement-20250918-1.pdf","$6M over four months ($1.5M/month); Delaware formation 6/11/25; Havas Germany on behalf of the State of Israel.","clock tower parscale registration 6m"],
+ ctx2:["Clock Tower X deficiency amendment, 10/20/25","https://efile.fara.gov/docs/7649-Amendment-20251020-2.pdf","The Israel erasure: filed to correct a deficiency; the State of Israel principal is dropped and HAVAS Media Network remains. Two weeks after the press wave.","clock tower amendment error israel erasure deficiency"],
+ ctx3:["Clock Tower X $31.5M work order, 6/7/26","https://efile.fara.gov/docs/7649-Exhibit-AB-20260607-4.pdf","$4.5 million per month, April through October 2026. The largest contract in the pipeline, ending the month before the midterms.","clock tower 31.5 4.5 million october midterms escalation"],
+ ctx4:["Clock Tower X Supplemental, 5/18/26 (DCNF mirror)","https://cdn01.dailycaller.com/wp-content/uploads/2026/05/fara-supplemental-filing-for-brad-parscales-clock-tower-x-from-may-2026.pdf","$15M received; $850K Havas loan; $750K loan repayment to Parscale personally; the 'in error' statements; the content ledger naming Carlson, Owens, and Kent; the $10K congressional contribution. DOJ's own link is broken; this is the Daily Caller News Foundation's mirror.","clock tower supplemental 15 million loan carlson owens kent contribution mirror broken"],
+ bri1:["Bridges Exhibit AB + Havas work order, 9/26/25","https://efile.fara.gov/docs/7652-Exhibit-AB-20250926-1.pdf","The Esther Project order (47239): $900K influencer program, contract 6/16/25, $199,985 received 7/3/25, roughly twelve weeks before registering.","bridges esther influencer 900k unregistered twelve weeks"],
+ bri2:["Bridges Supplemental, 4/30/26","https://efile.fara.gov/docs/7652-Supplemental-Statement-20260430-1.pdf","Zero receipts for the period; $197,960 disbursed; the sworn claim of no role in content; ~$700K of the work order in no US filing; no influencer named anywhere.","bridges supplemental 700k no role influencer"],
+ sfw1:["Show Faith Registration + Exhibit AB, 9/27/25","https://efile.fara.gov/docs/7653-Registration-Statement-20250927-1.pdf","The geofencing program as sworn: 900+ churches, the largest campaign of its kind in US history, target states, the trailer, pre-registration receipts and spending.","show faith geofencing churches registration"],
+ sfw2:["Show Faith Supplemental, 5/1/26 (the doubled ledger)","https://efile.fara.gov/docs/7653-Supplemental-Statement-20260501-1.pdf","Sworn disbursements of $3,333,191.86; all 742 appendix lines duplicated, zero exceptions; actual spending exactly $1,666,595.93*; a third of it to the owner's own entities*; zero advertising expenditures anywhere*.","show faith doubled ledger duplicate 742 supplemental graystone"],
+ dav:["Davis Media short form, 10/12/25","https://efile.fara.gov/docs/7662-Short-Form-20251012-2.pdf","Yoav Davis; Government of Israel through L.D.R.S Group LTD of Tel Aviv: the second pipe.","davis ldrs second pipe jews of ny"],
+ piro:["Piro Exhibit AB + work order, 6/2/26","https://efile.fara.gov/docs/7732-Exhibit-AB-20260602-0.pdf","Hollywood signs on: $900K Digital Storytelling Pilot, $400K production including paid on-camera talent; Shayovitch and Getz named.","piro hollywood pilot talent rosenberg piper"],
+ sni1:["Sniper Exhibit AB, 6/24/26","https://efile.fara.gov/docs/7745-Exhibit-AB-20260624-1.pdf","Oral 6/18/26 deal, both ministries jointly, no intermediary, volume-based fees contingent on campaigns the Ministry chooses to run; audience curation and cohort deployment language; Foreign Minister Gideon Sa'ar named.","sniper oral ministries direct saar volume geofence"],
+ sni2:["Sniper Registration Statement, 6/24/26","https://efile.fara.gov/docs/7745-Registration-Statement-20260624-1.pdf","Wyoming entity (1/4/24); 50/50 Hickerson (Key Largo) and Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel). Likely the only public record on earth naming the owners.","sniper wyoming hickerson kerschenbaum owners"],
+ hav:["Havas USA Exhibit AB, 2/27/23","https://efile.fara.gov/docs/7106-Exhibit-AB-20230227-4.pdf","The pipe pre-existed: Havas's US arm, itself a FARA registrant since 2022, adds Israel's Ministry of Tourism via LAPAM. Contact: Guy Getz. Two years before Project 545.","havas 7106 tourism getz pipe pre-existed"],
+ search:["DOJ FARA document search","https://efile.fara.gov/ords/fara/f?p=1235:10","Verify everything on this site yourself. That is the point.","doj search verify database"]
+};
+const LEGS = [
+ {id:"tcg",n:"Targeted Communications Global",fara:"7553",who:"SKDKnickerbocker affiliate; signer Katherine Reynolds",route:"Havas USA (papered on Frankfurt letterhead)",money:"$9.89M retroactive work order incl. $3.7M ad buys",
+  facts:["Contract Feb 18, 2025: the pipeline's first leg","Pre-registration booker blitz: NBC, CNN, CBS, Fox, MSNBC et al. (flag)","$9,892,336.58 papered 4/27/26, filed 7/2/26 (flag)","$1,545,000/month Sept-Dec 2025: twin to Clock Tower's rate"],
+  docs:["tcg1","tcg2","tcg3"],comment:"Comment requested; window open"},
+ {id:"g21",n:"Genesis 21 Consulting",fara:"7631",who:"Tzahi Daboush, sole owner (ex-Army Radio correspondent; ex-Barkat communications chief), Shoham, Israel",route:"Direct to MFA/Advertising Bureau",money:"Terms TBD; oral, 1 year",
+  facts:["Delaware LLC formed 5/21/25: first vehicle built","Registered day of its verbal agreement (compliant)","Sworn services: influencer outreach"],
+  docs:["g21"],comment:"Comment request queued"},
+ {id:"ctx",n:"Clock Tower X",fara:"7649",who:"Brad Parscale (Trump 2016 digital director, 2020 campaign manager; Salem Media CSO)",route:"Havas Frankfurt",money:"$6M > $9M > $31.5M order; $15M received in six months",
+  facts:["Homepage: 'We help determine who prevails. Elections. Narratives. Markets.'","10/20/25: State of Israel registration 'was in error'; principal becomes HAVAS Media Network (flag)","$850K Havas loan; $750K loan repayment to Parscale personally","$10,000 to a congressman's victory fund mid-engagement (disclosed, personal funds, lawful)","Content ledger: pieces on Tucker Carlson, Candace Owens, Joe Kent","11-site mesh built for GPT framing"],
+  docs:["ctx1","ctx2","ctx3","ctx4"],comment:"Comment requested; deadline July 22"},
+ {id:"bri",n:"Bridges Partners",fara:"7652",who:"Uri Steinberg + Yair Levy (ex-Israeli Tourism Ministry); Capitol Hill apartment",route:"Havas Frankfurt",money:"$900K Esther Project order; $199,985 on its books",
+  facts:["~12 weeks unregistered with money flowing (flag)","~$700K of the order appears in no US filing (flag)","Supplemental swears no role in the content its own Exhibit B describes (flag)","Consultant paid: Nadav Shtrauchler (Netanyahu 2019 strategist)","No influencer named or registered anywhere"],
+  docs:["bri1","bri2"],comment:"Questions sent; window closed"},
+ {id:"sfw",n:"Show Faith by Works",fara:"7653",who:"Chad Schnitger (pres., Faith and Freedom Coalition of California)",route:"Havas Frankfurt",money:"$2,313,791.50 received; actual spending $1,666,595.93*",
+  facts:["Sworn $3.33M total; all 742 lines duplicated, zero exceptions; exactly double actual* (flag)","9 days unregistered; $66,044 spent pre-registration (flag)","~33% of actual spending to owner's firm + himself*","Zero advertising expenditures in the entire ledger*","Denies geofencing; described activities never amended (flag)"],
+  docs:["sfw1","sfw2"],comment:"Questions sent 7/14, deadline 7/15: no response"},
+ {id:"dav",n:"Davis Media NY",fara:"7662",who:"Yoav Davis ('Jews of NY' founder; Israeli-born, ex-IDF)",route:"L.D.R.S Group (Tel Aviv) + Havas: only dual-source leg",money:"Undisclosed",
+  facts:["Second pipe: L.D.R.S Group LTD, unexamined","Influencer and celebrity media reach","Full docket pull pending"],
+  docs:["dav"],comment:"Comment request queued"},
+ {id:"piro",n:"Piro, Inc.",fara:"7732",who:"Daniel Rosenberg (Inside Man producer) + Tim Piper (Time 100 ad director)",route:"Havas Frankfurt",money:"$900K Digital Storytelling Pilot",
+  facts:["$400K production incl. paid on-camera talent","Markets AI-discoverability 'Narrative Operating System'","Registered before acting (compliant)"],
+  docs:["piro"],comment:"Comment request queued"},
+ {id:"sni",n:"Sniper Advertising Services",fara:"7745",who:"Frederick T. Hickerson III (Key Largo) + Larry Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel), 50/50",route:"DIRECT: both ministries jointly, no intermediary",money:"Volume-based, per campaign, undisclosed",
+  facts:["Oral deal 6/18/26; registered in six days (compliant)","Named official: Foreign Minister Gideon Sa'ar","Business: location-capture advertising (device IDs from chosen areas; audiences; optional direct mail)","Wyoming entity agented through the Wyoming Corporate Services chain","No location types named; no money moved yet"],
+  docs:["sni1","sni2"],comment:"Comment requested; window open"}
+];
+const HUBS = [
+ {id:"mfa",n:"GOVERNMENT OF ISRAEL · MFA",sub:"Project 545 · 545M shekels (~$145M) · Dec 2024",
+  detail:"The client. Budget approved December 2024. Eran Shayovich, strategic communications chief, runs the program (named on Piro's filing; reported architect). Oren Marmorstein, ministry spokesperson, supervised the first engagement (TCG, Feb 2025). Foreign Minister Gideon Sa'ar is named on Sniper's 2026 filing, the only minister-level name in the pipeline.",docs:["piro","tcg1","sni1"]},
+ {id:"lapam",n:"LAPAM · Government Advertising Agency",sub:"Guy Getz on filings 2023-2026 · client on most legs",
+  detail:"Israel's government advertising bureau, 9 Ahad Ha'am St, Tel Aviv. The purchasing office: named client on Bridges', Piro's, TCG's, and Genesis 21's paper, and on Havas USA's own 2023 registration. Guy Getz, Head of Advertising, appears across three separate FARA relationships spanning 2023 to 2026, the connective signature of the entire commercial program.",docs:["hav","tcg2","piro","bri1"]},
+ {id:"hg",n:"HAVAS GERMANY · Frankfurt",sub:"Principal-side paymaster · files nothing itself",
+  detail:"Contracting party or paymaster for Clock Tower, Show Faith, Bridges, and Piro, and the letterhead on TCG's retroactive order. Positioned on the foreign principal side of every filing, so its own books never face DOJ. Bollore-controlled. Named contacts on vendor paper: Martsello Alexidis; Nathalie Nikpour-Wagner (per Poulson).",docs:["ctx1","bri1","piro","tcg3"]},
+ {id:"hu",n:"HAVAS USA · NYC",sub:"Itself FARA #7106 since 2022",
+  detail:"The both-sides finding: Havas's American arm has been a registered foreign agent since 2022 and disclosed Israel's Ministry of Tourism via LAPAM (contact: Getz) in February 2023, for tourism advertising, two years before Project 545. For the political campaign, no Havas entity registered as agent anywhere; Havas appears only principal-side. Same client, same Frankfurt hub, opposite disclosure posture; the variable is the content.",docs:["hav","tcg2"]},
+ {id:"ldrs",n:"L.D.R.S GROUP · Tel Aviv",sub:"The second pipe · unexamined",
+  detail:"Named on Davis Media's short form as the channel for the Government of Israel: a funding route that bypasses the Havas hub entirely. Ownership and role unexamined; Israeli registry pull pending.",docs:["dav"]}
+];
+const TL = [
+ ["2020 TO 2023 · THE PIPE ALREADY EXISTED",null],
+ ["Apr 2022","reg","Havas USA registers under FARA (#7106)","One registration covers all of an agent's government clients; the tourism plumbing that Project 545 would later repurpose.",["hav"]],
+ ["Feb 27 2023","reg","Havas USA adds Israel: Tourism via LAPAM","Named contact Guy Getz, whose signature will recur across the entire program through 2026.",["hav"]],
+ ["DECEMBER 2024 · THE BUDGET",null],
+ ["Dec 2024","money","Project 545 approved: 545M shekels (~$145M)","Israeli reporting names Eran Shayovich as the program's chief; goals include shaping generative AI outputs. Same month, Tzahi Daboush leaves minister Barkat's office for the private sector.",[]],
+ ["FEB TO MAR 2025 · THE DEMOCRATS GO FIRST",null],
+ ["Feb 18 2025","money","SKDK's affiliate signs first","TCG contracts with the MFA under spokesperson Oren Marmorstein; SKDK holds the contract and pays TCG, per TCG's own exhibit.",["tcg1"]],
+ ["Feb 19-24 2025","flag","The newsroom blitz, before registering","Twenty-plus logged media placement contacts with named bookers at NBC, CNN, CBS, ABC, Fox, MSNBC, NewsMax, the Post, and the Daily Wire, all pre-registration, all disclosed afterward.",["tcg1"]],
+ ["Mar 3 2025","reg","TCG registers (#7553)","",["tcg1"]],
+ ["SPRING 2025 · BUILDING THE FLEET",null],
+ ["May 21 2025","reg","Genesis 21 formed (Delaware)","First vehicle in the fleet; sole owner Tzahi Daboush of Shoham, Israel.",["g21"]],
+ ["Jun 11 2025","reg","Clock Tower X formed (Delaware)","",["ctx1"]],
+ ["Jun 16 2025","money","The Esther Project is signed","$900K Havas work order, product line literally reading Esther Project, order 47239.",["bri1"]],
+ ["Jul 3 2025","flag","Bridges takes $199,985, stays dark","Roughly twelve weeks of unregistered operation follow, by its own sworn accounting, against a ten day statute.",["bri1"]],
+ ["AUG TO SEP 2025 · REGISTRATION SEASON",null],
+ ["Aug 11 2025","reg","Genesis 21 registers, day of its handshake (#7631)","The pipeline's most compliant filing, and it belongs to the one-man Israeli shop.",["g21"]],
+ ["Aug 29 2025","reg","TCG re-papers under the tourism pipe","New principal: Ministry of Tourism (LAPAM) through Havas USA. Contact: Guy Getz.",["tcg2"]],
+ ["Sep 2025","money","Twin flagships spin up","Clock Tower at exactly $1.5M/month and TCG at $1.545M/month, identical four months, one firm from each party's ecosystem.",["ctx1","tcg3"]],
+ ["Sep 18 2025","flag","CTX registers; Havas wires the church campaign","Clock Tower discloses $6M. Same day, $325,881 lands at Show Faith, nine days before Show Faith registers.",["ctx1","sfw1"]],
+ ["Sep 26-27 2025","reg","Bridges (#7652) and Show Faith (#7653) register","The nine-day registration window closes; something prompted the fleet at once.",["bri1","sfw1"]],
+ ["Sep 29 2025","press","Responsible Statecraft breaks the story","Two days after the last registration in the window.",[]],
+ ["OCT TO DEC 2025 · FULL OPERATION, FIRST RETREAT",null],
+ ["Oct 12 2025","reg","Davis Media registers (#7662)","Dual funding: Havas AND L.D.R.S Group of Tel Aviv, the second pipe.",["dav"]],
+ ["Oct 13-20 2025","flag","Clock Tower erases Israel","Connection with the State of Israel terminated 10/13; deficiency amendment 10/20 leaves HAVAS Media Network as sole principal; the supplemental later calls the Israel registration an error while still describing the work as Israel's campaign. Two weeks after the press wave.",["ctx2","ctx4"]],
+ ["Oct-Dec 2025","money","The pipeline runs at capacity","TCG buys $3.7M in ads; influencer waves post; mass texting begins; the trailer is built ($352,949* to Griggs Home Service).",["tcg3","sfw2"]],
+ ["Nov 25 2025","press","Schnitger's first walk-back","Tells Christianity Today the geofencing is scrapped; blames the lawyers' wording.",[]],
+ ["Dec 22 2025","flag","Parscale's $10,000 check","To a congressman's victory fund, mid-engagement. Disclosed in his own supplemental; personal funds; lawful with disclosure, and still a fact worth sitting with.",["ctx4"]],
+ ["Dec 31 2025","flag","Bridges goes quiet","Last disbursement. ~$700K of its $900K work order never appears in any US filing.",["bri2"]],
+ ["JAN TO MAR 2026 · THE QUIET QUARTER",null],
+ ["Jan 5-20 2026","money","Show Faith's Israel trip: $54,124*","Uncharted Adventures, EL AL, Ben Gurion parking, Sea of Galilee lodging: the pastors-trip promise from the pitch deck, materialized in the ledger. Twice, technically.",["sfw2"]],
+ ["Mar 30 2026","flag","FactSignal publishes on Carlson and Owens","An Israel-funded site, per Clock Tower's own sworn content ledger, publishes on the supposed Russian origins of Candace Owens' and Tucker Carlson's talking points. Months before Carlson's show mainstreams this story.",["ctx4"]],
+ ["APR TO JUL 2026 · THE SECOND WAVE",null],
+ ["Apr 27 2026","flag","The retroactive contract is dated","$9,892,336.58 of fall 2025 work, papered months after performance; filed with DOJ on July 2.",["tcg3"]],
+ ["Apr 30 2026","money","Hollywood signs","Piro's $900K Digital Storytelling Pilot: paid talent, test architecture, AI discoverability.",["piro"]],
+ ["May 1 2026","flag","The doubled ledger is filed","Show Faith swears $3,333,191.86 in disbursements; every one of 742 appendix lines is duplicated, zero exceptions; actual spending exactly $1,666,595.93*. No response to questions by deadline.",["sfw2"]],
+ ["May 18 2026","reg","Clock Tower's supplemental lands","$15M received against a $9M contract of record; $850K Havas loan; $750K loan repayment to Parscale personally. DOJ's public link to this document is broken; a news mirror survives.",["ctx4"]],
+ ["Jun 2 2026","money","The escalation","Piro registers (#7732); Clock Tower's new order triples it to $4.5M/month, April through October: $31.5M, ending the month before the midterms.",["piro","ctx3"]],
+ ["Jun 18 2026","money","Two ministries hire Sniper, directly","Oral, volume-based, per campaign; location-capture advertising; Foreign Minister Sa'ar named on the paper. No intermediary.",["sni1"]],
+ ["Jun 24 2026","reg","Sniper registers (#7745)","Six days after the handshake. Leg eight. FARA's Item 5 becomes the only public record naming its owners.",["sni1","sni2"]],
+ ["Jul 7 2026","press","'We are not doing geofencing'","Schnitger to the Daily Caller News Foundation, nineteen days after the ministries hired the location-capture specialist. His own ad-free ledger, for once, agrees with him.",["sfw2"]],
+ ["Jul 16 2026","press","The primetime address","The White House declares war on foreign election interference. This database goes unmentioned.",[]]
+];
+const MONEY = [
+ ["Clock Tower X (7649)","Work order, Apr-Oct 2026","$31,500,000.00","sworn order","ctx3"],
+ ["Clock Tower X (7649)","Received, six months ending 3/31/26","$15,000,000.00","sworn receipts","ctx4"],
+ ["Targeted Communications Global (7553)","Retroactive work order, Sept-Dec 2025","$9,892,336.58","sworn order","tcg3"],
+ ["Show Faith by Works (7653)","Received from the Ministry","$2,313,791.50","sworn receipts","sfw2"],
+ ["Show Faith by Works (7653)","Actual spending (dedup of doubled ledger)","$1,666,595.93*","our calculation","sfw2"],
+ ["Bridges Partners (7652)","Esther Project work order","$900,000.00","sworn order","bri1"],
+ ["Bridges Partners (7652)","Actually on its books","$199,985.00","sworn receipts","bri1"],
+ ["Piro, Inc. (7732)","Digital Storytelling Pilot","$900,000.00","sworn order","piro"],
+ ["Genesis 21 (7631)","Oral, 1 year, terms TBD","undisclosed","sworn","g21"],
+ ["Davis Media NY (7662)","Amounts undisclosed to date","undisclosed","sworn","dav"],
+ ["Sniper (7745)","Volume-based, per campaign","undisclosed","sworn","sni1"]
+];
+const CAST = [
+ ["Guy Getz","LAPAM Head of Advertising","The connective signature: named official on Havas USA's 2023 tourism exhibit, TCG's 2025 re-papering, and Piro's 2026 filing. Three years, three relationships, one purchasing officer, predating Project 545 by two years.",["hav","tcg2","piro"]],
+ ["Eran Shayovich","MFA strategic communications chief","Named on Piro's Exhibit A; reported architect of Project 545 and, per reporting, personal recruiter of Schnitger.",["piro"]],
+ ["Oren Marmorstein","MFA spokesperson","Supervised the pipeline's first documented engagement: TCG, February 2025.",["tcg1"]],
+ ["Gideon Sa'ar","Foreign Minister","Named on Sniper's 2026 exhibit: the only minister-level name in eight registrations, on the smallest, most direct vendor.",["sni1"]],
+ ["Brad Parscale","Owner, Clock Tower X","Trump 2016 digital director and 2020 campaign manager; Salem Media CSO. His company's homepage advertises election influence to nation-state actors; his filings show $15M received, a $750K personal loan repayment, a $10K congressional contribution (disclosed, lawful), and the Israel-erasure amendment.",["ctx1","ctx2","ctx4"]],
+ ["Chad Schnitger","Owner, Show Faith by Works","Riverside County consultant; president, Faith and Freedom Coalition of California. Signed the doubled ledger under penalty of perjury; denies the geofencing his registration describes; no response to questions by deadline.",["sfw1","sfw2"]],
+ ["Uri Steinberg + Yair Levy","Founders, Bridges Partners","Former Israeli Tourism Ministry officials (Steinberg was tourism commissioner for North America) running the Esther Project from a Capitol Hill apartment.",["bri1"]],
+ ["Nadav Shtrauchler","Consultant, Bridges Partners","$15,000 consultant fee in the pre-registration disbursements; the strategist who ran Netanyahu's 2019 reelection campaign.",["bri1"]],
+ ["Tzahi Daboush","Owner, Genesis 21","Ex-Army Radio military correspondent; communications chief for minister Nir Barkat until December 2024, the month the budget passed. His Delaware shell, named for the Genesis chapter in which his biblical namesake is born, registered the day of its handshake. Barkat connection is biography, not evidence of involvement.",["g21"]],
+ ["Yoav Davis","Owner, Davis Media NY","Founder of the Jews of NY platform; Israeli-born, ex-IDF; the pipeline's only dual-funded registrant (Havas plus L.D.R.S).",["dav"]],
+ ["Daniel Rosenberg + Tim Piper","Founders, Piro","Hollywood producer (Inside Man) and Time 100 advertising director: the professionalization wave, arrived spring 2026.",["piro"]],
+ ["Frederick T. Hickerson III + Larry Kerschenbaum","Owners, Sniper Advertising","50/50 partners per Item 5; Hickerson in Key Largo, Kerschenbaum a dual US-Israeli citizen residing in Yad Hanna, Israel. Outside DOJ's database, no public record appears to name them.",["sni1","sni2"]],
+ ["Katherine Reynolds","Signer, TCG","Signs TCG's filings; identification and role at SKDK/TCG pending.",["tcg1","tcg3"]]
+];
+const UPDATES = [
+ ["Jul 18, 2026","Leg eight added: Sniper Advertising Services (#7745), direct-to-ministries location-capture advertising; Wyoming registry chain documented; comment requested."],
+ ["Jul 17, 2026","Clock Tower supplemental analyzed (via DCNF mirror; DOJ link broken): $15M receipts, Havas loan, personal loan repayment, the Israel-erasure statements, the Carlson/Owens/Kent content ledger, the disclosed congressional contribution."],
+ ["Jul 16-17, 2026","Show Faith doubled ledger verified computationally: 742 lines, zero non-duplicates, actual spending exactly $1,666,595.93. Referral transmitted to congressional oversight staff. No response from Show Faith by stated deadline."],
+ ["Jul 15, 2026","Legs five through seven documented: Piro, Genesis 21, TCG/SKDK (the true origin, Feb 18, 2025); the Havas both-sides finding; Getz identified as the throughline; twin-rate finding."],
+ ["Jul 14, 2026","Bridges and Davis Media dockets pulled: the twelve-week gap, the $700K hole, the no-role claim, the second pipe."]
+];
+
+/* ================= HELPERS ================= */
+const docLink = id => { const d=D[id]; return `<a class="doclink" href="${d[1]}" target="_blank" rel="noopener">${d[0]} ↗</a>`; };
+const docLinks = ids => ids.map(i=>`<div>${docLink(i)}</div>`).join('');
+document.getElementById('asof').textContent = ASOF;
+document.getElementById('headTally').textContent = "8 registered legs · 5 money routes · $58M+ documented · " + Object.keys(D).length + " primary documents linked · updated " + ASOF;
+
+/* nav + hash routing */
+function showTab(id){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active', b.dataset.s===id));
+  document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active', s.id===id));
+  if(location.hash.replace('#','').split('=')[0]!==id) history.replaceState(null,'','#'+id);
+}
+document.getElementById('nav').addEventListener('click', e=>{ if(e.target.dataset.s) showTab(e.target.dataset.s); });
+
+/* network */
+(function(){
+  const W=830,colW=192,gap=12;
+  const legPos={}; LEGS.forEach((l,i)=>{ legPos[l.id]={x:8+(i%4)*(colW+gap),y:i<4?322:474}; });
+  const hubPos={mfa:{x:215,y:14,w:400},lapam:{x:255,y:98,w:320},hg:{x:60,y:188,w:250},hu:{x:335,y:188,w:230},ldrs:{x:585,y:188,w:220}};
+  let s=`<svg viewBox="0 0 ${W} 640" style="min-width:780px;width:100%" font-family="'Courier New',monospace">
+  <defs><marker id="m" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#1E2A38"/></marker></defs>
+  <path d="M415,66 V94" stroke="#1E2A38" stroke-width="2" marker-end="url(#m)"/>
+  <path d="M335,150 V184 H185" fill="none" stroke="#1E2A38" stroke-width="2" marker-end="url(#m)"/>
+  <path d="M450,150 V184" fill="none" stroke="#1E2A38" stroke-width="2" marker-end="url(#m)"/>
+  <path d="M615,66 H695 V184" fill="none" stroke="#1E2A38" stroke-width="2" marker-end="url(#m)"/>`;
+  const edge=(x1,y1,id,color)=>`<path d="M${x1},${y1} V${legPos[id].y-6} H${legPos[id].x+colW/2} V${legPos[id].y}" fill="none" stroke="${color||'#1E2A38'}" stroke-width="1.8" marker-end="url(#m)"/>`;
+  s+=edge(120,248,'ctx')+edge(160,248,'bri')+edge(205,248,'sfw')+edge(248,248,'piro')+edge(450,248,'tcg')+edge(695,248,'dav');
+  s+=`<path d="M255,122 H20 V${legPos['g21'].y-6} H${legPos['g21'].x+colW/2} V${legPos['g21'].y}" fill="none" stroke="#C98A2D" stroke-width="2" marker-end="url(#m)"/>`;
+  s+=`<path d="M575,122 H812 V${legPos['sni'].y-6} H${legPos['sni'].x+colW/2} V${legPos['sni'].y}" fill="none" stroke="#C98A2D" stroke-width="2" marker-end="url(#m)"/>`;
+  s+=`<text x="700" y="142" font-size="9.5" fill="#C98A2D">direct: no intermediary</text>`;
+  s+=`<path d="M305,248 V302 H${legPos['bri'].x+colW+5} V606" fill="none" stroke="#B3402E" stroke-width="2.2" stroke-dasharray="7,5"/>`;
+  s+=`<text x="20" y="622" font-size="10" fill="#B3402E" font-weight="bold">red dashed: ~$700K influencer money, in no US filing · amber: direct ministry routes</text>`;
+  HUBS.forEach(h=>{const p=hubPos[h.id];const gov=(h.id==='mfa');
+    s+=`<g class="node" data-hub="${h.id}"><rect x="${p.x}" y="${p.y}" width="${p.w}" height="52" fill="${gov?'#1E2A38':'#FBF8EF'}" stroke="#1E2A38" stroke-width="1.6" rx="3"/>
+    <text x="${p.x+p.w/2}" y="${p.y+20}" text-anchor="middle" font-size="11" font-weight="bold" fill="${gov?'#F2EDE0':'#1E2A38'}">${h.n}</text>
+    <text x="${p.x+p.w/2}" y="${p.y+37}" text-anchor="middle" font-size="8.6" fill="${gov?'#D9CDB0':'#5A5548'}">${h.sub.slice(0,66)}</text></g>`;});
+  LEGS.forEach(l=>{const p=legPos[l.id];
+    s+=`<g class="node" data-leg="${l.id}"><rect x="${p.x}" y="${p.y}" width="${colW}" height="122" fill="#FBF8EF" stroke="#1E2A38" stroke-width="1.6" rx="3"/>
+    <text x="${p.x+10}" y="${p.y+20}" font-size="10.5" font-weight="bold" fill="#1E2A38">${l.n.toUpperCase().slice(0,26)}</text>
+    <text x="${p.x+10}" y="${p.y+36}" font-size="10" font-weight="bold" fill="#B3402E">FARA ${l.fara}</text>
+    <text x="${p.x+10}" y="${p.y+54}" font-size="8.8" fill="#5A5548">${l.who.slice(0,33)}</text>
+    <text x="${p.x+10}" y="${p.y+70}" font-size="8.8" fill="#5A5548">${l.route.slice(0,33)}</text>
+    <text x="${p.x+10}" y="${p.y+90}" font-size="8.8" fill="#1E2A38">${l.money.slice(0,33)}</text>
+    <text x="${p.x+10}" y="${p.y+110}" font-size="8.6" fill="#B3402E">click: details + documents</text></g>`;});
+  s+=`</svg>`;
+  const box=document.getElementById('netsvgbox'); box.innerHTML=s;
+  function select(id, isHub){
+    document.querySelectorAll('.node').forEach(n=>n.classList.toggle('sel',(n.dataset.leg||n.dataset.hub)===id));
+    const d=document.getElementById('detail');
+    if(!isHub){
+      const l=LEGS.find(x=>x.id===id);
+      d.innerHTML=`<h3>${l.n}</h3><span class="stamp">FARA ${l.fara}</span>
+      <p><b>Who:</b> ${l.who}</p><p><b>Route:</b> ${l.route}</p><p><b>Money:</b> ${l.money}</p>
+      ${l.facts.map(f=>`<p class="${f.includes('(flag)')?'flag':(f.toLowerCase().includes('compliant')||f.toLowerCase().includes('lawful')?'ok':'')}">• ${f.replace(' (flag)','')}</p>`).join('')}
+      <p class="mono" style="color:#C98A2D">${l.comment}</p>${docLinks(l.docs)}`;
+      history.replaceState(null,'','#network=leg-'+id);
+    } else {
+      const h=HUBS.find(x=>x.id===id);
+      d.innerHTML=`<h3>${h.n}</h3><p>${h.detail}</p>${docLinks(h.docs)}`;
+      history.replaceState(null,'','#network=hub-'+id);
+    }
+  }
+  box.addEventListener('click', e=>{const g=e.target.closest('.node'); if(!g)return; select(g.dataset.leg||g.dataset.hub, !!g.dataset.hub); syncChips(g.dataset.leg||g.dataset.hub);});
+  window._netSelect = (id,isHub)=>{ select(id,isHub); syncChips(id); };
+  /* chip picker (mobile-friendly node selection) */
+  const chips=document.getElementById('chips');
+  chips.innerHTML = HUBS.map(h=>`<button data-id="${h.id}" data-hub="1" class="gov">${h.n.split('·')[0].trim()}</button>`).join('')
+    + LEGS.map(l=>`<button data-id="${l.id}">${l.n} · ${l.fara}</button>`).join('');
+  function syncChips(id){ chips.querySelectorAll('button').forEach(b=>b.classList.toggle('sel', b.dataset.id===id)); }
+  chips.addEventListener('click', e=>{
+    if(!e.target.dataset.id) return;
+    select(e.target.dataset.id, !!e.target.dataset.hub);
+    syncChips(e.target.dataset.id);
+    document.getElementById('detail').scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+})();
+
+/* timeline */
+const tlColors={money:'#1E2A38',reg:'#3B6B8F',flag:'#B3402E',press:'#C98A2D'};
+function renderTL(filter,q){
+  const box=document.getElementById('tlbox'); let html=''; let open=false;
+  TL.forEach((ev,idx)=>{
+    if(ev[1]===null){ if(open)html+='</div>'; html+=`<div class="era">${ev[0]}</div><div class="tl">`; open=true; return;}
+    if(filter!=='all'&&ev[1]!==filter)return;
+    if(q && !(ev[0]+' '+ev[2]+' '+ev[3]).toLowerCase().includes(q))return;
+    html+=`<div class="tev" data-i="${idx}"><span class="dot" style="background:${tlColors[ev[1]]}"></span>
+      <div class="d">${ev[0]}</div><div class="t">${ev[2]} ${ (ev[3]||ev[4].length)?'<span class="exp">[+]</span>':''}</div>
+      <div class="x">${ev[3]?`<p>${ev[3]}</p>`:''}${docLinks(ev[4])}</div></div>`;
+  });
+  if(open)html+='</div>';
+  box.innerHTML=html;
+}
+renderTL('all','');
+document.getElementById('tf').addEventListener('click',e=>{
+  if(!e.target.dataset.c)return;
+  document.querySelectorAll('#tf button').forEach(b=>b.classList.toggle('on',b===e.target));
+  renderTL(e.target.dataset.c, (document.getElementById('q').value||'').toLowerCase());
+});
+document.getElementById('tlbox').addEventListener('click',e=>{
+  const t=e.target.closest('.tev'); if(!t)return;
+  if(e.target.tagName==='A')return;
+  t.classList.toggle('open');
+});
+
+/* money */
+(function(){
+  const t=document.getElementById('moneyT');
+  let rows=`<tr><th>REGISTRANT</th><th>INSTRUMENT</th><th style="text-align:right">AMOUNT</th><th>BASIS</th><th>SOURCE</th></tr>`;
+  MONEY.forEach(r=>{rows+=`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="amt">${r[2]}</td><td class="mono" style="font-size:11.5px">${r[3]}</td><td>${docLink(r[4])}</td></tr>`;});
+  rows+=`<tr class="total"><td colspan="2">Documented orders and receipts, non-overlapping floor</td><td class="amt">$58,000,000+</td><td class="mono" style="font-size:11.5px">of ~$145M budget</td><td></td></tr>`;
+  t.innerHTML=rows;
+})();
+
+/* registrants */
+(function(){
+  document.getElementById('cardbox').innerHTML = LEGS.map(l=>`<div class="rc" id="card-${l.id}"><span class="stamp">FARA ${l.fara}</span><h3>${l.n}</h3>
+   <div class="who">${l.who}</div><div class="who mono">${l.route}</div><div class="who mono"><b>${l.money}</b></div>
+   <ul>${l.facts.map(f=>`<li class="${f.includes('(flag)')?'flag':(f.toLowerCase().includes('compliant')||f.toLowerCase().includes('lawful')?'ok':'')}">${f.replace(' (flag)','')}</li>`).join('')}</ul>
+   <div class="cs">${l.comment}</div><div class="dlinks">${docLinks(l.docs)}</div></div>`).join('');
+})();
+
+/* cast */
+(function(){
+  document.getElementById('castbox').innerHTML = CAST.map(p=>`<div class="pcard"><h3>${p[0]}</h3><span class="role">${p[1]}</span>
+    <p>${p[2]}</p>${docLinks(p[3])}</div>`).join('');
+})();
+
+/* documents */
+function renderDocs(q){
+  const b=document.getElementById('docbox');
+  b.innerHTML = Object.entries(D).filter(([k,d])=>!q||(d[0]+d[2]+d[3]).toLowerCase().includes(q))
+   .map(([k,d])=>`<div class="docrow"><a href="${d[1]}" target="_blank" rel="noopener">${d[0]} ↗</a><div class="why">${d[2]}</div></div>`).join('')
+   || `<div class="docrow"><div class="why">No documents match. Broaden the filter.</div></div>`;
+}
+renderDocs('');
+document.getElementById('docfilter').addEventListener('input',e=>renderDocs(e.target.value.toLowerCase()));
+
+/* updates */
+document.getElementById('upbox').innerHTML = UPDATES.map(u=>`<div class="uentry"><span class="d">${u[0]}</span><p>${u[1]}</p></div>`).join('');
+
+/* global search: routes to timeline + docs */
+document.getElementById('q').addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  const active=document.querySelector('main section.active').id;
+  if(active==='docs'){document.getElementById('docfilter').value=e.target.value;renderDocs(q);return;}
+  showTab('timeline');
+  const f=document.querySelector('#tf button.on').dataset.c;
+  renderTL(f,q);
+});
+
+/* hash on load */
+(function(){
+  const h=location.hash.replace('#','');
+  if(!h)return;
+  const [tab,sel]=h.split('=');
+  if(document.getElementById(tab))showTab(tab);
+  if(tab==='network'&&sel){const [kind,id]=sel.split('-'); if(window._netSelect&&id)window._netSelect(id,kind==='hub');}
+})();
+</script>
+</body>
+</html>
