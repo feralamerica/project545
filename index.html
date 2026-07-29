@@ -4,152 +4,176 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Project 545 Tracker | Feral America</title>
-<meta name="description" content="A document-based interactive tracker of Israel's Project 545 influence campaign: every FARA registrant, every dollar, every date, every filing linked. Compiled by Feral America.">
+<meta name="description" content="A document-based interactive tracker of Israel's Project 545 influence pipeline: every FARA registrant, every dollar, every date, every filing linked. Compiled by Feral America.">
+<meta name="theme-color" content="#0a0f1a">
 <style>
-  :root{--paper:#F2EDE0;--card:#FBF8EF;--ink:#1E2A38;--red:#B3402E;--amber:#C98A2D;--blue:#3B6B8F;--gray:#5A5548;--faint:#8A857A;--hl:#EFE7D2;}
+  :root{
+    --bg:#0a0f1a; --bg2:#0d1422; --card:#121a2b; --card2:#17233a; --line:#22304a;
+    --text:#e8ecf3; --mut:#9aa7bd; --dim:#6b7891;
+    --blue:#5aa2f7; --blue2:#7fb8ff; --red:#f0564a; --amber:#f0a24a; --green:#4ade80; --purple:#b393f5;
+  }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55;}
-  .mono{font-family:'Courier New',Courier,monospace;}
-  a{color:var(--blue);}
-  header{background:var(--ink);color:var(--paper);padding:32px 18px 24px;text-align:center;}
-  header h1{font-size:clamp(25px,4.5vw,42px);letter-spacing:1px;}
-  header .sub{font-family:'Courier New',monospace;font-size:13px;color:#D9CDB0;margin-top:8px;}
-  header .tally{display:inline-block;margin-top:13px;border:1.5px solid var(--red);color:#F2EDE0;padding:6px 14px;font-family:'Courier New',monospace;font-size:12.5px;transform:rotate(-1deg);background:rgba(179,64,46,.15);}
-  nav{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:2px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2px;padding:6px;}
-  nav button{background:none;border:none;font-family:'Courier New',monospace;font-size:12.5px;padding:8px 11px;cursor:pointer;color:var(--gray);border-bottom:3px solid transparent;}
-  nav button.active{color:var(--ink);font-weight:bold;border-bottom:3px solid var(--red);}
-  #q{font-family:'Courier New',monospace;font-size:12.5px;border:1.5px solid var(--ink);background:#fff;padding:6px 10px;margin-left:10px;width:190px;}
-  main{max-width:1200px;margin:0 auto;padding:24px 14px 60px;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.65;}
+  a{color:var(--blue);text-decoration:none;} a:hover{color:var(--blue2);text-decoration:underline;}
+  /* header */
+  header{background:linear-gradient(180deg,#0d1526 0%,var(--bg) 100%);border-bottom:1px solid var(--line);padding:44px 18px 30px;text-align:center;}
+  header h1{font-size:clamp(26px,4.5vw,42px);font-weight:800;letter-spacing:.5px;}
+  header h1 .accent{color:var(--red);}
+  header .sub{color:var(--mut);max-width:720px;margin:12px auto 0;font-size:16px;}
+  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px;}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 20px;min-width:130px;}
+  .stat b{display:block;font-size:24px;color:var(--blue2);font-weight:800;}
+  .stat span{font-size:12.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;}
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,15,26,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;padding:8px 6px;}
+  nav button{background:none;border:1px solid transparent;border-radius:999px;font-size:13.5px;font-weight:600;padding:7px 14px;cursor:pointer;color:var(--mut);}
+  nav button.active{color:#fff;background:var(--card2);border-color:var(--line);}
+  nav button:hover{color:var(--text);}
+  #q{font-size:13.5px;border:1px solid var(--line);background:var(--card);color:var(--text);padding:7px 12px;border-radius:999px;margin-left:8px;width:200px;}
+  #q::placeholder{color:var(--dim);}
+  main{max-width:1180px;margin:0 auto;padding:28px 16px 70px;}
   section{display:none;} section.active{display:block;}
-  h2{font-size:24px;margin:12px 0 6px;}
-  .lede{color:var(--gray);font-size:15px;max-width:860px;margin-bottom:16px;}
-  .note{font-family:'Courier New',monospace;font-size:11.5px;color:var(--faint);margin:8px 0 14px;}
-  .doclink{font-family:'Courier New',monospace;font-size:12px;}
-  .searchhit{outline:2px solid var(--amber);}
-  /* network */
-  #netwrap{display:grid;grid-template-columns:1fr 330px;gap:14px;}
-  @media(max-width:920px){#netwrap{grid-template-columns:1fr;} #detail{position:static;}}
-  #netsvgbox{background:var(--card);border:1.5px solid var(--ink);overflow:auto;}
-  .node{cursor:pointer;} .node:hover rect{stroke-width:3;}
-  .node.sel rect{stroke:var(--red);stroke-width:3;}
-  #detail{background:var(--card);border:1.5px solid var(--ink);padding:16px;min-height:320px;align-self:start;position:sticky;top:60px;max-height:78vh;overflow:auto;}
-  #detail h3{font-size:17px;padding-right:8px;}
-  .stamp{display:inline-block;font-family:'Courier New',monospace;color:var(--red);border:1.5px solid var(--red);padding:1px 7px;font-size:12px;font-weight:bold;transform:rotate(-2deg);margin:6px 0;}
-  #detail p{font-size:13.5px;margin:7px 0;color:var(--gray);}
-  .flag{color:var(--red);} .ok{color:var(--blue);}
+  h2{font-size:26px;font-weight:800;margin:10px 0 6px;}
+  .lede{color:var(--mut);font-size:15.5px;max-width:860px;margin-bottom:20px;}
+  .note{font-size:13px;color:var(--dim);margin:10px 0 14px;}
+  /* badges */
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;padding:3px 9px;border-radius:999px;text-transform:uppercase;}
+  .b-red{background:rgba(240,86,74,.15);color:var(--red);border:1px solid rgba(240,86,74,.4);}
+  .b-blue{background:rgba(90,162,247,.13);color:var(--blue);border:1px solid rgba(90,162,247,.4);}
+  .b-amber{background:rgba(240,162,74,.13);color:var(--amber);border:1px solid rgba(240,162,74,.4);}
+  .b-green{background:rgba(74,222,128,.12);color:var(--green);border:1px solid rgba(74,222,128,.35);}
+  .b-purple{background:rgba(179,147,245,.13);color:var(--purple);border:1px solid rgba(179,147,245,.4);}
+  /* network tiers */
+  .tierlabel{font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--dim);text-transform:uppercase;margin:24px 0 10px;display:flex;align-items:center;gap:10px;}
+  .tierlabel::after{content:"";flex:1;height:1px;background:var(--line);}
+  .tiergrid{display:grid;gap:12px;}
+  .tg-hubs{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+  .tg-legs{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));}
+  .ncard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;cursor:pointer;transition:border-color .12s, transform .12s;}
+  .ncard:hover{border-color:var(--blue);transform:translateY(-2px);}
+  .ncard.sel{border-color:var(--red);box-shadow:0 0 0 1px var(--red);}
+  .ncard h3{font-size:15.5px;font-weight:700;margin-bottom:4px;}
+  .ncard .meta{font-size:13px;color:var(--mut);}
+  .ncard .fara{font-size:12px;font-weight:800;color:var(--red);margin-bottom:6px;display:inline-block;}
+  .ncard .money{font-size:13px;color:var(--text);font-weight:600;margin-top:8px;}
+  .ncard .route{margin-top:10px;}
+  .ncard.gov{background:linear-gradient(135deg,#16233c,#101a2e);border-color:#2c3e61;}
+  .alert{background:rgba(240,86,74,.08);border:1px solid rgba(240,86,74,.4);border-radius:12px;padding:14px 16px;margin:20px 0;font-size:14px;color:var(--text);}
+  .alert b{color:var(--red);}
+  #detail{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:22px;}
+  #detail h3{font-size:19px;font-weight:800;}
+  #detail .fara{color:var(--red);font-weight:800;font-size:13px;}
+  #detail p{font-size:14.5px;color:var(--mut);margin:8px 0;}
+  #detail p.flag{color:var(--red);} #detail p.ok{color:var(--green);}
+  #detail .cstat{color:var(--amber);font-size:13.5px;font-weight:600;margin-top:10px;}
+  .doclink{font-size:13.5px;display:inline-block;margin:3px 0;}
   /* timeline */
-  .tfilters{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;}
-  .tfilters button{font-family:'Courier New',monospace;font-size:12px;border:1.5px solid var(--ink);background:var(--card);padding:5px 11px;cursor:pointer;}
-  .tfilters button.on{background:var(--ink);color:var(--paper);}
-  .tl{border-left:2.5px solid rgba(30,42,56,.35);margin-left:9px;}
-  .tev{position:relative;padding:0 0 6px 26px;cursor:pointer;}
-  .tev .dot{position:absolute;left:-8px;top:5px;width:13px;height:13px;border-radius:50%;border:2px solid var(--paper);}
-  .tev .d{font-family:'Courier New',monospace;font-size:12px;color:var(--gray);}
-  .tev .t{font-weight:bold;font-size:15px;}
-  .tev .t .exp{font-family:'Courier New',monospace;font-size:11px;color:var(--amber);}
-  .tev .x{display:none;background:var(--card);border:1.5px solid var(--ink);padding:10px 12px;margin:7px 0 10px;font-size:13px;color:var(--gray);}
+  .tfilters{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 18px;}
+  .tfilters button{font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--mut);padding:6px 13px;border-radius:999px;cursor:pointer;}
+  .tfilters button.on{background:var(--card2);color:#fff;border-color:var(--blue);}
+  .era{font-size:13px;font-weight:800;letter-spacing:1px;color:var(--blue2);text-transform:uppercase;margin:26px 0 12px;display:flex;align-items:center;gap:10px;}
+  .era::after{content:"";flex:1;height:1px;background:var(--line);}
+  .tl{border-left:2px solid var(--line);margin-left:7px;}
+  .tev{position:relative;padding:0 0 14px 22px;cursor:pointer;}
+  .tev .dot{position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;border:2px solid var(--bg);}
+  .tev .d{font-size:12.5px;color:var(--dim);font-weight:600;}
+  .tev .t{font-weight:700;font-size:15.5px;}
+  .tev .t .exp{font-size:11px;color:var(--amber);font-weight:700;}
+  .tev .x{display:none;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0 4px;font-size:14px;color:var(--mut);}
   .tev.open .x{display:block;}
-  .era{font-family:'Courier New',monospace;letter-spacing:1px;font-size:12.5px;background:var(--ink);color:var(--paper);display:inline-block;padding:5px 12px;margin:16px 0 12px;transform:translateX(-9px);}
-  /* money */
-  table{width:100%;border-collapse:collapse;background:var(--card);border:1.5px solid var(--ink);font-size:13.5px;}
-  th{background:var(--ink);color:var(--paper);font-family:'Courier New',monospace;font-size:12px;text-align:left;padding:9px 10px;}
-  td{padding:9px 10px;border-top:1px solid rgba(30,42,56,.18);vertical-align:top;}
-  td.amt{font-family:'Courier New',monospace;white-space:nowrap;text-align:right;}
-  tr.total td{font-weight:bold;font-family:'Courier New',monospace;border-top:2.5px solid var(--ink);background:var(--hl);}
-  /* cards */
-  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px;}
-  /* mobile node picker chips */
-  #chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;}
-  #chips button{font-family:'Courier New',monospace;font-size:11.5px;border:1.5px solid var(--ink);background:var(--card);padding:5px 9px;cursor:pointer;}
-  #chips button.gov{border-color:var(--gray);color:var(--gray);}
-  #chips button.sel{background:var(--ink);color:var(--paper);}
-  .swipehint{display:none;font-family:'Courier New',monospace;font-size:11px;color:var(--amber);margin:4px 0 8px;}
-  @media(max-width:920px){
-    .swipehint{display:block;}
-    #detail{max-height:none;}
-  }
-  @media(max-width:600px){
-    header{padding:24px 12px 18px;}
-    header .tally{font-size:11px;white-space:normal;}
-    nav{padding:4px;}
-    nav button{font-size:11.5px;padding:7px 8px;}
-    #q{width:100%;margin:6px 4px 2px;}
-    main{padding:18px 10px 50px;}
-    h2{font-size:21px;}
-    .lede{font-size:14px;}
-    table{font-size:12.5px;}
-    th,td{padding:7px 7px;}
-    .rc h3{padding-right:80px;font-size:15px;}
-    .era{font-size:11.5px;padding:4px 10px;}
-    .tev .t{font-size:14px;}
-    .method{padding:16px;font-size:14px;}
-  }
-  .rc{background:var(--card);border:1.5px solid var(--ink);padding:16px;position:relative;}
-  .rc .stamp{position:absolute;top:12px;right:12px;transform:rotate(-4deg);margin:0;}
-  .rc h3{font-size:16px;padding-right:95px;}
-  .rc .who{font-size:13px;color:var(--gray);margin:4px 0;}
-  .rc ul{margin:8px 0 0 16px;font-family:'Courier New',monospace;font-size:12.5px;color:var(--gray);}
-  .rc li{margin:3px 0;} .rc li.flag{color:var(--red);} .rc li.ok{color:var(--blue);}
-  .rc .cs{margin-top:10px;font-family:'Courier New',monospace;font-size:11.5px;color:var(--amber);}
-  .rc .dlinks{margin-top:8px;}
-  /* cast */
-  .pcard{background:var(--card);border:1.5px solid var(--ink);padding:14px 16px;margin-bottom:10px;}
-  .pcard h3{font-size:15.5px;display:inline;}
-  .pcard .role{font-family:'Courier New',monospace;font-size:12px;color:var(--red);margin-left:8px;}
-  .pcard p{font-size:13.5px;color:var(--gray);margin:5px 0;}
+  /* tables */
+  .twrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:14px;min-width:640px;}
+  th{background:var(--bg2);color:var(--dim);font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--mut);}
+  td:first-child{color:var(--text);font-weight:600;}
+  td.amt{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;color:var(--text);font-weight:700;}
+  tr.total td{font-weight:800;color:#fff;background:var(--card2);border-bottom:none;}
+  /* registrant + cast cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,350px),1fr));gap:14px;}
+  .rc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;}
+  .rc h3{font-size:16.5px;font-weight:800;}
+  .rc .who{font-size:13.5px;color:var(--mut);margin:5px 0;}
+  .rc ul{margin:10px 0 0 18px;font-size:13.5px;color:var(--mut);}
+  .rc li{margin:4px 0;} .rc li.flag{color:var(--red);} .rc li.ok{color:var(--green);}
+  .rc .cs{margin-top:12px;font-size:13px;color:var(--amber);font-weight:600;}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;}
+  .pcard h3{font-size:16px;display:inline;font-weight:800;}
+  .pcard .role{font-size:12.5px;color:var(--red);font-weight:700;margin-left:8px;text-transform:uppercase;letter-spacing:.4px;}
+  .pcard p{font-size:14px;color:var(--mut);margin:6px 0;}
   /* docs */
-  .doclist{background:var(--card);border:1.5px solid var(--ink);padding:6px 0;}
-  .docrow{padding:10px 16px;border-top:1px solid rgba(30,42,56,.12);}
-  .docrow:first-child{border-top:none;}
-  .docrow a{font-family:'Courier New',monospace;font-size:13px;text-decoration:none;font-weight:bold;}
-  .docrow .why{font-size:12.5px;color:var(--gray);margin-top:2px;}
-  .docrow:hover{background:var(--hl);}
-  #docfilter{font-family:'Courier New',monospace;font-size:13px;border:1.5px solid var(--ink);padding:7px 10px;width:100%;max-width:420px;margin:6px 0 12px;}
+  #docfilter{font-size:14px;border:1px solid var(--line);background:var(--card);color:var(--text);padding:9px 13px;border-radius:10px;width:100%;max-width:440px;margin:4px 0 14px;}
+  .doclist{display:grid;gap:10px;}
+  .docrow{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;}
+  .docrow:hover{border-color:var(--blue);}
+  .docrow a{font-weight:700;font-size:14.5px;}
+  .docrow .why{font-size:13.5px;color:var(--mut);margin-top:3px;}
   /* updates + method */
-  .uentry{background:var(--card);border:1.5px solid var(--ink);padding:12px 16px;margin-bottom:10px;}
-  .uentry .d{font-family:'Courier New',monospace;font-size:12px;color:var(--red);font-weight:bold;}
-  .uentry p{font-size:13.5px;color:var(--gray);margin-top:4px;}
-  .method{background:var(--card);border:1.5px solid var(--ink);padding:22px;max-width:880px;font-size:15px;}
-  .method h3{margin:14px 0 6px;font-size:17px;}
-  .method p{margin:8px 0;color:var(--gray);}
-  footer{background:var(--ink);color:#D9CDB0;text-align:center;padding:26px 16px;font-family:'Courier New',monospace;font-size:12px;line-height:1.9;}
-  footer a{color:#F2EDE0;}
+  .uentry{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px;}
+  .uentry .d{font-size:12.5px;color:var(--red);font-weight:800;}
+  .uentry p{font-size:14px;color:var(--mut);margin-top:4px;}
+  .method{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px;max-width:880px;font-size:15px;}
+  .method h3{margin:16px 0 6px;font-size:17px;font-weight:800;color:var(--blue2);}
+  .method h3:first-child{margin-top:0;}
+  .method p{margin:8px 0;color:var(--mut);}
+  footer{border-top:1px solid var(--line);background:var(--bg2);text-align:center;padding:30px 16px;font-size:13px;color:var(--dim);line-height:2;}
+  footer a{color:var(--mut);}
+  @media(max-width:600px){
+    header{padding:32px 14px 22px;}
+    .stat{min-width:100px;padding:10px 14px;} .stat b{font-size:19px;}
+    nav{padding:6px 4px;} nav button{font-size:12.5px;padding:6px 10px;}
+    #q{width:100%;margin:6px 6px 2px;}
+    main{padding:20px 12px 56px;}
+    h2{font-size:22px;} .lede{font-size:14.5px;}
+    .method{padding:18px;font-size:14px;}
+  }
 </style>
 </head>
 <body>
 <header>
-  <h1>THE PROJECT 545 TRACKER</h1>
-  <div class="sub">Israel's ~$145M campaign to shape American opinion, mapped from sworn FARA filings. Every claim links to a document. Click everything.</div>
-  <div class="tally" id="headTally"></div>
+  <h1>THE PROJECT <span class="accent">545</span> TRACKER</h1>
+  <div class="sub">Israel's ~$145M campaign to shape American opinion, mapped from sworn FARA filings. Every claim links to a document. Tap anything.</div>
+  <div class="stats">
+    <div class="stat"><b>8</b><span>Registered Legs</span></div>
+    <div class="stat"><b>5</b><span>Money Routes</span></div>
+    <div class="stat"><b>$58M+</b><span>Documented Paper</span></div>
+    <div class="stat"><b id="docCount">16</b><span>Primary Documents</span></div>
+    <div class="stat"><b id="asofStat"></b><span>Last Updated</span></div>
+  </div>
 </header>
 <nav id="nav">
-  <button data-s="network" class="active">NETWORK</button>
-  <button data-s="timeline">TIMELINE</button>
-  <button data-s="money">MONEY</button>
-  <button data-s="regs">REGISTRANTS</button>
-  <button data-s="cast">CAST</button>
-  <button data-s="docs">DOCUMENTS</button>
-  <button data-s="updates">UPDATES</button>
-  <button data-s="method">METHODOLOGY</button>
-  <input id="q" placeholder="search the record..." aria-label="search">
+  <button data-s="network" class="active">Pipeline</button>
+  <button data-s="timeline">Timeline</button>
+  <button data-s="money">Money</button>
+  <button data-s="regs">Registrants</button>
+  <button data-s="cast">Cast</button>
+  <button data-s="docs">Documents</button>
+  <button data-s="updates">Updates</button>
+  <button data-s="method">Methodology</button>
+  <input id="q" placeholder="Search the record..." aria-label="search">
 </nav>
 <main>
 
 <section id="network" class="active">
   <h2>The Pipeline</h2>
-  <p class="lede">Eight registered vehicles, five money routes, one purchasing office. Tap any name below or any box in the map: the panel shows people, flags, comment status, and the documents themselves. Amber route: direct to the ministries. Red dashed: money in no US filing.</p>
-  <div id="chips"></div>
-  <div class="swipehint">↔ swipe the map sideways to explore, or use the buttons above</div>
-  <div id="netwrap"><div id="netsvgbox"></div>
-  <div id="detail"><h3>Select a node</h3><p>Every box is clickable, including the government and intermediary layers. Sharable link updates as you click.</p></div></div>
+  <p class="lede">Eight registered vehicles, five money routes, one purchasing office. Tap any card to open its full detail: people, flags, comment status, and the documents themselves.</p>
+  <div class="tierlabel">The Client</div>
+  <div class="tiergrid tg-hubs" id="tierGov"></div>
+  <div class="tierlabel">The Purchasing Office &amp; The Pipes</div>
+  <div class="tiergrid tg-hubs" id="tierHubs"></div>
+  <div class="tierlabel">The Eight Registered Legs</div>
+  <div class="tiergrid tg-legs" id="tierLegs"></div>
+  <div class="alert"><b>Missing money:</b> roughly $700,000 of the Bridges "Esther Project" influencer order appears in no US filing anywhere. <a href="#" id="alertLink">See Bridges Partners →</a></div>
+  <div id="detail"><h3>Select any card above</h3><p>Details, flags, comment status, and direct FARA document links will appear here. The page address updates as you click, so any view can be shared or cited.</p></div>
 </section>
 
 <section id="timeline">
   <h2>The Paper Timeline</h2>
-  <p class="lede">Click any event to expand its detail and source documents. Filter by category.</p>
+  <p class="lede">Tap any event to expand its detail and source documents. Filter by category.</p>
   <div class="tfilters" id="tf">
-    <button data-c="all" class="on">ALL</button><button data-c="money">MONEY</button>
-    <button data-c="reg">FILINGS</button><button data-c="flag">FLAGS</button><button data-c="press">PRESS</button>
+    <button data-c="all" class="on">All</button><button data-c="money">Money</button>
+    <button data-c="reg">Filings</button><button data-c="flag">Flags</button><button data-c="press">Press</button>
   </div>
   <div id="tlbox"></div>
 </section>
@@ -157,13 +181,13 @@
 <section id="money">
   <h2>Documented Paper</h2>
   <p class="lede">Contracts, work orders, and sworn receipts, each linked to its source. This is the floor, not the ceiling: three legs disclose no amounts yet.</p>
-  <div style="overflow-x:auto"><table id="moneyT"></table></div>
-  <p class="note">* = Feral America calculation from the filing's own itemized appendix (methodology tab). All other figures are sworn totals or contract values as filed.</p>
+  <div class="twrap"><table id="moneyT"></table></div>
+  <p class="note">* = Feral America calculation from the filing's own itemized appendix (see Methodology). All other figures are sworn totals or contract values as filed.</p>
 </section>
 
 <section id="regs">
   <h2>The Eight Legs</h2>
-  <p class="lede">Every registered vehicle: people, route, money, flags in red, compliant conduct in blue, comment status, and direct filing links.</p>
+  <p class="lede">Every registered vehicle: people, route, money, flags in red, compliant conduct in green, comment status, and direct filing links.</p>
   <div class="cards" id="cardbox"></div>
 </section>
 
@@ -175,8 +199,8 @@
 
 <section id="docs">
   <h2>The Documents</h2>
-  <p class="lede">The primary sources, annotated: what each one shows and why it matters. Filter as you type. Then go read them, because that is the entire point of this site.</p>
-  <input id="docfilter" placeholder="filter documents (try: doubled, Sniper, retroactive, Havas)...">
+  <p class="lede">The primary sources, annotated: what each one shows and why it matters. Filter as you type, then go read them, because that is the entire point of this site.</p>
+  <input id="docfilter" placeholder="Filter documents (try: doubled, Sniper, retroactive, Havas)...">
   <div class="doclist" id="docbox"></div>
 </section>
 
@@ -196,7 +220,7 @@
     <h3>What this tracker does not claim</h3>
     <p>No assertion of candidate advocacy, race targeting, electoral intent, coordination with any US campaign, or unlawful conduct by any person, except where a filing itself discloses a fact. Sequence is not causation; open questions are labeled as questions; lawful conduct (disclosed personal political contributions, commercial registered agents, timely registrations) is identified as lawful.</p>
     <h3>Comment and corrections</h3>
-    <p>Every registrant receives detailed questions with a stated deadline before coverage naming them publishes; responses are added in full, and non-responses are dated. Documented errors are corrected loudly, not quietly, and logged on the Updates page. Corrections with documentation: <a href mailto:localtip@proton.me>localtip@proton.me</a>.</p>
+    <p>Every registrant receives detailed questions with a stated deadline before coverage naming them publishes; responses are added in full, and non-responses are dated. Documented errors are corrected loudly, not quietly, and logged on the Updates page. Corrections with documentation: localtip@proton.me.</p>
     <h3>Who makes this</h3>
     <p>Compiled by Sue Selle, Feral America, feralamerica.substack.com. This site is an index of public records and independent journalism about them. Verify before you amplify, always.</p>
   </div>
@@ -205,13 +229,13 @@
 </main>
 <footer>
   A Feral America project · <a href="https://feralamerica.substack.com">feralamerica.substack.com</a> · All documents: <a href="https://efile.fara.gov/ords/fara/f?p=1235:10">efile.fara.gov</a><br>
-  Data current as of <span id="asof"></span> · Share any view: the address bar updates as you click.<br>
-  Stay feral.
+  Independent journalism analyzing public records. Data current as of <span id="asof"></span> · Share any view: the address updates as you click.<br>
+  Tips and corrections: localtip@proton.me · Stay feral.
 </footer>
 
 <script>
 /* ================= DATA ================= */
-const ASOF = "July 18, 2026";
+const ASOF = "July 28, 2026";
 const D = { // document registry: id -> [label, url, annotation, tags]
  tcg1:["TCG Exhibit AB, 3/3/25","https://efile.fara.gov/docs/7553-Exhibit-AB-20250303-1.pdf","The origin document: Feb 18, 2025 contract, SKDKnickerbocker payment structure, and the named-booker media blitz logged before registration.","tcg skdk origin booker blitz first"],
  tcg2:["TCG Exhibit AB, 8/29/25","https://efile.fara.gov/docs/7553-Exhibit-AB-20250829-2.pdf","The re-papering: principal becomes Ministry of Tourism (LAPAM) through Havas USA; Guy Getz named.","tcg havas tourism getz"],
@@ -235,28 +259,28 @@ const D = { // document registry: id -> [label, url, annotation, tags]
 const LEGS = [
  {id:"tcg",n:"Targeted Communications Global",fara:"7553",who:"SKDKnickerbocker affiliate; signer Katherine Reynolds",route:"Havas USA (papered on Frankfurt letterhead)",money:"$9.89M retroactive work order incl. $3.7M ad buys",
   facts:["Contract Feb 18, 2025: the pipeline's first leg","Pre-registration booker blitz: NBC, CNN, CBS, Fox, MSNBC et al. (flag)","$9,892,336.58 papered 4/27/26, filed 7/2/26 (flag)","$1,545,000/month Sept-Dec 2025: twin to Clock Tower's rate"],
-  docs:["tcg1","tcg2","tcg3"],comment:"Comment requested; window open"},
+  docs:["tcg1","tcg2","tcg3"],comment:"Questions sent; deadline passed without response (as of 7/28)"},
  {id:"g21",n:"Genesis 21 Consulting",fara:"7631",who:"Tzahi Daboush, sole owner (ex-Army Radio correspondent; ex-Barkat communications chief), Shoham, Israel",route:"Direct to MFA/Advertising Bureau",money:"Terms TBD; oral, 1 year",
   facts:["Delaware LLC formed 5/21/25: first vehicle built","Registered day of its verbal agreement (compliant)","Sworn services: influencer outreach"],
-  docs:["g21"],comment:"Comment request queued"},
+  docs:["g21"],comment:"Comment request pending"},
  {id:"ctx",n:"Clock Tower X",fara:"7649",who:"Brad Parscale (Trump 2016 digital director, 2020 campaign manager; Salem Media CSO)",route:"Havas Frankfurt",money:"$6M > $9M > $31.5M order; $15M received in six months",
   facts:["Homepage: 'We help determine who prevails. Elections. Narratives. Markets.'","10/20/25: State of Israel registration 'was in error'; principal becomes HAVAS Media Network (flag)","$850K Havas loan; $750K loan repayment to Parscale personally","$10,000 to a congressman's victory fund mid-engagement (disclosed, personal funds, lawful)","Content ledger: pieces on Tucker Carlson, Candace Owens, Joe Kent","11-site mesh built for GPT framing"],
-  docs:["ctx1","ctx2","ctx3","ctx4"],comment:"Comment requested; deadline July 22"},
+  docs:["ctx1","ctx2","ctx3","ctx4"],comment:"Questions sent; July 22 deadline passed without response"},
  {id:"bri",n:"Bridges Partners",fara:"7652",who:"Uri Steinberg + Yair Levy (ex-Israeli Tourism Ministry); Capitol Hill apartment",route:"Havas Frankfurt",money:"$900K Esther Project order; $199,985 on its books",
   facts:["~12 weeks unregistered with money flowing (flag)","~$700K of the order appears in no US filing (flag)","Supplemental swears no role in the content its own Exhibit B describes (flag)","Consultant paid: Nadav Shtrauchler (Netanyahu 2019 strategist)","No influencer named or registered anywhere"],
-  docs:["bri1","bri2"],comment:"Questions sent; window closed"},
+  docs:["bri1","bri2"],comment:"Questions sent; deadline passed without response"},
  {id:"sfw",n:"Show Faith by Works",fara:"7653",who:"Chad Schnitger (pres., Faith and Freedom Coalition of California)",route:"Havas Frankfurt",money:"$2,313,791.50 received; actual spending $1,666,595.93*",
   facts:["Sworn $3.33M total; all 742 lines duplicated, zero exceptions; exactly double actual* (flag)","9 days unregistered; $66,044 spent pre-registration (flag)","~33% of actual spending to owner's firm + himself*","Zero advertising expenditures in the entire ledger*","Denies geofencing; described activities never amended (flag)"],
   docs:["sfw1","sfw2"],comment:"Questions sent 7/14, deadline 7/15: no response"},
  {id:"dav",n:"Davis Media NY",fara:"7662",who:"Yoav Davis ('Jews of NY' founder; Israeli-born, ex-IDF)",route:"L.D.R.S Group (Tel Aviv) + Havas: only dual-source leg",money:"Undisclosed",
   facts:["Second pipe: L.D.R.S Group LTD, unexamined","Influencer and celebrity media reach","Full docket pull pending"],
-  docs:["dav"],comment:"Comment request queued"},
+  docs:["dav"],comment:"Comment request pending"},
  {id:"piro",n:"Piro, Inc.",fara:"7732",who:"Daniel Rosenberg (Inside Man producer) + Tim Piper (Time 100 ad director)",route:"Havas Frankfurt",money:"$900K Digital Storytelling Pilot",
   facts:["$400K production incl. paid on-camera talent","Markets AI-discoverability 'Narrative Operating System'","Registered before acting (compliant)"],
-  docs:["piro"],comment:"Comment request queued"},
+  docs:["piro"],comment:"Comment request pending"},
  {id:"sni",n:"Sniper Advertising Services",fara:"7745",who:"Frederick T. Hickerson III (Key Largo) + Larry Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel), 50/50",route:"DIRECT: both ministries jointly, no intermediary",money:"Volume-based, per campaign, undisclosed",
   facts:["Oral deal 6/18/26; registered in six days (compliant)","Named official: Foreign Minister Gideon Sa'ar","Business: location-capture advertising (device IDs from chosen areas; audiences; optional direct mail)","Wyoming entity agented through the Wyoming Corporate Services chain","No location types named; no money moved yet"],
-  docs:["sni1","sni2"],comment:"Comment requested; window open"}
+  docs:["sni1","sni2"],comment:"Questions sent; deadline passed without response (as of 7/28)"}
 ];
 const HUBS = [
  {id:"mfa",n:"GOVERNMENT OF ISRAEL · MFA",sub:"Project 545 · 545M shekels (~$145M) · Dec 2024",
@@ -311,7 +335,8 @@ const TL = [
  ["Jun 18 2026","money","Two ministries hire Sniper, directly","Oral, volume-based, per campaign; location-capture advertising; Foreign Minister Sa'ar named on the paper. No intermediary.",["sni1"]],
  ["Jun 24 2026","reg","Sniper registers (#7745)","Six days after the handshake. Leg eight. FARA's Item 5 becomes the only public record naming its owners.",["sni1","sni2"]],
  ["Jul 7 2026","press","'We are not doing geofencing'","Schnitger to the Daily Caller News Foundation, nineteen days after the ministries hired the location-capture specialist. His own ad-free ledger, for once, agrees with him.",["sfw2"]],
- ["Jul 16 2026","press","The primetime address","The White House declares war on foreign election interference. This database goes unmentioned.",[]]
+ ["Jul 16 2026","press","The primetime address","The White House declares war on foreign election interference. This database goes unmentioned.",[]],
+ ["Jul 15-24 2026","flag","The comment windows close in silence","Detailed questions with stated deadlines to Show Faith by Works, Bridges Partners, Clock Tower X, Sniper, and the Department of Justice FARA Unit, including the document request for the broken supplemental link, all pass without response. Non-responses are documented and dated; any late reply will be added in full.",[]]
 ];
 const MONEY = [
  ["Clock Tower X (7649)","Work order, Apr-Oct 2026","$31,500,000.00","sworn order","ctx3"],
@@ -342,6 +367,7 @@ const CAST = [
  ["Katherine Reynolds","Signer, TCG","Signs TCG's filings; identification and role at SKDK/TCG pending.",["tcg1","tcg3"]]
 ];
 const UPDATES = [
+ ["Jul 28, 2026","All outstanding comment windows closed without response, including Clock Tower X (July 22) and the DOJ FARA Unit (July 24, covering both the questions and the document request for the broken supplemental link). Contact address live: localtip@proton.me. Late responses will be added in full and logged here."],
  ["Jul 18, 2026","Leg eight added: Sniper Advertising Services (#7745), direct-to-ministries location-capture advertising; Wyoming registry chain documented; comment requested."],
  ["Jul 17, 2026","Clock Tower supplemental analyzed (via DCNF mirror; DOJ link broken): $15M receipts, Havas loan, personal loan repayment, the Israel-erasure statements, the Carlson/Owens/Kent content ledger, the disclosed congressional contribution."],
  ["Jul 16-17, 2026","Show Faith doubled ledger verified computationally: 742 lines, zero non-duplicates, actual spending exactly $1,666,595.93. Referral transmitted to congressional oversight staff. No response from Show Faith by stated deadline."],
@@ -353,9 +379,9 @@ const UPDATES = [
 const docLink = id => { const d=D[id]; return `<a class="doclink" href="${d[1]}" target="_blank" rel="noopener">${d[0]} ↗</a>`; };
 const docLinks = ids => ids.map(i=>`<div>${docLink(i)}</div>`).join('');
 document.getElementById('asof').textContent = ASOF;
-document.getElementById('headTally').textContent = "8 registered legs · 5 money routes · $58M+ documented · " + Object.keys(D).length + " primary documents linked · updated " + ASOF;
+document.getElementById('asofStat').textContent = ASOF.replace(', 2026','');
+document.getElementById('docCount').textContent = Object.keys(D).length;
 
-/* nav + hash routing */
 function showTab(id){
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active', b.dataset.s===id));
   document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active', s.id===id));
@@ -363,79 +389,60 @@ function showTab(id){
 }
 document.getElementById('nav').addEventListener('click', e=>{ if(e.target.dataset.s) showTab(e.target.dataset.s); });
 
-/* network */
+/* ---- pipeline tiers ---- */
+function routeBadge(route){
+  const r=route.toLowerCase();
+  if(r.includes('direct'))return '<span class="badge b-amber">Direct to ministries</span>';
+  if(r.includes('l.d.r.s'))return '<span class="badge b-purple">L.D.R.S + Havas</span>';
+  if(r.includes('havas usa'))return '<span class="badge b-blue">Havas USA</span>';
+  return '<span class="badge b-blue">Havas Frankfurt</span>';
+}
 (function(){
-  const W=830,colW=192,gap=12;
-  const legPos={}; LEGS.forEach((l,i)=>{ legPos[l.id]={x:8+(i%4)*(colW+gap),y:i<4?322:474}; });
-  const hubPos={mfa:{x:215,y:14,w:400},lapam:{x:255,y:98,w:320},hg:{x:60,y:188,w:250},hu:{x:335,y:188,w:230},ldrs:{x:585,y:188,w:220}};
-  let s=`<svg viewBox="0 0 ${W} 640" style="min-width:780px;width:100%" font-family="'Courier New',monospace">
-  <defs><marker id="m" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#1E2A38"/></marker></defs>
-  <path d="M415,66 V94" stroke="#1E2A38" stroke-width="2" marker-end="url(#m)"/>
-  <path d="M335,150 V184 H185" fill="none" stroke="#1E2A38" stroke-width="2" marker-end="url(#m)"/>
-  <path d="M450,150 V184" fill="none" stroke="#1E2A38" stroke-width="2" marker-end="url(#m)"/>
-  <path d="M615,66 H695 V184" fill="none" stroke="#1E2A38" stroke-width="2" marker-end="url(#m)"/>`;
-  const edge=(x1,y1,id,color)=>`<path d="M${x1},${y1} V${legPos[id].y-6} H${legPos[id].x+colW/2} V${legPos[id].y}" fill="none" stroke="${color||'#1E2A38'}" stroke-width="1.8" marker-end="url(#m)"/>`;
-  s+=edge(120,248,'ctx')+edge(160,248,'bri')+edge(205,248,'sfw')+edge(248,248,'piro')+edge(450,248,'tcg')+edge(695,248,'dav');
-  s+=`<path d="M255,122 H20 V${legPos['g21'].y-6} H${legPos['g21'].x+colW/2} V${legPos['g21'].y}" fill="none" stroke="#C98A2D" stroke-width="2" marker-end="url(#m)"/>`;
-  s+=`<path d="M575,122 H812 V${legPos['sni'].y-6} H${legPos['sni'].x+colW/2} V${legPos['sni'].y}" fill="none" stroke="#C98A2D" stroke-width="2" marker-end="url(#m)"/>`;
-  s+=`<text x="700" y="142" font-size="9.5" fill="#C98A2D">direct: no intermediary</text>`;
-  s+=`<path d="M305,248 V302 H${legPos['bri'].x+colW+5} V606" fill="none" stroke="#B3402E" stroke-width="2.2" stroke-dasharray="7,5"/>`;
-  s+=`<text x="20" y="622" font-size="10" fill="#B3402E" font-weight="bold">red dashed: ~$700K influencer money, in no US filing · amber: direct ministry routes</text>`;
-  HUBS.forEach(h=>{const p=hubPos[h.id];const gov=(h.id==='mfa');
-    s+=`<g class="node" data-hub="${h.id}"><rect x="${p.x}" y="${p.y}" width="${p.w}" height="52" fill="${gov?'#1E2A38':'#FBF8EF'}" stroke="#1E2A38" stroke-width="1.6" rx="3"/>
-    <text x="${p.x+p.w/2}" y="${p.y+20}" text-anchor="middle" font-size="11" font-weight="bold" fill="${gov?'#F2EDE0':'#1E2A38'}">${h.n}</text>
-    <text x="${p.x+p.w/2}" y="${p.y+37}" text-anchor="middle" font-size="8.6" fill="${gov?'#D9CDB0':'#5A5548'}">${h.sub.slice(0,66)}</text></g>`;});
-  LEGS.forEach(l=>{const p=legPos[l.id];
-    s+=`<g class="node" data-leg="${l.id}"><rect x="${p.x}" y="${p.y}" width="${colW}" height="122" fill="#FBF8EF" stroke="#1E2A38" stroke-width="1.6" rx="3"/>
-    <text x="${p.x+10}" y="${p.y+20}" font-size="10.5" font-weight="bold" fill="#1E2A38">${l.n.toUpperCase().slice(0,26)}</text>
-    <text x="${p.x+10}" y="${p.y+36}" font-size="10" font-weight="bold" fill="#B3402E">FARA ${l.fara}</text>
-    <text x="${p.x+10}" y="${p.y+54}" font-size="8.8" fill="#5A5548">${l.who.slice(0,33)}</text>
-    <text x="${p.x+10}" y="${p.y+70}" font-size="8.8" fill="#5A5548">${l.route.slice(0,33)}</text>
-    <text x="${p.x+10}" y="${p.y+90}" font-size="8.8" fill="#1E2A38">${l.money.slice(0,33)}</text>
-    <text x="${p.x+10}" y="${p.y+110}" font-size="8.6" fill="#B3402E">click: details + documents</text></g>`;});
-  s+=`</svg>`;
-  const box=document.getElementById('netsvgbox'); box.innerHTML=s;
-  function select(id, isHub){
-    document.querySelectorAll('.node').forEach(n=>n.classList.toggle('sel',(n.dataset.leg||n.dataset.hub)===id));
+  const gov=document.getElementById('tierGov'), hubs=document.getElementById('tierHubs'), legs=document.getElementById('tierLegs');
+  const mfa=HUBS.find(h=>h.id==='mfa');
+  gov.innerHTML=`<div class="ncard gov" data-hub="mfa"><h3>${mfa.n}</h3><div class="meta">${mfa.sub}</div></div>`;
+  hubs.innerHTML=HUBS.filter(h=>h.id!=='mfa').map(h=>`<div class="ncard" data-hub="${h.id}"><h3>${h.n}</h3><div class="meta">${h.sub}</div></div>`).join('');
+  legs.innerHTML=LEGS.map(l=>`<div class="ncard" data-leg="${l.id}">
+    <span class="fara">FARA ${l.fara}</span><h3>${l.n}</h3>
+    <div class="meta">${l.who.split(';')[0].split('(')[0].trim()}</div>
+    <div class="money">${l.money}</div>
+    <div class="route">${routeBadge(l.route)}</div></div>`).join('');
+
+  function select(id,isHub){
+    document.querySelectorAll('.ncard').forEach(n=>n.classList.toggle('sel',(n.dataset.leg||n.dataset.hub)===id));
     const d=document.getElementById('detail');
     if(!isHub){
       const l=LEGS.find(x=>x.id===id);
-      d.innerHTML=`<h3>${l.n}</h3><span class="stamp">FARA ${l.fara}</span>
+      d.innerHTML=`<h3>${l.n} <span class="fara">· FARA ${l.fara}</span></h3>
       <p><b>Who:</b> ${l.who}</p><p><b>Route:</b> ${l.route}</p><p><b>Money:</b> ${l.money}</p>
       ${l.facts.map(f=>`<p class="${f.includes('(flag)')?'flag':(f.toLowerCase().includes('compliant')||f.toLowerCase().includes('lawful')?'ok':'')}">• ${f.replace(' (flag)','')}</p>`).join('')}
-      <p class="mono" style="color:#C98A2D">${l.comment}</p>${docLinks(l.docs)}`;
+      <p class="cstat">${l.comment}</p>${docLinks(l.docs)}`;
       history.replaceState(null,'','#network=leg-'+id);
     } else {
       const h=HUBS.find(x=>x.id===id);
       d.innerHTML=`<h3>${h.n}</h3><p>${h.detail}</p>${docLinks(h.docs)}`;
       history.replaceState(null,'','#network=hub-'+id);
     }
+    if(window.innerWidth<900) d.scrollIntoView({behavior:'smooth',block:'start'});
   }
-  box.addEventListener('click', e=>{const g=e.target.closest('.node'); if(!g)return; select(g.dataset.leg||g.dataset.hub, !!g.dataset.hub); syncChips(g.dataset.leg||g.dataset.hub);});
-  window._netSelect = (id,isHub)=>{ select(id,isHub); syncChips(id); };
-  /* chip picker (mobile-friendly node selection) */
-  const chips=document.getElementById('chips');
-  chips.innerHTML = HUBS.map(h=>`<button data-id="${h.id}" data-hub="1" class="gov">${h.n.split('·')[0].trim()}</button>`).join('')
-    + LEGS.map(l=>`<button data-id="${l.id}">${l.n} · ${l.fara}</button>`).join('');
-  function syncChips(id){ chips.querySelectorAll('button').forEach(b=>b.classList.toggle('sel', b.dataset.id===id)); }
-  chips.addEventListener('click', e=>{
-    if(!e.target.dataset.id) return;
-    select(e.target.dataset.id, !!e.target.dataset.hub);
-    syncChips(e.target.dataset.id);
-    document.getElementById('detail').scrollIntoView({behavior:'smooth',block:'nearest'});
+  document.getElementById('network').addEventListener('click', e=>{
+    const c=e.target.closest('.ncard'); if(!c)return;
+    select(c.dataset.leg||c.dataset.hub, !!c.dataset.hub);
   });
+  document.getElementById('alertLink').addEventListener('click', e=>{e.preventDefault(); select('bri', false);});
+  window._netSelect=select;
 })();
 
-/* timeline */
-const tlColors={money:'#1E2A38',reg:'#3B6B8F',flag:'#B3402E',press:'#C98A2D'};
+/* ---- timeline ---- */
+const tlColors={money:'#5aa2f7',reg:'#4ade80',flag:'#f0564a',press:'#f0a24a'};
 function renderTL(filter,q){
   const box=document.getElementById('tlbox'); let html=''; let open=false;
   TL.forEach((ev,idx)=>{
     if(ev[1]===null){ if(open)html+='</div>'; html+=`<div class="era">${ev[0]}</div><div class="tl">`; open=true; return;}
     if(filter!=='all'&&ev[1]!==filter)return;
-    if(q && !(ev[0]+' '+ev[2]+' '+ev[3]).toLowerCase().includes(q))return;
+    if(q && !(ev[0]+' '+ev[2]+' '+(ev[3]||'')).toLowerCase().includes(q))return;
     html+=`<div class="tev" data-i="${idx}"><span class="dot" style="background:${tlColors[ev[1]]}"></span>
-      <div class="d">${ev[0]}</div><div class="t">${ev[2]} ${ (ev[3]||ev[4].length)?'<span class="exp">[+]</span>':''}</div>
+      <div class="d">${ev[0]}</div><div class="t">${ev[2]} ${(ev[3]||ev[4].length)?'<span class="exp">[+]</span>':''}</div>
       <div class="x">${ev[3]?`<p>${ev[3]}</p>`:''}${docLinks(ev[4])}</div></div>`;
   });
   if(open)html+='</div>';
@@ -445,7 +452,7 @@ renderTL('all','');
 document.getElementById('tf').addEventListener('click',e=>{
   if(!e.target.dataset.c)return;
   document.querySelectorAll('#tf button').forEach(b=>b.classList.toggle('on',b===e.target));
-  renderTL(e.target.dataset.c, (document.getElementById('q').value||'').toLowerCase());
+  renderTL(e.target.dataset.c,(document.getElementById('q').value||'').toLowerCase());
 });
 document.getElementById('tlbox').addEventListener('click',e=>{
   const t=e.target.closest('.tev'); if(!t)return;
@@ -453,53 +460,51 @@ document.getElementById('tlbox').addEventListener('click',e=>{
   t.classList.toggle('open');
 });
 
-/* money */
+/* ---- money ---- */
 (function(){
   const t=document.getElementById('moneyT');
-  let rows=`<tr><th>REGISTRANT</th><th>INSTRUMENT</th><th style="text-align:right">AMOUNT</th><th>BASIS</th><th>SOURCE</th></tr>`;
-  MONEY.forEach(r=>{rows+=`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="amt">${r[2]}</td><td class="mono" style="font-size:11.5px">${r[3]}</td><td>${docLink(r[4])}</td></tr>`;});
-  rows+=`<tr class="total"><td colspan="2">Documented orders and receipts, non-overlapping floor</td><td class="amt">$58,000,000+</td><td class="mono" style="font-size:11.5px">of ~$145M budget</td><td></td></tr>`;
+  let rows=`<tr><th>Registrant</th><th>Instrument</th><th style="text-align:right">Amount</th><th>Basis</th><th>Source</th></tr>`;
+  MONEY.forEach(r=>{rows+=`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="amt">${r[2]}</td><td>${r[3]}</td><td>${docLink(r[4])}</td></tr>`;});
+  rows+=`<tr class="total"><td colspan="2">Documented orders and receipts, non-overlapping floor</td><td class="amt">$58,000,000+</td><td colspan="2">of ~$145M budget</td></tr>`;
   t.innerHTML=rows;
 })();
 
-/* registrants */
+/* ---- registrants ---- */
 (function(){
-  document.getElementById('cardbox').innerHTML = LEGS.map(l=>`<div class="rc" id="card-${l.id}"><span class="stamp">FARA ${l.fara}</span><h3>${l.n}</h3>
-   <div class="who">${l.who}</div><div class="who mono">${l.route}</div><div class="who mono"><b>${l.money}</b></div>
+  document.getElementById('cardbox').innerHTML=LEGS.map(l=>`<div class="rc" id="card-${l.id}">
+   <span class="badge b-red">FARA ${l.fara}</span> ${routeBadge(l.route)}
+   <h3 style="margin-top:8px">${l.n}</h3>
+   <div class="who">${l.who}</div><div class="who"><b>${l.money}</b></div>
    <ul>${l.facts.map(f=>`<li class="${f.includes('(flag)')?'flag':(f.toLowerCase().includes('compliant')||f.toLowerCase().includes('lawful')?'ok':'')}">${f.replace(' (flag)','')}</li>`).join('')}</ul>
-   <div class="cs">${l.comment}</div><div class="dlinks">${docLinks(l.docs)}</div></div>`).join('');
+   <div class="cs">${l.comment}</div><div style="margin-top:10px">${docLinks(l.docs)}</div></div>`).join('');
 })();
 
-/* cast */
-(function(){
-  document.getElementById('castbox').innerHTML = CAST.map(p=>`<div class="pcard"><h3>${p[0]}</h3><span class="role">${p[1]}</span>
-    <p>${p[2]}</p>${docLinks(p[3])}</div>`).join('');
-})();
+/* ---- cast ---- */
+document.getElementById('castbox').innerHTML=CAST.map(p=>`<div class="pcard"><h3>${p[0]}</h3><span class="role">${p[1]}</span>
+  <p>${p[2]}</p>${docLinks(p[3])}</div>`).join('');
 
-/* documents */
+/* ---- documents ---- */
 function renderDocs(q){
-  const b=document.getElementById('docbox');
-  b.innerHTML = Object.entries(D).filter(([k,d])=>!q||(d[0]+d[2]+d[3]).toLowerCase().includes(q))
+  document.getElementById('docbox').innerHTML=Object.entries(D).filter(([k,d])=>!q||(d[0]+d[2]+d[3]).toLowerCase().includes(q))
    .map(([k,d])=>`<div class="docrow"><a href="${d[1]}" target="_blank" rel="noopener">${d[0]} ↗</a><div class="why">${d[2]}</div></div>`).join('')
    || `<div class="docrow"><div class="why">No documents match. Broaden the filter.</div></div>`;
 }
 renderDocs('');
 document.getElementById('docfilter').addEventListener('input',e=>renderDocs(e.target.value.toLowerCase()));
 
-/* updates */
-document.getElementById('upbox').innerHTML = UPDATES.map(u=>`<div class="uentry"><span class="d">${u[0]}</span><p>${u[1]}</p></div>`).join('');
+/* ---- updates ---- */
+document.getElementById('upbox').innerHTML=UPDATES.map(u=>`<div class="uentry"><span class="d">${u[0]}</span><p>${u[1]}</p></div>`).join('');
 
-/* global search: routes to timeline + docs */
+/* ---- global search ---- */
 document.getElementById('q').addEventListener('input',e=>{
   const q=e.target.value.toLowerCase();
   const active=document.querySelector('main section.active').id;
   if(active==='docs'){document.getElementById('docfilter').value=e.target.value;renderDocs(q);return;}
   showTab('timeline');
-  const f=document.querySelector('#tf button.on').dataset.c;
-  renderTL(f,q);
+  renderTL(document.querySelector('#tf button.on').dataset.c,q);
 });
 
-/* hash on load */
+/* ---- hash routing ---- */
 (function(){
   const h=location.hash.replace('#','');
   if(!h)return;
