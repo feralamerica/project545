@@ -220,7 +220,7 @@
     <h3>What this tracker does not claim</h3>
     <p>No assertion of candidate advocacy, race targeting, electoral intent, coordination with any US campaign, or unlawful conduct by any person, except where a filing itself discloses a fact. Sequence is not causation; open questions are labeled as questions; lawful conduct (disclosed personal political contributions, commercial registered agents, timely registrations) is identified as lawful.</p>
     <h3>Comment and corrections</h3>
-    <p>Every registrant receives detailed questions with a stated deadline before coverage naming them publishes; responses are added in full, and non-responses are dated. Documented errors are corrected loudly, not quietly, and logged on the Updates page. Corrections with documentation: <a href=mailto:localtip@proton.me>localtip@proton.me</a>.</p>
+    <p>Every registrant receives detailed questions with a stated deadline before coverage naming them publishes; responses are added in full, and non-responses are dated. Documented errors are corrected loudly, not quietly, and logged on the Updates page. Corrections with documentation: <a href='mailto:localtip@proton.me'>localtip@proton.me</a>.</p>
     <h3>Who makes this</h3>
     <p>Compiled by Sue Selle, Feral America, feralamerica.substack.com. This site is an index of public records and independent journalism about them. Verify before you amplify, always.</p>
   </div>
@@ -230,12 +230,12 @@
 <footer>
   A Feral America project · <a href="https://feralamerica.substack.com">feralamerica.substack.com</a> · All documents: <a href="https://efile.fara.gov/ords/fara/f?p=1235:10">efile.fara.gov</a><br>
   Independent journalism analyzing public records. Data current as of <span id="asof"></span> · Share any view: the address updates as you click.<br>
-  Tips and corrections: localtip@proton.me · Stay feral.
+  Tips and corrections: <a href='mailto:localtip@proton.me'>localtip@proton.me</a> · Stay feral.
 </footer>
 
 <script>
 /* ================= DATA ================= */
-const ASOF = "July 28, 2026";
+const ASOF = "July 30, 2026";
 const D = { // document registry: id -> [label, url, annotation, tags]
  tcg1:["TCG Exhibit AB, 3/3/25","https://efile.fara.gov/docs/7553-Exhibit-AB-20250303-1.pdf","The origin document: Feb 18, 2025 contract, SKDKnickerbocker payment structure, and the named-booker media blitz logged before registration.","tcg skdk origin booker blitz first"],
  tcg2:["TCG Exhibit AB, 8/29/25","https://efile.fara.gov/docs/7553-Exhibit-AB-20250829-2.pdf","The re-papering: principal becomes Ministry of Tourism (LAPAM) through Havas USA; Guy Getz named.","tcg havas tourism getz"],
@@ -254,6 +254,7 @@ const D = { // document registry: id -> [label, url, annotation, tags]
  sni1:["Sniper Exhibit AB, 6/24/26","https://efile.fara.gov/docs/7745-Exhibit-AB-20260624-1.pdf","Oral 6/18/26 deal, both ministries jointly, no intermediary, volume-based fees contingent on campaigns the Ministry chooses to run; audience curation and cohort deployment language; Foreign Minister Gideon Sa'ar named.","sniper oral ministries direct saar volume geofence"],
  sni2:["Sniper Registration Statement, 6/24/26","https://efile.fara.gov/docs/7745-Registration-Statement-20260624-1.pdf","Wyoming entity (1/4/24); 50/50 Hickerson (Key Largo) and Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel). Likely the only public record on earth naming the owners.","sniper wyoming hickerson kerschenbaum owners"],
  hav:["Havas USA Exhibit AB, 2/27/23","https://efile.fara.gov/docs/7106-Exhibit-AB-20230227-4.pdf","The pipe pre-existed: Havas's US arm, itself a FARA registrant since 2022, adds Israel's Ministry of Tourism via LAPAM. Contact: Guy Getz. Two years before Project 545.","havas 7106 tourism getz pipe pre-existed"],
+ npr:["NPR: Shell Game, 2,000 Firms Based in One Simple House (2011)","https://www.npr.org/2011/07/02/137573513/shell-game-2-000-firms-based-in-one-simple-house","Wyoming Corporate Services, the end of Sniper's registered-agent chain (Capital Administrations LLC to Corporate Agents LLC to WCS to Therese Hoard). Context on the corporate-anonymity industry; using commercial agents is lawful and common, which is exactly why FARA's ownership question matters.","npr wyoming shell house agent chain corporate services sniper"],
  search:["DOJ FARA document search","https://efile.fara.gov/ords/fara/f?p=1235:10","Verify everything on this site yourself. That is the point.","doj search verify database"]
 };
 const LEGS = [
@@ -279,8 +280,8 @@ const LEGS = [
   facts:["$400K production incl. paid on-camera talent","Markets AI-discoverability 'Narrative Operating System'","Registered before acting (compliant)"],
   docs:["piro"],comment:"Comment request pending"},
  {id:"sni",n:"Sniper Advertising Services",fara:"7745",who:"Frederick T. Hickerson III (Key Largo) + Larry Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel), 50/50",route:"DIRECT: both ministries jointly, no intermediary",money:"Volume-based, per campaign, undisclosed",
-  facts:["Oral deal 6/18/26; registered in six days (compliant)","Named official: Foreign Minister Gideon Sa'ar","Business: location-capture advertising (device IDs from chosen areas; audiences; optional direct mail)","Wyoming entity agented through the Wyoming Corporate Services chain","No location types named; no money moved yet"],
-  docs:["sni1","sni2"],comment:"Questions sent; deadline passed without response (as of 7/28)"}
+  facts:["Oral deal 6/18/26; registered in six days (compliant)","Named official: Foreign Minister Gideon Sa'ar","Business: location-capture advertising (device IDs from chosen areas; audiences; optional direct mail)","Wyoming agent chain: Capital Administrations LLC > Corporate Agents LLC > Wyoming Corporate Services Inc > Therese Hoard, the commercial-agent family NPR and Reuters profiled in 2011 (lawful and common; FARA Item 5 remains the only public record naming the owners)","No location types named; no money moved yet"],
+  docs:["sni1","sni2","npr"],comment:"Detailed questions sent July 30, 2026 (incl. locations, Section 4(b) labeling, and the platform relationship); response deadline August 4, 2026"}
 ];
 const HUBS = [
  {id:"mfa",n:"GOVERNMENT OF ISRAEL · MFA",sub:"Project 545 · 545M shekels (~$145M) · Dec 2024",
@@ -367,7 +368,8 @@ const CAST = [
  ["Katherine Reynolds","Signer, TCG","Signs TCG's filings; identification and role at SKDK/TCG pending.",["tcg1","tcg3"]]
 ];
 const UPDATES = [
- ["Jul 28, 2026","All outstanding comment windows closed without response, including Clock Tower X (July 22) and the DOJ FARA Unit (July 24, covering both the questions and the document request for the broken supplemental link). Contact address live: localtip@proton.me. Late responses will be added in full and logged here."],
+ ["Jul 30, 2026","Expanded comment requests sent to Sniper Advertising Services and to the platform vendor whose legal language appears on its site; response deadlines August 4, 2026. Full archives of both companies' websites captured via the Wayback Machine. Sniper's Wyoming registered-agent chain documented, with the 2011 NPR reporting on Wyoming Corporate Services added to the document library."],
+ ["Jul 28, 2026","All outstanding comment windows closed without response, including Clock Tower X (July 22) and the DOJ FARA Unit (July 24, covering both the questions and the document request for the broken supplemental link). Contact address live: <a href='mailto:localtip@proton.me'>localtip@proton.me</a>. Late responses will be added in full and logged here."],
  ["Jul 18, 2026","Leg eight added: Sniper Advertising Services (#7745), direct-to-ministries location-capture advertising; Wyoming registry chain documented; comment requested."],
  ["Jul 17, 2026","Clock Tower supplemental analyzed (via DCNF mirror; DOJ link broken): $15M receipts, Havas loan, personal loan repayment, the Israel-erasure statements, the Carlson/Owens/Kent content ledger, the disclosed congressional contribution."],
  ["Jul 16-17, 2026","Show Faith doubled ledger verified computationally: 742 lines, zero non-duplicates, actual spending exactly $1,666,595.93. Referral transmitted to congressional oversight staff. No response from Show Faith by stated deadline."],
