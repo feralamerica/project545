@@ -235,7 +235,7 @@
 
 <script>
 /* ================= DATA ================= */
-const ASOF = "July 30, 2026";
+const ASOF = "August 1, 2026";
 const D = { // document registry: id -> [label, url, annotation, tags]
  tcg1:["TCG Exhibit AB, 3/3/25","https://efile.fara.gov/docs/7553-Exhibit-AB-20250303-1.pdf","The origin document: Feb 18, 2025 contract, SKDKnickerbocker payment structure, and the named-booker media blitz logged before registration.","tcg skdk origin booker blitz first"],
  tcg2:["TCG Exhibit AB, 8/29/25","https://efile.fara.gov/docs/7553-Exhibit-AB-20250829-2.pdf","The re-papering: principal becomes Ministry of Tourism (LAPAM) through Havas USA; Guy Getz named.","tcg havas tourism getz"],
@@ -244,7 +244,7 @@ const D = { // document registry: id -> [label, url, annotation, tags]
  ctx1:["Clock Tower X Registration, 9/18/25","https://efile.fara.gov/docs/7649-Registration-Statement-20250918-1.pdf","$6M over four months ($1.5M/month); Delaware formation 6/11/25; Havas Germany on behalf of the State of Israel.","clock tower parscale registration 6m"],
  ctx2:["Clock Tower X deficiency amendment, 10/20/25","https://efile.fara.gov/docs/7649-Amendment-20251020-2.pdf","The Israel erasure: filed to correct a deficiency; the State of Israel principal is dropped and HAVAS Media Network remains. Two weeks after the press wave.","clock tower amendment error israel erasure deficiency"],
  ctx3:["Clock Tower X $31.5M work order, 6/7/26","https://efile.fara.gov/docs/7649-Exhibit-AB-20260607-4.pdf","$4.5 million per month, April through October 2026. The largest contract in the pipeline, ending the month before the midterms.","clock tower 31.5 4.5 million october midterms escalation"],
- ctx4:["Clock Tower X Supplemental, 5/18/26 (DCNF mirror)","https://cdn01.dailycaller.com/wp-content/uploads/2026/05/fara-supplemental-filing-for-brad-parscales-clock-tower-x-from-may-2026.pdf","$15M received; $850K Havas loan; $750K loan repayment to Parscale personally; the 'in error' statements; the content ledger naming Carlson, Owens, and Kent; the $10K congressional contribution. DOJ's own link is broken; this is the Daily Caller News Foundation's mirror.","clock tower supplemental 15 million loan carlson owens kent contribution mirror broken"],
+ ctx4:["Clock Tower X Supplemental Statement, filed May 18, 2026 (official DOJ copy)","https://efile.fara.gov/docs/7649-Supplemental-Statement-20260518-1.pdf","$15M received; $850K Havas loan; $750K loan repayment to Parscale personally; the 'in error' statements; the content ledger naming Carlson, Owens, and Kent; the $10K congressional contribution. DOJ's own link is broken; this is the Daily Caller News Foundation's mirror.","clock tower supplemental 15 million loan carlson owens kent contribution mirror broken"],
  bri1:["Bridges Exhibit AB + Havas work order, 9/26/25","https://efile.fara.gov/docs/7652-Exhibit-AB-20250926-1.pdf","The Esther Project order (47239): $900K influencer program, contract 6/16/25, $199,985 received 7/3/25, roughly twelve weeks before registering.","bridges esther influencer 900k unregistered twelve weeks"],
  bri2:["Bridges Supplemental, 4/30/26","https://efile.fara.gov/docs/7652-Supplemental-Statement-20260430-1.pdf","Zero receipts for the period; $197,960 disbursed; the sworn claim of no role in content; ~$700K of the work order in no US filing; no influencer named anywhere.","bridges supplemental 700k no role influencer"],
  sfw1:["Show Faith Registration + Exhibit AB, 9/27/25","https://efile.fara.gov/docs/7653-Registration-Statement-20250927-1.pdf","The geofencing program as sworn: 900+ churches, the largest campaign of its kind in US history, target states, the trailer, pre-registration receipts and spending.","show faith geofencing churches registration"],
@@ -254,6 +254,9 @@ const D = { // document registry: id -> [label, url, annotation, tags]
  sni1:["Sniper Exhibit AB, 6/24/26","https://efile.fara.gov/docs/7745-Exhibit-AB-20260624-1.pdf","Oral 6/18/26 deal, both ministries jointly, no intermediary, volume-based fees contingent on campaigns the Ministry chooses to run; audience curation and cohort deployment language; Foreign Minister Gideon Sa'ar named.","sniper oral ministries direct saar volume geofence"],
  sni2:["Sniper Registration Statement, 6/24/26","https://efile.fara.gov/docs/7745-Registration-Statement-20260624-1.pdf","Wyoming entity (1/4/24); 50/50 Hickerson (Key Largo) and Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel). Likely the only public record on earth naming the owners.","sniper wyoming hickerson kerschenbaum owners"],
  hav:["Havas USA Exhibit AB, 2/27/23","https://efile.fara.gov/docs/7106-Exhibit-AB-20230227-4.pdf","The pipe pre-existed: Havas's US arm, itself a FARA registrant since 2022, adds Israel's Ministry of Tourism via LAPAM. Contact: Guy Getz. Two years before Project 545.","havas 7106 tourism getz pipe pre-existed"],
+ ctx5:["Clock Tower X, Fourth Exhibit A/B (filed June 7, 2026)","https://efile.fara.gov/docs/7649-Exhibit-AB-20260607-4.pdf","Formally papers the $31.5M order: seven months of Digital Advertising at $4.5M each, April 1 through October 31, 2026, under an agreement dated June 2, 2026. April and May ran before the agreement date. Letterhead names Havas Media Germany's managing directors.","clock tower exhibit order 31.5 million retroactive havas frankfurt directors"],
+ ctxam:["Clock Tower X, Amendment (filed July 14, 2026)","https://efile.fara.gov/docs/7649-Amendment-20260714-5.pdf","Reports that short-form registrant Ashley Evdokimo terminated October 31, 2025; filed July 13, 2026, roughly eight and a half months later, on a form checking the box to correct a deficiency.","clock tower amendment evdokimo deficiency late termination"],
+ careg:["California AG Data Broker Registration #552962: Refinition (2022)","https://oag.ca.gov/data-broker/registration/552962","Refinition's 2022 California data broker registration: the opt-out email matching Sniper's site, the Austin virtual-suite address. GeoDataScience says current operations no longer require registration, a position noted as theirs.","refinition geodatascience california data broker registration sniper platform"],
  npr:["NPR: Shell Game, 2,000 Firms Based in One Simple House (2011)","https://www.npr.org/2011/07/02/137573513/shell-game-2-000-firms-based-in-one-simple-house","Wyoming Corporate Services, the end of Sniper's registered-agent chain (Capital Administrations LLC to Corporate Agents LLC to WCS to Therese Hoard). Context on the corporate-anonymity industry; using commercial agents is lawful and common, which is exactly why FARA's ownership question matters.","npr wyoming shell house agent chain corporate services sniper"],
  search:["DOJ FARA document search","https://efile.fara.gov/ords/fara/f?p=1235:10","Verify everything on this site yourself. That is the point.","doj search verify database"]
 };
@@ -266,7 +269,7 @@ const LEGS = [
   docs:["g21"],comment:"Comment request pending"},
  {id:"ctx",n:"Clock Tower X",fara:"7649",who:"Brad Parscale (Trump 2016 digital director, 2020 campaign manager; Salem Media CSO)",route:"Havas Frankfurt",money:"$6M > $9M > $31.5M order; $15M received in six months",
   facts:["Homepage: 'We help determine who prevails. Elections. Narratives. Markets.'","10/20/25: State of Israel registration 'was in error'; principal becomes HAVAS Media Network (flag)","$850K Havas loan; $750K loan repayment to Parscale personally","$10,000 to a congressman's victory fund mid-engagement (disclosed, personal funds, lawful)","Content ledger: pieces on Tucker Carlson, Candace Owens, Joe Kent","11-site mesh built for GPT framing"],
-  docs:["ctx1","ctx2","ctx3","ctx4"],comment:"Questions sent; July 22 deadline passed without response"},
+  docs:["ctx1","ctx2","ctx3","ctx4","ctx5","ctxam"],comment:"Questions sent; July 22 deadline passed without response"},
  {id:"bri",n:"Bridges Partners",fara:"7652",who:"Uri Steinberg + Yair Levy (ex-Israeli Tourism Ministry); Capitol Hill apartment",route:"Havas Frankfurt",money:"$900K Esther Project order; $199,985 on its books",
   facts:["~12 weeks unregistered with money flowing (flag)","~$700K of the order appears in no US filing (flag)","Supplemental swears no role in the content its own Exhibit B describes (flag)","Consultant paid: Nadav Shtrauchler (Netanyahu 2019 strategist)","No influencer named or registered anywhere"],
   docs:["bri1","bri2"],comment:"Questions sent; deadline passed without response"},
@@ -281,7 +284,7 @@ const LEGS = [
   docs:["piro"],comment:"Comment request pending"},
  {id:"sni",n:"Sniper Advertising Services",fara:"7745",who:"Frederick T. Hickerson III (Key Largo) + Larry Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel), 50/50",route:"DIRECT: both ministries jointly, no intermediary",money:"Volume-based, per campaign, undisclosed",
   facts:["Oral deal 6/18/26; registered in six days (compliant)","Named official: Foreign Minister Gideon Sa'ar","Business: location-capture advertising (device IDs from chosen areas; audiences; optional direct mail)","Wyoming agent chain: Capital Administrations LLC > Corporate Agents LLC > Wyoming Corporate Services Inc > Therese Hoard, the commercial-agent family NPR and Reuters profiled in 2011 (lawful and common; FARA Item 5 remains the only public record naming the owners)","No location types named; no money moved yet"],
-  docs:["sni1","sni2","npr"],comment:"Detailed questions sent July 30, 2026 (incl. locations, Section 4(b) labeling, and the platform relationship); response deadline August 4, 2026"}
+  docs:["sni1","sni2","npr","careg"],comment:"Detailed questions sent July 30, 2026; response deadline August 4, 2026. On August 1, platform owner GeoDataScience (dba Refinition) responded on the record: Sniper is a reseller; GeoDataScience says it was unaware of the FARA registration until our inquiry and that no campaigns are running"}
 ];
 const HUBS = [
  {id:"mfa",n:"GOVERNMENT OF ISRAEL · MFA",sub:"Project 545 · 545M shekels (~$145M) · Dec 2024",
@@ -337,7 +340,10 @@ const TL = [
  ["Jun 24 2026","reg","Sniper registers (#7745)","Six days after the handshake. Leg eight. FARA's Item 5 becomes the only public record naming its owners.",["sni1","sni2"]],
  ["Jul 7 2026","press","'We are not doing geofencing'","Schnitger to the Daily Caller News Foundation, nineteen days after the ministries hired the location-capture specialist. His own ad-free ledger, for once, agrees with him.",["sfw2"]],
  ["Jul 16 2026","press","The primetime address","The White House declares war on foreign election interference. This database goes unmentioned.",[]],
- ["Jul 15-24 2026","flag","The comment windows close in silence","Detailed questions with stated deadlines to Show Faith by Works, Bridges Partners, Clock Tower X, Sniper, and the Department of Justice FARA Unit, including the document request for the broken supplemental link, all pass without response. Non-responses are documented and dated; any late reply will be added in full.",[]]
+ ["Jul 15-24 2026","flag","The comment windows close in silence","Detailed questions with stated deadlines to Show Faith by Works, Bridges Partners, Clock Tower X, Sniper, and the Department of Justice FARA Unit, including the document request for the broken supplemental link, all pass without response. Non-responses are documented and dated; any late reply will be added in full.",[]],
+ ["Jun 2 2026","money","Order papers the $31.5M, two months in","Agreement dated June 2 covers Digital Advertising April 1 through October 31, 2026 at $4.5M/month; April and May (~$9M) ran before the agreement date. Filed as the fourth exhibit June 7.",["ctx5"]],
+ ["Jul 13 2026","reg","A Halloween departure, reported in July","Amendment reports short-form registrant Ashley Evdokimo terminated October 31, 2025, about eight and a half months earlier; the form checks the box for correcting a deficiency.",["ctxam"]],
+ ["Aug 1 2026","press","First on-the-record response of the investigation","GeoDataScience (dba Refinition), owner of the platform behind Sniper's site, confirms the reseller arrangement, says it was unaware of the FARA registration until our inquiry, and says no campaigns are running.",["careg"]],
 ];
 const MONEY = [
  ["Clock Tower X (7649)","Work order, Apr-Oct 2026","$31,500,000.00","sworn order","ctx3"],
@@ -353,6 +359,9 @@ const MONEY = [
  ["Sniper (7745)","Volume-based, per campaign","undisclosed","sworn","sni1"]
 ];
 const CAST = [
+ ["Roger Heaston","President and CEO, GeoDataScience Inc. dba Refinition","Signed the Texas assumed-name certificate that unmasked Refinition. On August 1, 2026 became the first company principal in this investigation to respond on the record: confirmed the Sniper reseller arrangement, said GeoDataScience was unaware of the FARA registration until our inquiry, said no campaigns are running, and stated that reseller-contracted campaigns are executed solely by Refinition. Career: NetSuite, Placewise, Supply Strategies. No wrongdoing asserted; his account is reported as his account.",["careg"]],
+ ["GeoDataScience Inc. (dba Refinition)","Location-data platform, Austin TX (Delaware corporation)","The platform behind Sniper's offering: same opt-out email, near-identical services copy, and Sniper's privacy policy is Refinition's verbatim. Texas assumed name filed June 4, 2021 (filing #804083318); California data broker registration #552962 (2022); claims ~75% of US adult mobile devices reachable with multi-year location lookback. Confirmed reseller relationship with Sniper on August 1; says no campaigns running and no foreign-government agreements.",["careg"]],
+ ["Havas Media Germany managing directors","Sven Traichel, Gavin Jonderko, Andreas Lutzel, Christian Gaffal, Jan Altmeyer","Named on the letterhead of the June 2, 2026 order attached to Clock Tower X's fourth exhibit (Frankfurt registry HRB 57024). The Frankfurt buffer files nothing in the US; its own letterhead, inside a DOJ filing, names its leadership. Professional records only; no individual conduct asserted.",["ctx5"]],
  ["Guy Getz","LAPAM Head of Advertising","The connective signature: named official on Havas USA's 2023 tourism exhibit, TCG's 2025 re-papering, and Piro's 2026 filing. Three years, three relationships, one purchasing officer, predating Project 545 by two years.",["hav","tcg2","piro"]],
  ["Eran Shayovich","MFA strategic communications chief","Named on Piro's Exhibit A; reported architect of Project 545 and, per reporting, personal recruiter of Schnitger.",["piro"]],
  ["Oren Marmorstein","MFA spokesperson","Supervised the pipeline's first documented engagement: TCG, February 2025.",["tcg1"]],
@@ -368,6 +377,7 @@ const CAST = [
  ["Katherine Reynolds","Signer, TCG","Signs TCG's filings; identification and role at SKDK/TCG pending.",["tcg1","tcg3"]]
 ];
 const UPDATES = [
+ ["Aug 1, 2026","Clock Tower X docket check: fourth exhibit formally papers the $31.5M April-October order under an agreement dated June 2 (April and May ran first); a July 14 amendment reports an October 2025 staff departure eight and a half months late; two new short-form registrants filed July 9; informational materials continue every two days, about 169 filings since October 2025. And a first: GeoDataScience (dba Refinition), the platform behind Sniper's site, responded on the record, confirming the reseller arrangement and stating it was unaware of the FARA registration until our inquiry. Supplemental link swapped to the official DOJ copy. Full write-up at feralamerica.substack.com."],
  ["Jul 30, 2026","Expanded comment requests sent to Sniper Advertising Services and to the platform vendor whose legal language appears on its site; response deadlines August 4, 2026. Full archives of both companies' websites captured via the Wayback Machine. Sniper's Wyoming registered-agent chain documented, with the 2011 NPR reporting on Wyoming Corporate Services added to the document library."],
  ["Jul 28, 2026","All outstanding comment windows closed without response, including Clock Tower X (July 22) and the DOJ FARA Unit (July 24, covering both the questions and the document request for the broken supplemental link). Contact address live: <a href='mailto:localtip@proton.me'>localtip@proton.me</a>. Late responses will be added in full and logged here."],
  ["Jul 18, 2026","Leg eight added: Sniper Advertising Services (#7745), direct-to-ministries location-capture advertising; Wyoming registry chain documented; comment requested."],
@@ -379,6 +389,7 @@ const UPDATES = [
 
 /* ================= HELPERS ================= */
 const docLink = id => { const d=D[id]; return `<a class="doclink" href="${d[1]}" target="_blank" rel="noopener">${d[0]} ↗</a>`; };
+const safeHash = h => { try { history.replaceState(null,'',h); } catch(e) { /* sandboxed preview: hash deep-links disabled */ } };
 const docLinks = ids => ids.map(i=>`<div>${docLink(i)}</div>`).join('');
 document.getElementById('asof').textContent = ASOF;
 document.getElementById('asofStat').textContent = ASOF.replace(', 2026','');
@@ -387,7 +398,7 @@ document.getElementById('docCount').textContent = Object.keys(D).length;
 function showTab(id){
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active', b.dataset.s===id));
   document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active', s.id===id));
-  if(location.hash.replace('#','').split('=')[0]!==id) history.replaceState(null,'','#'+id);
+  if(location.hash.replace('#','').split('=')[0]!==id) safeHash('#'+id);
 }
 document.getElementById('nav').addEventListener('click', e=>{ if(e.target.dataset.s) showTab(e.target.dataset.s); });
 
@@ -419,11 +430,11 @@ function routeBadge(route){
       <p><b>Who:</b> ${l.who}</p><p><b>Route:</b> ${l.route}</p><p><b>Money:</b> ${l.money}</p>
       ${l.facts.map(f=>`<p class="${f.includes('(flag)')?'flag':(f.toLowerCase().includes('compliant')||f.toLowerCase().includes('lawful')?'ok':'')}">• ${f.replace(' (flag)','')}</p>`).join('')}
       <p class="cstat">${l.comment}</p>${docLinks(l.docs)}`;
-      history.replaceState(null,'','#network=leg-'+id);
+      safeHash('#network=leg-'+id);
     } else {
       const h=HUBS.find(x=>x.id===id);
       d.innerHTML=`<h3>${h.n}</h3><p>${h.detail}</p>${docLinks(h.docs)}`;
-      history.replaceState(null,'','#network=hub-'+id);
+      safeHash('#network=hub-'+id);
     }
     if(window.innerWidth<900) d.scrollIntoView({behavior:'smooth',block:'start'});
   }
