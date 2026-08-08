@@ -142,6 +142,7 @@
   .shortsrow{display:flex;gap:12px;margin-top:12px;}
   .shortsrow .vshort{flex:1;min-width:0;}
   .vshort iframe{width:100%;aspect-ratio:9/16;border:0;border-radius:12px;background:var(--card);max-height:420px;}
+  #detail{grid-column:1/-1;margin-top:4px;}
 </style>
 </head>
 <body>
@@ -632,7 +633,9 @@ function routeBadge(route){
       d.innerHTML=`<h3>${h.n}</h3><p>${h.detail}</p>${docLinks(h.docs)}`;
       safeHash('#network=hub-'+id);
     }
-    if(window.innerWidth<900) d.scrollIntoView({behavior:'smooth',block:'start'});
+    const selCard=document.querySelector('.ncard.sel');
+    if(selCard) selCard.insertAdjacentElement('afterend', d);
+    if(typeof d.scrollIntoView==='function') d.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
   document.getElementById('network').addEventListener('click', e=>{
     const c=e.target.closest('.ncard'); if(!c)return;
