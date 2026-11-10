@@ -1,0 +1,1507 @@
+{
+ "asof": "November 10, 2026",
+ "docs": [
+  {
+   "id": "tcg1",
+   "label": "TCG Exhibit AB, 3/3/25",
+   "url": "https://efile.fara.gov/docs/7553-Exhibit-AB-20250303-1.pdf",
+   "note": "The origin document: Feb 18, 2025 contract, SKDKnickerbocker payment structure, and the named-booker media blitz logged before registration.",
+   "tags": "tcg skdk origin booker blitz first"
+  },
+  {
+   "id": "tcg2",
+   "label": "TCG Exhibit AB, 8/29/25",
+   "url": "https://efile.fara.gov/docs/7553-Exhibit-AB-20250829-2.pdf",
+   "note": "The re-papering: principal becomes Ministry of Tourism (LAPAM) through Havas USA; Guy Getz named.",
+   "tags": "tcg havas tourism getz"
+  },
+  {
+   "id": "tcg3",
+   "label": "TCG retroactive work order, filed 7/2/26",
+   "url": "https://efile.fara.gov/docs/7553-Exhibit-AB-20260702-3.pdf",
+   "note": "$9,892,336.58 for Sept-Dec 2025 work, papered by an order dated April 27, 2026. Retroactive by up to ten months.",
+   "tags": "tcg retroactive 9.89 million work order"
+  },
+  {
+   "id": "g21",
+   "label": "Genesis 21 Registration + Exhibit AB, 8/11/25",
+   "url": "https://efile.fara.gov/docs/7631-Registration-Statement-20250811-1.pdf",
+   "note": "One-man Israeli-owned Delaware shell, direct ministry principal, influencer outreach, registered the day of its verbal agreement. The pipeline's most compliant filing.",
+   "tags": "genesis daboush direct influencer compliant"
+  },
+  {
+   "id": "ctx1",
+   "label": "Clock Tower X Registration, 9/18/25",
+   "url": "https://efile.fara.gov/docs/7649-Registration-Statement-20250918-1.pdf",
+   "note": "$6M over four months ($1.5M/month); Delaware formation 6/11/25; Havas Germany on behalf of the State of Israel.",
+   "tags": "clock tower parscale registration 6m"
+  },
+  {
+   "id": "ctx2",
+   "label": "Clock Tower X deficiency amendment, 10/20/25",
+   "url": "https://efile.fara.gov/docs/7649-Amendment-20251020-2.pdf",
+   "note": "The Israel erasure: filed to correct a deficiency; the State of Israel principal is dropped and HAVAS Media Network remains. Two weeks after the press wave.",
+   "tags": "clock tower amendment error israel erasure deficiency"
+  },
+  {
+   "id": "ctx3",
+   "label": "Clock Tower X $31.5M work order, 6/7/26",
+   "url": "https://efile.fara.gov/docs/7649-Exhibit-AB-20260607-4.pdf",
+   "note": "$4.5 million per month, April through October 2026. The largest contract in the pipeline, ending the month before the midterms.",
+   "tags": "clock tower 31.5 4.5 million october midterms escalation"
+  },
+  {
+   "id": "ctx4",
+   "label": "Clock Tower X Supplemental Statement, filed May 18, 2026 (official DOJ copy)",
+   "url": "https://efile.fara.gov/docs/7649-Supplemental-Statement-20260518-1.pdf",
+   "note": "$15M received; $850K Havas loan; $750K loan repayment to Parscale personally; the 'in error' statements; the content ledger naming Carlson, Owens, and Kent; the $10K congressional contribution. DOJ's own link is broken; this is the Daily Caller News Foundation's mirror.",
+   "tags": "clock tower supplemental 15 million loan carlson owens kent contribution mirror broken"
+  },
+  {
+   "id": "bri1",
+   "label": "Bridges Exhibit AB + Havas work order, 9/26/25",
+   "url": "https://efile.fara.gov/docs/7652-Exhibit-AB-20250926-1.pdf",
+   "note": "The Esther Project order (47239): $900K influencer program, contract 6/16/25, $199,985 received 7/3/25, roughly twelve weeks before registering.",
+   "tags": "bridges esther influencer 900k unregistered twelve weeks"
+  },
+  {
+   "id": "bri2",
+   "label": "Bridges Supplemental, 4/30/26",
+   "url": "https://efile.fara.gov/docs/7652-Supplemental-Statement-20260430-1.pdf",
+   "note": "Zero receipts for the period; $197,960 disbursed; the sworn claim of no role in content; ~$700K of the work order in no US filing; no influencer named anywhere.",
+   "tags": "bridges supplemental 700k no role influencer"
+  },
+  {
+   "id": "sfw1",
+   "label": "Show Faith Registration + Exhibit AB, 9/27/25",
+   "url": "https://efile.fara.gov/docs/7653-Registration-Statement-20250927-1.pdf",
+   "note": "The geofencing program as sworn: 900+ churches, the largest campaign of its kind in US history, target states, the trailer, pre-registration receipts and spending.",
+   "tags": "show faith geofencing churches registration"
+  },
+  {
+   "id": "sfw2",
+   "label": "Show Faith Supplemental, 5/1/26 (the doubled ledger)",
+   "url": "https://efile.fara.gov/docs/7653-Supplemental-Statement-20260501-1.pdf",
+   "note": "Sworn disbursements of $3,333,191.86; all 742 appendix lines duplicated, zero exceptions; actual spending exactly $1,666,595.93*; a third of it to the owner's own entities*; zero advertising expenditures anywhere*.",
+   "tags": "show faith doubled ledger duplicate 742 supplemental graystone"
+  },
+  {
+   "id": "dav",
+   "label": "Davis Media short form, 10/12/25",
+   "url": "https://efile.fara.gov/docs/7662-Short-Form-20251012-2.pdf",
+   "note": "Yoav Davis; Government of Israel through L.D.R.S Group LTD of Tel Aviv: the second pipe.",
+   "tags": "davis ldrs second pipe jews of ny"
+  },
+  {
+   "id": "piro",
+   "label": "Piro Exhibit AB + work order, 6/2/26",
+   "url": "https://efile.fara.gov/docs/7732-Exhibit-AB-20260602-0.pdf",
+   "note": "Hollywood signs on: $900K Digital Storytelling Pilot, $400K production including paid on-camera talent; Shayovitch and Getz named.",
+   "tags": "piro hollywood pilot talent rosenberg piper"
+  },
+  {
+   "id": "sni1",
+   "label": "Sniper Exhibit AB, 6/24/26",
+   "url": "https://efile.fara.gov/docs/7745-Exhibit-AB-20260624-1.pdf",
+   "note": "Oral 6/18/26 deal, both ministries jointly, no intermediary, volume-based fees contingent on campaigns the Ministry chooses to run; audience curation and cohort deployment language; Foreign Minister Gideon Sa'ar named.",
+   "tags": "sniper oral ministries direct saar volume geofence"
+  },
+  {
+   "id": "sni2",
+   "label": "Sniper Registration Statement, 6/24/26",
+   "url": "https://efile.fara.gov/docs/7745-Registration-Statement-20260624-1.pdf",
+   "note": "Wyoming entity (1/4/24); 50/50 Hickerson (Key Largo) and Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel). Likely the only public record on earth naming the owners.",
+   "tags": "sniper wyoming hickerson kerschenbaum owners"
+  },
+  {
+   "id": "hav",
+   "label": "Havas USA Exhibit AB, 2/27/23",
+   "url": "https://efile.fara.gov/docs/7106-Exhibit-AB-20230227-4.pdf",
+   "note": "The pipe pre-existed: Havas's US arm, itself a FARA registrant since 2022, adds Israel's Ministry of Tourism via LAPAM. Contact: Guy Getz. Two years before Project 545.",
+   "tags": "havas 7106 tourism getz pipe pre-existed"
+  },
+  {
+   "id": "ctx5",
+   "label": "Clock Tower X, Fourth Exhibit A/B (filed June 7, 2026)",
+   "url": "https://efile.fara.gov/docs/7649-Exhibit-AB-20260607-4.pdf",
+   "note": "Formally papers the $31.5M order: seven months of Digital Advertising at $4.5M each, April 1 through October 31, 2026, under an agreement dated June 2, 2026. April and May ran before the agreement date. Letterhead names Havas Media Germany's managing directors.",
+   "tags": "clock tower exhibit order 31.5 million retroactive havas frankfurt directors"
+  },
+  {
+   "id": "ctxam",
+   "label": "Clock Tower X, Amendment (filed July 14, 2026)",
+   "url": "https://efile.fara.gov/docs/7649-Amendment-20260714-5.pdf",
+   "note": "Reports that short-form registrant Ashley Evdokimo terminated October 31, 2025; filed July 13, 2026, roughly eight and a half months later, on a form checking the box to correct a deficiency.",
+   "tags": "clock tower amendment evdokimo deficiency late termination"
+  },
+  {
+   "id": "careg",
+   "label": "California AG Data Broker Registration #552962: Refinition (2022)",
+   "url": "https://oag.ca.gov/data-broker/registration/552962",
+   "note": "Refinition's 2022 California data broker registration: the opt-out email matching Sniper's site, the Austin virtual-suite address. GeoDataScience says current operations no longer require registration, a position noted as theirs.",
+   "tags": "refinition geodatascience california data broker registration sniper platform"
+  },
+  {
+   "id": "ctxam2",
+   "label": "Clock Tower X, Amendment (filed August 4, 2026)",
+   "url": "https://efile.fara.gov/docs/7649-Amendment-20260804-6.pdf",
+   "note": "Reports Alexander Miller terminated August 3, 2026, filed August 4: one day. Contrast the Evdokimo amendment: an October 31 termination reported eight and a half months later. Same registrant, same form; the compliance tempo transformed between mid-July and August.",
+   "tags": "clock tower amendment miller termination same day compliance"
+  },
+  {
+   "id": "im1",
+   "label": "Clock Tower X, Informational Material #1 (filed October 25, 2025)",
+   "url": "https://efile.fara.gov/docs/7649-Informational-Materials-20251025-1.pdf",
+   "note": "The first content filing: 176 pages consisting entirely of allyvia.org, the mesh flagship launched alone. The network grew from here: roughly a new pseudo-institute brand every few weeks through mid-2026.",
+   "tags": "allyvia mesh first filing content launch october 2025"
+  },
+  {
+   "id": "imjun",
+   "label": "Clock Tower X, June 2 batch sample (content dated April 30)",
+   "url": "https://efile.fara.gov/docs/7649-Informational-Materials-20260602-139.pdf",
+   "note": "One of ten filings batch-dumped June 2, 2026. Internal publication date: April 30, thirty-three days before filing, against a statute requiring filing within 48 hours of dissemination. A companion filing carries May 8 content. July-era filings, by contrast, run same-day.",
+   "tags": "late filing 48 hour batch june april internal dates"
+  },
+  {
+   "id": "im171",
+   "label": "Clock Tower X, Informational Material #171 (filed August 4, 2026)",
+   "url": "https://efile.fara.gov/docs/7649-Informational-Materials-20260804-171.pdf",
+   "note": "199 pages, 14 articles published August 3 and 4. The citation graph enumerates the mesh: justorium, paxpoint, culturavia, innovascope, econora, compassionpulse alongside allyvia, cognitura, and factsignal. Roughly 97% of citations point at sibling mesh properties, and 25 passages describe sister-site content as our analysis.",
+   "tags": "mesh enumeration self citation our analysis doc 171 justorium paxpoint"
+  },
+  {
+   "id": "gp1",
+   "label": "GlobalPoint International, Exhibit A/B for Stark Aerospace (FARA #7518)",
+   "url": "https://efile.fara.gov/docs/7518-Exhibit-AB-20251212-5.pdf",
+   "note": "The defense track contract: $45,000 per month plus expenses to build the relationship of IAI, described in the appendix as a state owned enterprise of the Government of Israel, with the Trump-Vance Administration, Congress, and named agencies including the Missile Defense Agency. Third-party op-ed provision included.",
+   "tags": "globalpoint stark iai defense missile agency contract"
+  },
+  {
+   "id": "mer1",
+   "label": "Mercury Public Affairs, Exhibit A/B for the Misgav Institute (FARA #6170)",
+   "url": "https://efile.fara.gov/docs/6170-Exhibit-AB-20260626-4.pdf",
+   "note": "A $5,000 one-month engagement, signed for Mercury by former US Senator David Vitter: distribute a Misgav report to the foreign-policy committees, both Appropriations subcommittees, the NSC, State, OMB, and the US Mission to the UN, then run a three-day Washington fly-in in late July 2026.",
+   "tags": "mercury misgav vitter five thousand fly-in congress"
+  },
+  {
+   "id": "mer2",
+   "label": "Misgav Institute report: Disengaging from a Failed UN (filed as informational material)",
+   "url": "https://efile.fara.gov/docs/6170-Informational-Materials-20260626-3.pdf",
+   "note": "The payload itself, co-authored by Gilad Erdan, Israel's former Ambassador to the UN: zero automatic UN funding, willingness to let the US General Assembly vote lapse, withdrawal from most UN bodies, UNRWA terror-designation reviews. The FARA 4(b) label is printed on the cover.",
+   "tags": "misgav erdan un withdrawal report fredman disengage"
+  },
+  {
+   "id": "ctxsa",
+   "label": "Clock Tower X, original services agreement with Havas (filed with the September 18, 2025 registration)",
+   "url": "https://efile.fara.gov/docs/7649-Exhibit-AB-20250918-1.pdf",
+   "note": "The engagement's blueprint, marked as a draft dated August 27, 2025. Deliverables include: production quotas of 100 root creative assets and 5,000 variants per month; 50 million paid impressions monthly; monthly SEO using the MarketBrew AI platform; and, quote, deployment of websites and content to deliver GPT framing results on GPT conversations. Funding: client payments together with any matching funds contributed by Agency. Whether it was executed as drafted is among the questions sent August 7.",
+   "tags": "services agreement gpt framing marketbrew quotas matching funds draft"
+  },
+  {
+   "id": "ctxc",
+   "label": "Clock Tower X, Exhibit C: Delaware Certificate of Formation",
+   "url": "https://efile.fara.gov/docs/7649-Exhibit-C-20250918-1.pdf",
+   "note": "Filed 11:43 AM, June 11, 2025, file number 10224445: a single-member Delaware LLC, registered agent Harvard Business Services of Lewes, one of the country's highest-volume formation services. Confirmed against Delaware's live registry August 7, 2026. Ninety-nine days from formation to foreign-agent registration.",
+   "tags": "delaware formation certificate harvard business services single member"
+  },
+  {
+   "id": "ctxdec",
+   "label": "Clock Tower X, December Exhibit A/B (agreement dated December 19, 2025)",
+   "url": "https://efile.fara.gov/docs/7649-Exhibit-AB-20251226-3.pdf",
+   "note": "Restructures the launch budget: the original $1.5 million per month for four months is deleted and replaced with a $6,000,000 lump sum, plus an additional $3,000,000 digital advertising budget, a $9,000,000 combined pool. Adds deliverables: monthly audience segmentation and sentiment analysis, and monthly refreshed influence and network maps.",
+   "tags": "december restructure lump sum nine million influence network maps"
+  },
+  {
+   "id": "hpsci",
+   "label": "Brad Parscale, House Intelligence Committee interview transcript (October 24, 2017)",
+   "url": "https://intelligence.house.gov/uploadedfiles/brad_parscale_testimony_oct_24_2017.pdf",
+   "note": "The 2016 digital operation in his own words: Facebook, Google, and Twitter staff embedded with the campaign in San Antonio. Quote: you spend money on their platform, we send people. Unclassified official transcript; background for the registrant's history with platform-mediated persuasion.",
+   "tags": "parscale testimony house intelligence embeds 2017 san antonio"
+  },
+  {
+   "id": "npr",
+   "label": "NPR: Shell Game, 2,000 Firms Based in One Simple House (2011)",
+   "url": "https://www.npr.org/2011/07/02/137573513/shell-game-2-000-firms-based-in-one-simple-house",
+   "note": "Wyoming Corporate Services, the end of Sniper's registered-agent chain (Capital Administrations LLC to Corporate Agents LLC to WCS to Therese Hoard). Context on the corporate-anonymity industry; using commercial agents is lawful and common, which is exactly why FARA's ownership question matters.",
+   "tags": "npr wyoming shell house agent chain corporate services sniper"
+  },
+  {
+   "id": "search",
+   "label": "DOJ FARA document search",
+   "url": "https://efile.fara.gov/ords/fara/f?p=1235:10",
+   "note": "Verify everything on this site yourself. That is the point.",
+   "tags": "doj search verify database"
+  },
+  {
+   "id": "ctxsupp2",
+   "label": "Clock Tower X, Supplemental Statement for the six months ending 9/30/26 (filed 10/30/26)",
+   "url": "https://efile.fara.gov/docs/7649-Supplemental-Statement-20261030-2.pdf",
+   "note": "$25,500,000.00 received from Havas Media Germany in six wires (Apr 9: $3M; May 5, Jun 11, Jul 2, Aug 4, Sep 15: $4.5M each). $18,388,988.90 disbursed. Largest recipients in the itemized appendix: Sparkfire Technologies ('Direct Engagement', roughly $11.4M*), Portman Road Strategies ('Media Placement', roughly $4.3M*), Cavalier Communications ('Iowa Mailers', $907,687.03 on 9/25), Three Tech Managed Services (website), Situation Management Group ('War Room', incl. $284,000 on 9/11), Stratus Intelligence ('Israel Monthly Models + Support', 'Polling'), Eyesover ('Sentiment Analytics'), SEO Engine, and Campaign Nucleus LLC and CloudLogics LLC, both asterisked in the filing. A $25,000 'Event, Charitable' payment to First Church of the Bible on 9/28. Political contribution disclosed: $5,000 from short-form registrant Michael Shields to Friends of Jimmy Patronis, 7/29/26. Item 18 lists the mesh's social accounts plus iowa4israel.com and a @standtogether4truth TikTok.",
+   "tags": "clock tower supplemental 25.5 million sparkfire portman cavalier iowa mailers campaign nucleus war room patronis",
+   "draft": true
+  },
+  {
+   "id": "ctxnovdec",
+   "label": "Clock Tower X, Exhibit A/B: work order extending the $4.5M/month rate through December 2026 (agreement 9/24/26, filed 10/5/26)",
+   "url": "https://efile.fara.gov/docs/7649-Exhibit-AB-20261005-1.pdf",
+   "note": "Havas Media Germany order dated 24/09/2026: Digital Advertising 01.11-30.11.26, $4,500,000.00; 01.12-31.12.26, $4,500,000.00. Nine million more, carrying the campaign past the November 3 midterms. Cumulative orders on the docket: $6M, $9M pool, $31.5M, now $40.5M. Havas's footer: it acts 'solely in the capacity of a booking agent' and 'is not responsible for the content of the campaigns.'",
+   "tags": "clock tower november december extension 9 million 40.5 booking agent",
+   "draft": true
+  },
+  {
+   "id": "ctxam3",
+   "label": "Clock Tower X, Amendment (filed 10/5/26): updated fee schedule",
+   "url": "https://efile.fara.gov/docs/7649-Amendment-20261005-1.pdf",
+   "note": "'Amended work order to reflect updated fee schedule.' Filed the same day as the November-December order.",
+   "tags": "clock tower amendment fee schedule",
+   "draft": true
+  },
+  {
+   "id": "ctxam4",
+   "label": "Clock Tower X, Amendment (filed 10/21/26): Milhoan termination",
+   "url": "https://efile.fara.gov/docs/7649-Amendment-20261021-2.pdf",
+   "note": "Aaron Milhoan terminated 10/16/26, reported five days later. The compliance tempo holds.",
+   "tags": "clock tower amendment milhoan termination",
+   "draft": true
+  },
+  {
+   "id": "star1",
+   "label": "Olympic Media LLC dba Starboard, Registration Statement (filed 10/28/26)",
+   "url": "https://efile.fara.gov/docs/7788-Registration-Statement-20261028-1.pdf",
+   "note": "Leg nine. Virginia LLC formed 1/20/2017 (LegalZoom); 1881 N Nash St, Arlington. Ryan Patrick Coyne, CEO and 100% owner; Will Ambruzs COO; Michael Reid CFO. Principal: 'LDRS Group LLC on behalf of the State of Israel', One World Trade Center, Floor 65, New York. Political contribution disclosed: $7,000 from Coyne to Bernie Moreno for Senate, 10/2/26, eleven days before the contract.",
+   "tags": "starboard olympic media coyne ldrs registration moreno arlington",
+   "draft": true
+  },
+  {
+   "id": "star2",
+   "label": "Starboard, Exhibit A/B with the LDRS contract and Statement of Work (filed 10/28/26)",
+   "url": "https://efile.fara.gov/docs/7788-Exhibit-AB-20261028-1.pdf",
+   "note": "Independent Contractor Agreement signed 10/13/26 by Udi Mendelovits, CFO of LDRS Group LLC, and Ryan Coyne. SOW: a 'controlled one hundred twenty (120) day multichannel persuasion pilot program that measures contact impact and sentiment analysis through regular polling,' $500,000, no paid influencer marketing, deliverables including 'Cost-Per-Converted-Voice (CPCV) assessments.' Every page footer reads 'Independent Contractor Agreement Starboard x Havas Frankfurt' although the counterparty is LDRS in New York. Exhibit A swears LDRS is not supervised, owned, directed, controlled, financed or subsidized by a foreign government. Registered fifteen days after the agreement, against a ten-day statute.",
+   "tags": "starboard sow persuasion pilot cpcv 500k mendelovits havas frankfurt footer fifteen days",
+   "draft": true
+  },
+  {
+   "id": "star3",
+   "label": "Starboard, short form: Ryan Patrick Coyne (filed 10/28/26)",
+   "url": "https://efile.fara.gov/docs/7788-Short-Form-20261028-1.pdf",
+   "note": "Born 1987, US citizen, CEO. Services: 'audience development and panel construction; content production and distribution; optimization and analytics; surveying/polling and measurement.' Political activity: yes, 'to promote the interests of the State of Israel.'",
+   "tags": "coyne short form starboard",
+   "draft": true
+  },
+  {
+   "id": "piro2",
+   "label": "Piro, Exhibit A/B: $240,000 continuation work order (agreement 10/19/26, filed 10/27/26)",
+   "url": "https://efile.fara.gov/docs/7732-Exhibit-AB-20261027-3.pdf",
+   "note": "'Fact-Based Content Initiative (Continuation)': extends a July 20, 2026 work order 'with the same scope and applicable terms,' for the Israel Ministry of Foreign Affairs via Havas Germany and LaPam. The July 20 order itself is referenced but no Exhibit A/B for it appears on the docket.",
+   "tags": "piro continuation 240k july 20 work order fact based",
+   "draft": true
+  },
+  {
+   "id": "piro3",
+   "label": "Piro, Exhibit A/B: $200,000 'Fact Based Video Content Pilot' (agreement 10/21/26, filed 10/27/26)",
+   "url": "https://efile.fara.gov/docs/7732-Exhibit-AB-20261027-2.pdf",
+   "note": "Three to five roughly 15-second videos, horizontal and vertical, 'concerning Israel and the U.S.-Israel relationship,' 'addressing factual inaccuracies.' Media buying, distribution and measurement excluded. Piro's paper now totals $1.34M across three orders.",
+   "tags": "piro video pilot 200k 15 second",
+   "draft": true
+  },
+  {
+   "id": "piroam",
+   "label": "Piro, Amendment (filed 10/19/26): Storfer compensation",
+   "url": "https://efile.fara.gov/docs/7732-Amendment-20261019-3.pdf",
+   "note": "Doron Storfer's short-form compensation restated as a $14,000 fixed fee in two installments, replacing '$10,000 flat fee plus up to $10,000 for approved overages.' Piro now has twelve short-form registrants.",
+   "tags": "piro storfer amendment short form",
+   "draft": true
+  },
+  {
+   "id": "sfw3",
+   "label": "Show Faith by Works, Supplemental Statement for the six months ending 9/30/26 (filed 10/30/26)",
+   "url": "https://efile.fara.gov/docs/7653-Supplemental-Statement-20261030-2.pdf",
+   "note": "Received $977,658.00 from the Ministry of Foreign Affairs (6/3: $651,777; 9/1: $325,881), bringing sworn receipts to $3,291,449.50. Disbursed $1,492,226.12. This ledger is not doubled: our parse finds 264 lines and only three same-day same-amount repeats*. Largest items: Graystone Public Staffing (the owner's staffing entity per the earlier filing) roughly $490K*; a $250,000 'Savings account, Internal transfers' line; Griggs Home Service trailer construction $133,207*; owner draws to Chad Schnitger $85,000*; Holtzman Vogel legal fees roughly $82K*; The Shofar exhibits $51,937.50; Ford Motor Credit vehicle financing $20,000. Activities described as 'public outreach and marketing services focused on promoting educational and cultural initiatives.' Barbara Peil and Kelli Ayotte terminated 9/30/26. Advertising campaigns: still unchecked.",
+   "tags": "show faith supplemental 977k graystone savings transfer holtzman vogel ford not doubled",
+   "draft": true
+  },
+  {
+   "id": "bri3",
+   "label": "Bridges Partners, Supplemental Statement for the six months ending 9/30/26 (filed 10/19/26)",
+   "url": "https://efile.fara.gov/docs/7652-Supplemental-Statement-20261019-2.pdf",
+   "note": "No receipts, no disbursements, no activity: 'the registrant did not provide any services to or on behalf of the foreign principal during the reporting period.' Still registered, still silent. The ~$700K gap in the Esther Project order is unchanged.",
+   "tags": "bridges supplemental dormant zero esther",
+   "draft": true
+  }
+ ],
+ "legs": [
+  {
+   "id": "tcg",
+   "n": "Targeted Communications Global",
+   "fara": "7553",
+   "who": "SKDKnickerbocker affiliate; signer Katherine Reynolds",
+   "route": "Havas USA (papered on Frankfurt letterhead)",
+   "money": "$9.89M retroactive work order incl. $3.7M ad buys",
+   "facts": [
+    "Contract Feb 18, 2025: the pipeline's first leg",
+    "Pre-registration booker blitz: NBC, CNN, CBS, Fox, MSNBC et al. (flag)",
+    "$9,892,336.58 papered 4/27/26, filed 7/2/26 (flag)",
+    "$1,545,000/month Sept-Dec 2025: twin to Clock Tower's rate"
+   ],
+   "docs": [
+    "tcg1",
+    "tcg2",
+    "tcg3"
+   ],
+   "comment": "Questions sent; deadline passed without response (as of 7/28)"
+  },
+  {
+   "id": "g21",
+   "n": "Genesis 21 Consulting",
+   "fara": "7631",
+   "who": "Tzahi Daboush, sole owner (ex-Army Radio correspondent; ex-Barkat communications chief), Shoham, Israel",
+   "route": "Direct to MFA/Advertising Bureau",
+   "money": "Terms TBD; oral, 1 year",
+   "facts": [
+    "Delaware LLC formed 5/21/25: first vehicle built",
+    "Registered day of its verbal agreement (compliant)",
+    "Sworn services: influencer outreach"
+   ],
+   "docs": [
+    "g21"
+   ],
+   "comment": "Detailed questions sent August 7, 2026 (the services agreement, platform dissemination, and spending); response deadline August 13, 2026. Clock Tower has not responded to any inquiry in this investigation to date"
+  },
+  {
+   "id": "ctx",
+   "n": "Clock Tower X",
+   "fara": "7649",
+   "who": "Brad Parscale (Trump 2016 digital director, 2020 campaign manager; Salem Media CSO)",
+   "route": "Havas Frankfurt",
+   "money": "$40.5M ordered through Dec 2026; $40.5M received through 9/30/26",
+   "facts": [
+    "Homepage: 'We help determine who prevails. Elections. Narratives. Markets.'",
+    "10/20/25: State of Israel registration 'was in error'; principal becomes HAVAS Media Network (flag)",
+    "$850K Havas loan; $750K loan repayment to Parscale personally",
+    "$10,000 to a congressman's victory fund mid-engagement (disclosed, personal funds, lawful)",
+    "Content ledger: pieces on Tucker Carlson, Candace Owens, Joe Kent",
+    "11-site mesh built for GPT framing",
+    "NEW 10/30/26: $25.5M received Apr-Sep 2026; cumulative $40.5M. $18.39M disbursed; Sparkfire ~$11.4M*, Portman Road ~$4.3M*, Cavalier 'Iowa Mailers' $907,687 (draft)",
+    "NEW 10/5/26: order extended through Nov and Dec 2026 at $4.5M/month; campaign now runs past the midterms (draft)",
+    "NEW: $5,000 contribution by Michael Shields to Friends of Jimmy Patronis disclosed; First Church of the Bible $25,000 'Event, Charitable' (draft)",
+    "Asterisked recipients in the ledger: Campaign Nucleus LLC, CloudLogics LLC (asterisk unexplained in filing; verify) (draft)"
+   ],
+   "docs": [
+    "ctx1",
+    "ctxsa",
+    "ctxc",
+    "ctx2",
+    "ctx3",
+    "ctxdec",
+    "ctx4",
+    "ctx5",
+    "ctxam",
+    "ctxam2",
+    "im1",
+    "imjun",
+    "im171",
+    "ctxnovdec",
+    "ctxam3",
+    "ctxam4",
+    "ctxsupp2"
+   ],
+   "comment": "Questions sent; July 22 deadline passed without response"
+  },
+  {
+   "id": "bri",
+   "n": "Bridges Partners",
+   "fara": "7652",
+   "who": "Uri Steinberg + Yair Levy (ex-Israeli Tourism Ministry); Capitol Hill apartment",
+   "route": "Havas Frankfurt",
+   "money": "$900K Esther Project order; $199,985 on its books",
+   "facts": [
+    "~12 weeks unregistered with money flowing (flag)",
+    "~$700K of the order appears in no US filing (flag)",
+    "Supplemental swears no role in the content its own Exhibit B describes (flag)",
+    "Consultant paid: Nadav Shtrauchler (Netanyahu 2019 strategist)",
+    "No influencer named or registered anywhere",
+    "NEW 10/19/26: supplemental swears zero activity and zero money Apr-Sep 2026 (draft)"
+   ],
+   "docs": [
+    "bri1",
+    "bri2",
+    "bri3"
+   ],
+   "comment": "Questions sent; deadline passed without response"
+  },
+  {
+   "id": "sfw",
+   "n": "Show Faith by Works",
+   "fara": "7653",
+   "who": "Chad Schnitger (pres., Faith and Freedom Coalition of California)",
+   "route": "Havas Frankfurt",
+   "money": "$3,291,449.50 received through 9/30/26; actual 2025-26 spending $1,666,595.93* + $1,492,226.12",
+   "facts": [
+    "Sworn $3.33M total; all 742 lines duplicated, zero exceptions; exactly double actual* (flag)",
+    "9 days unregistered; $66,044 spent pre-registration (flag)",
+    "~33% of actual spending to owner's firm + himself*",
+    "Zero advertising expenditures in the entire ledger*",
+    "Denies geofencing; described activities never amended (flag)",
+    "NEW 10/30/26: $977,658 more received; new ledger is NOT doubled; $250K 'internal transfer' to savings; owner draws $85K* (draft)"
+   ],
+   "docs": [
+    "sfw1",
+    "sfw2",
+    "sfw3"
+   ],
+   "comment": "Questions sent 7/14, deadline 7/15: no response"
+  },
+  {
+   "id": "dav",
+   "n": "Davis Media NY",
+   "fara": "7662",
+   "who": "Yoav Davis ('Jews of NY' founder; Israeli-born, ex-IDF)",
+   "route": "L.D.R.S Group (Tel Aviv) + Havas: only dual-source leg",
+   "money": "Undisclosed",
+   "facts": [
+    "Second pipe: L.D.R.S Group LTD, unexamined",
+    "Influencer and celebrity media reach",
+    "Full docket pull pending"
+   ],
+   "docs": [
+    "dav"
+   ],
+   "comment": "Comment request pending"
+  },
+  {
+   "id": "piro",
+   "n": "Piro, Inc.",
+   "fara": "7732",
+   "who": "Daniel Rosenberg (Inside Man producer) + Tim Piper (Time 100 ad director)",
+   "route": "Havas Frankfurt",
+   "money": "$900K pilot + $240K continuation + $200K video order = $1.34M",
+   "facts": [
+    "$400K production incl. paid on-camera talent",
+    "Markets AI-discoverability 'Narrative Operating System'",
+    "Registered before acting (compliant)",
+    "NEW 10/27/26: two more Havas orders, $240K and $200K; references a July 20 work order not on the docket (draft)",
+    "Twelve short-form registrants as of 10/19/26 (draft)"
+   ],
+   "docs": [
+    "piro",
+    "piro2",
+    "piro3",
+    "piroam"
+   ],
+   "comment": "Comment request pending"
+  },
+  {
+   "id": "sni",
+   "n": "Sniper Advertising Services",
+   "fara": "7745",
+   "who": "Frederick T. Hickerson III (Key Largo) + Larry Kerschenbaum (dual US-Israeli citizen, Yad Hanna, Israel), 50/50",
+   "route": "DIRECT: both ministries jointly, no intermediary",
+   "money": "Volume-based, per campaign, undisclosed",
+   "facts": [
+    "Oral deal 6/18/26; registered in six days (compliant)",
+    "Named official: Foreign Minister Gideon Sa'ar",
+    "Business: location-capture advertising (device IDs from chosen areas; audiences; optional direct mail)",
+    "Wyoming agent chain: Capital Administrations LLC > Corporate Agents LLC > Wyoming Corporate Services Inc > Therese Hoard, the commercial-agent family NPR and Reuters profiled in 2011 (lawful and common; FARA Item 5 remains the only public record naming the owners)",
+    "No location types named; no money moved yet"
+   ],
+   "docs": [
+    "sni1",
+    "sni2",
+    "npr",
+    "careg"
+   ],
+   "comment": "Detailed questions sent July 30, 2026; response deadline August 4, 2026, which passed without a response; a follow-up email is documented. On August 1, platform owner GeoDataScience (dba Refinition) responded on the record: Sniper is a reseller; GeoDataScience says it was unaware of the FARA registration until our inquiry and that no campaigns are running"
+  },
+  {
+   "id": "star",
+   "n": "Olympic Media LLC dba Starboard",
+   "fara": "7788",
+   "who": "Ryan Patrick Coyne, CEO and sole owner (Arlington, VA); Will Ambruzs COO; Michael Reid CFO",
+   "route": "L.D.R.S. Group LLC (New York) 'on behalf of the State of Israel'",
+   "money": "$500,000, 120-day 'multichannel persuasion pilot'",
+   "facts": [
+    "Contract 10/13/26 signed by LDRS CFO Udi Mendelovits; registered 10/28/26, fifteen days later (flag)",
+    "Deliverable: 'Cost-Per-Converted-Voice (CPCV) assessments'; polling-measured persuasion; no paid influencers",
+    "Every contract page is footered 'Starboard x Havas Frankfurt' though the counterparty is LDRS in New York (flag)",
+    "$7,000 from Coyne to Bernie Moreno for Senate on 10/2/26, disclosed (lawful)",
+    "Second operator on the L.D.R.S. pipe, after Davis Media"
+   ],
+   "docs": [
+    "star1",
+    "star2",
+    "star3"
+   ],
+   "comment": "Comment request not yet sent (added by the November 2026 data sync; pending review)",
+   "draft": true
+  }
+ ],
+ "hubs": [
+  {
+   "id": "mfa",
+   "n": "GOVERNMENT OF ISRAEL · MFA",
+   "sub": "Project 545 · 545M shekels (~$145M) · Dec 2024",
+   "detail": "The client. Budget approved December 2024. Eran Shayovich, strategic communications chief, runs the program (named on Piro's filing; reported architect). Oren Marmorstein, ministry spokesperson, supervised the first engagement (TCG, Feb 2025). Foreign Minister Gideon Sa'ar is named on Sniper's 2026 filing, the only minister-level name in the pipeline.",
+   "docs": [
+    "piro",
+    "tcg1",
+    "sni1"
+   ]
+  },
+  {
+   "id": "lapam",
+   "n": "LAPAM · Government Advertising Agency",
+   "sub": "Guy Getz on filings 2023-2026 · client on most legs",
+   "detail": "Israel's government advertising bureau, 9 Ahad Ha'am St, Tel Aviv. The purchasing office: named client on Bridges', Piro's, TCG's, and Genesis 21's paper, and on Havas USA's own 2023 registration. Guy Getz, Head of Advertising, appears across three separate FARA relationships spanning 2023 to 2026, the connective signature of the entire commercial program.",
+   "docs": [
+    "hav",
+    "tcg2",
+    "piro",
+    "bri1"
+   ]
+  },
+  {
+   "id": "hg",
+   "n": "HAVAS GERMANY · Frankfurt",
+   "sub": "Principal-side paymaster · files nothing itself",
+   "detail": "Contracting party or paymaster for Clock Tower, Show Faith, Bridges, and Piro, and the letterhead on TCG's retroactive order. Positioned on the foreign principal side of every filing, so its own books never face DOJ. Bollore-controlled. Named contacts on vendor paper: Martsello Alexidis; Nathalie Nikpour-Wagner (per Poulson).",
+   "docs": [
+    "ctx1",
+    "bri1",
+    "piro",
+    "tcg3"
+   ]
+  },
+  {
+   "id": "hu",
+   "n": "HAVAS USA · NYC",
+   "sub": "Itself FARA #7106 since 2022",
+   "detail": "The both-sides finding: Havas's American arm has been a registered foreign agent since 2022 and disclosed Israel's Ministry of Tourism via LAPAM (contact: Getz) in February 2023, for tourism advertising, two years before Project 545. For the political campaign, no Havas entity registered as agent anywhere; Havas appears only principal-side. Same client, same Frankfurt hub, opposite disclosure posture; the variable is the content.",
+   "docs": [
+    "hav",
+    "tcg2"
+   ]
+  },
+  {
+   "id": "ldrs",
+   "n": "L.D.R.S GROUP · Tel Aviv",
+   "sub": "The second pipe · now two operators",
+   "detail": "Named on Davis Media's short form as the channel for the Government of Israel: a funding route that bypasses the Havas hub entirely. Ownership and role unexamined; Israeli registry pull pending. UPDATE (draft): On October 13, 2026, LDRS Group LLC, One World Trade Center, New York, CFO Udi Mendelovits, contracted Starboard (Olympic Media LLC, Ryan Coyne) for a $500,000 persuasion pilot 'on behalf of the State of Israel,' filed as FARA #7788. The contract pages are footered 'Starboard x Havas Frankfurt.' The US entity's relationship to L.D.R.S Group LTD of Tel Aviv is unexamined.",
+   "docs": [
+    "dav",
+    "star2"
+   ]
+  }
+ ],
+ "timeline": [
+  {
+   "era": "2020 TO 2023 · THE PIPE ALREADY EXISTED"
+  },
+  {
+   "date": "Apr 2022",
+   "cat": "reg",
+   "title": "Havas USA registers under FARA (#7106)",
+   "detail": "One registration covers all of an agent's government clients; the tourism plumbing that Project 545 would later repurpose.",
+   "docs": [
+    "hav"
+   ]
+  },
+  {
+   "date": "Feb 27 2023",
+   "cat": "reg",
+   "title": "Havas USA adds Israel: Tourism via LAPAM",
+   "detail": "Named contact Guy Getz, whose signature will recur across the entire program through 2026.",
+   "docs": [
+    "hav"
+   ]
+  },
+  {
+   "era": "DECEMBER 2024 · THE BUDGET"
+  },
+  {
+   "date": "Dec 2024",
+   "cat": "money",
+   "title": "Project 545 approved: 545M shekels (~$145M)",
+   "detail": "Israeli reporting names Eran Shayovich as the program's chief; goals include shaping generative AI outputs. Same month, Tzahi Daboush leaves minister Barkat's office for the private sector.",
+   "docs": []
+  },
+  {
+   "era": "FEB TO MAR 2025 · THE DEMOCRATS GO FIRST"
+  },
+  {
+   "date": "Feb 18 2025",
+   "cat": "money",
+   "title": "SKDK's affiliate signs first",
+   "detail": "TCG contracts with the MFA under spokesperson Oren Marmorstein; SKDK holds the contract and pays TCG, per TCG's own exhibit.",
+   "docs": [
+    "tcg1"
+   ]
+  },
+  {
+   "date": "Feb 19-24 2025",
+   "cat": "flag",
+   "title": "The newsroom blitz, before registering",
+   "detail": "Twenty-plus logged media placement contacts with named bookers at NBC, CNN, CBS, ABC, Fox, MSNBC, NewsMax, the Post, and the Daily Wire, all pre-registration, all disclosed afterward.",
+   "docs": [
+    "tcg1"
+   ]
+  },
+  {
+   "date": "Mar 3 2025",
+   "cat": "reg",
+   "title": "TCG registers (#7553)",
+   "detail": "",
+   "docs": [
+    "tcg1"
+   ]
+  },
+  {
+   "era": "SPRING 2025 · BUILDING THE FLEET"
+  },
+  {
+   "date": "May 21 2025",
+   "cat": "reg",
+   "title": "Genesis 21 formed (Delaware)",
+   "detail": "First vehicle in the fleet; sole owner Tzahi Daboush of Shoham, Israel.",
+   "docs": [
+    "g21"
+   ]
+  },
+  {
+   "date": "Jun 11 2025",
+   "cat": "reg",
+   "title": "Clock Tower X formed (Delaware)",
+   "detail": "",
+   "docs": [
+    "ctx1"
+   ]
+  },
+  {
+   "date": "Jun 16 2025",
+   "cat": "money",
+   "title": "The Esther Project is signed",
+   "detail": "$900K Havas work order, product line literally reading Esther Project, order 47239.",
+   "docs": [
+    "bri1"
+   ]
+  },
+  {
+   "date": "Jul 3 2025",
+   "cat": "flag",
+   "title": "Bridges takes $199,985, stays dark",
+   "detail": "Roughly twelve weeks of unregistered operation follow, by its own sworn accounting, against a ten day statute.",
+   "docs": [
+    "bri1"
+   ]
+  },
+  {
+   "era": "AUG TO SEP 2025 · REGISTRATION SEASON"
+  },
+  {
+   "date": "Aug 11 2025",
+   "cat": "reg",
+   "title": "Genesis 21 registers, day of its handshake (#7631)",
+   "detail": "The pipeline's most compliant filing, and it belongs to the one-man Israeli shop.",
+   "docs": [
+    "g21"
+   ]
+  },
+  {
+   "date": "Aug 29 2025",
+   "cat": "reg",
+   "title": "TCG re-papers under the tourism pipe",
+   "detail": "New principal: Ministry of Tourism (LAPAM) through Havas USA. Contact: Guy Getz.",
+   "docs": [
+    "tcg2"
+   ]
+  },
+  {
+   "date": "Sep 2025",
+   "cat": "money",
+   "title": "Twin flagships spin up",
+   "detail": "Clock Tower at exactly $1.5M/month and TCG at $1.545M/month, identical four months, one firm from each party's ecosystem.",
+   "docs": [
+    "ctx1",
+    "tcg3"
+   ]
+  },
+  {
+   "date": "Sep 18 2025",
+   "cat": "flag",
+   "title": "CTX registers; Havas wires the church campaign",
+   "detail": "Clock Tower discloses $6M. Same day, $325,881 lands at Show Faith, nine days before Show Faith registers.",
+   "docs": [
+    "ctx1",
+    "sfw1"
+   ]
+  },
+  {
+   "date": "Sep 26-27 2025",
+   "cat": "reg",
+   "title": "Bridges (#7652) and Show Faith (#7653) register",
+   "detail": "The nine-day registration window closes; something prompted the fleet at once.",
+   "docs": [
+    "bri1",
+    "sfw1"
+   ]
+  },
+  {
+   "date": "Sep 29 2025",
+   "cat": "press",
+   "title": "Responsible Statecraft breaks the story",
+   "detail": "Two days after the last registration in the window.",
+   "docs": []
+  },
+  {
+   "era": "OCT TO DEC 2025 · FULL OPERATION, FIRST RETREAT"
+  },
+  {
+   "date": "Oct 12 2025",
+   "cat": "reg",
+   "title": "Davis Media registers (#7662)",
+   "detail": "Dual funding: Havas AND L.D.R.S Group of Tel Aviv, the second pipe.",
+   "docs": [
+    "dav"
+   ]
+  },
+  {
+   "date": "Oct 13-20 2025",
+   "cat": "flag",
+   "title": "Clock Tower erases Israel",
+   "detail": "Connection with the State of Israel terminated 10/13; deficiency amendment 10/20 leaves HAVAS Media Network as sole principal; the supplemental later calls the Israel registration an error while still describing the work as Israel's campaign. Two weeks after the press wave.",
+   "docs": [
+    "ctx2",
+    "ctx4"
+   ]
+  },
+  {
+   "date": "Oct-Dec 2025",
+   "cat": "money",
+   "title": "The pipeline runs at capacity",
+   "detail": "TCG buys $3.7M in ads; influencer waves post; mass texting begins; the trailer is built ($352,949* to Griggs Home Service).",
+   "docs": [
+    "tcg3",
+    "sfw2"
+   ]
+  },
+  {
+   "date": "Nov 25 2025",
+   "cat": "press",
+   "title": "Schnitger's first walk-back",
+   "detail": "Tells Christianity Today the geofencing is scrapped; blames the lawyers' wording.",
+   "docs": []
+  },
+  {
+   "date": "Dec 19 2025",
+   "cat": "money",
+   "title": "The launch budget becomes a $9 million pool",
+   "detail": "A new agreement deletes the monthly structure and replaces it with a $6,000,000 lump sum plus a $3,000,000 advertising budget, and adds monthly influence and network maps to the deliverables.",
+   "docs": [
+    "ctxdec"
+   ]
+  },
+  {
+   "date": "Dec 22 2025",
+   "cat": "flag",
+   "title": "Parscale's $10,000 check",
+   "detail": "To a congressman's victory fund, mid-engagement. Disclosed in his own supplemental; personal funds; lawful with disclosure, and still a fact worth sitting with.",
+   "docs": [
+    "ctx4"
+   ]
+  },
+  {
+   "date": "Dec 31 2025",
+   "cat": "flag",
+   "title": "Bridges goes quiet",
+   "detail": "Last disbursement. ~$700K of its $900K work order never appears in any US filing.",
+   "docs": [
+    "bri2"
+   ]
+  },
+  {
+   "era": "JAN TO MAR 2026 · THE QUIET QUARTER"
+  },
+  {
+   "date": "Jan 5-20 2026",
+   "cat": "money",
+   "title": "Show Faith's Israel trip: $54,124*",
+   "detail": "Uncharted Adventures, EL AL, Ben Gurion parking, Sea of Galilee lodging: the pastors-trip promise from the pitch deck, materialized in the ledger. Twice, technically.",
+   "docs": [
+    "sfw2"
+   ]
+  },
+  {
+   "date": "Mar 30 2026",
+   "cat": "flag",
+   "title": "FactSignal publishes on Carlson and Owens",
+   "detail": "An Israel-funded site, per Clock Tower's own sworn content ledger, publishes on the supposed Russian origins of Candace Owens' and Tucker Carlson's talking points. Months before Carlson's show mainstreams this story.",
+   "docs": [
+    "ctx4"
+   ]
+  },
+  {
+   "era": "APR TO JUL 2026 · THE SECOND WAVE"
+  },
+  {
+   "date": "Apr 27 2026",
+   "cat": "flag",
+   "title": "The retroactive contract is dated",
+   "detail": "$9,892,336.58 of fall 2025 work, papered months after performance; filed with DOJ on July 2.",
+   "docs": [
+    "tcg3"
+   ]
+  },
+  {
+   "date": "Apr 30 2026",
+   "cat": "money",
+   "title": "Hollywood signs",
+   "detail": "Piro's $900K Digital Storytelling Pilot: paid talent, test architecture, AI discoverability.",
+   "docs": [
+    "piro"
+   ]
+  },
+  {
+   "date": "May 1 2026",
+   "cat": "flag",
+   "title": "The doubled ledger is filed",
+   "detail": "Show Faith swears $3,333,191.86 in disbursements; every one of 742 appendix lines is duplicated, zero exceptions; actual spending exactly $1,666,595.93*. No response to questions by deadline.",
+   "docs": [
+    "sfw2"
+   ]
+  },
+  {
+   "date": "May 18 2026",
+   "cat": "reg",
+   "title": "Clock Tower's supplemental lands",
+   "detail": "$15M received against a $9M contract of record; $850K Havas loan; $750K loan repayment to Parscale personally. DOJ's public link to this document is broken; a news mirror survives.",
+   "docs": [
+    "ctx4"
+   ]
+  },
+  {
+   "date": "Jun 2 2026",
+   "cat": "money",
+   "title": "The escalation",
+   "detail": "Piro registers (#7732); Clock Tower's new order triples it to $4.5M/month, April through October: $31.5M, ending the month before the midterms.",
+   "docs": [
+    "piro",
+    "ctx3"
+   ]
+  },
+  {
+   "date": "Jun 18 2026",
+   "cat": "money",
+   "title": "Two ministries hire Sniper, directly",
+   "detail": "Oral, volume-based, per campaign; location-capture advertising; Foreign Minister Sa'ar named on the paper. No intermediary.",
+   "docs": [
+    "sni1"
+   ]
+  },
+  {
+   "date": "Jun 24 2026",
+   "cat": "reg",
+   "title": "Sniper registers (#7745)",
+   "detail": "Six days after the handshake. Leg eight. FARA's Item 5 becomes the only public record naming its owners.",
+   "docs": [
+    "sni1",
+    "sni2"
+   ]
+  },
+  {
+   "date": "Jul 7 2026",
+   "cat": "press",
+   "title": "'We are not doing geofencing'",
+   "detail": "Schnitger to the Daily Caller News Foundation, nineteen days after the ministries hired the location-capture specialist. His own ad-free ledger, for once, agrees with him.",
+   "docs": [
+    "sfw2"
+   ]
+  },
+  {
+   "date": "Jul 16 2026",
+   "cat": "press",
+   "title": "The primetime address",
+   "detail": "The White House declares war on foreign election interference. This database goes unmentioned.",
+   "docs": []
+  },
+  {
+   "date": "Jul 15-24 2026",
+   "cat": "flag",
+   "title": "The comment windows close in silence",
+   "detail": "Detailed questions with stated deadlines to Show Faith by Works, Bridges Partners, Clock Tower X, Sniper, and the Department of Justice FARA Unit, including the document request for the broken supplemental link, all pass without response. Non-responses are documented and dated; any late reply will be added in full.",
+   "docs": []
+  },
+  {
+   "date": "Jun 2 2026",
+   "cat": "money",
+   "title": "Order papers the $31.5M, two months in",
+   "detail": "Agreement dated June 2 covers Digital Advertising April 1 through October 31, 2026 at $4.5M/month; April and May (~$9M) ran before the agreement date. Filed as the fourth exhibit June 7.",
+   "docs": [
+    "ctx5"
+   ]
+  },
+  {
+   "date": "Jul 13 2026",
+   "cat": "reg",
+   "title": "A Halloween departure, reported in July",
+   "detail": "Amendment reports short-form registrant Ashley Evdokimo terminated October 31, 2025, about eight and a half months earlier; the form checks the box for correcting a deficiency.",
+   "docs": [
+    "ctxam"
+   ]
+  },
+  {
+   "date": "Jul 18 2026",
+   "cat": "money",
+   "title": "The ad campaign enters the record",
+   "detail": "A second filing series begins: discrete ad creatives reading Strong Allies. Safer America., built on Trump and Netanyahu imagery, the 4(b) label printed on the creative. First appearance of the $31.5M order's advertising in the public record, three and a half months into the order window.",
+   "docs": [
+    "im171"
+   ]
+  },
+  {
+   "date": "Jul 31 2026",
+   "cat": "reg",
+   "title": "Three short-forms, including the roster's first web developer",
+   "detail": "Joy Ogunpolu (web developer), Lexi Sesock, and Karl Sili register, bringing named personnel to roughly two dozen as the order runs toward its October 31 end.",
+   "docs": []
+  },
+  {
+   "date": "Aug 1 2026",
+   "cat": "press",
+   "title": "First on-the-record response of the investigation",
+   "detail": "GeoDataScience (dba Refinition), owner of the platform behind Sniper's site, confirms the reseller arrangement, says it was unaware of the FARA registration until our inquiry, and says no campaigns are running.",
+   "docs": [
+    "careg"
+   ]
+  },
+  {
+   "date": "Aug 4 2026",
+   "cat": "reg",
+   "title": "A termination reported in one day",
+   "detail": "Amendment reports Alexander Miller terminated August 3, filed August 4. The prior termination on this docket took eight and a half months to report. The compliance tempo transformed between mid-July and August.",
+   "docs": [
+    "ctxam2"
+   ]
+  },
+  {
+   "era": "AUG TO NOV 2026 · THE RUN TO THE MIDTERMS"
+  },
+  {
+   "date": "Sep 10 2026",
+   "cat": "reg",
+   "title": "Pearson Unlimited registers for Xtend Reality (#7768)",
+   "detail": "Coreco 'CJ' Pearson's company registers for an Israeli private company. Principal is not the state; logged in Beyond 545.",
+   "docs": [],
+   "draft": true
+  },
+  {
+   "date": "Sep 24 2026",
+   "cat": "money",
+   "title": "Clock Tower's order is extended past the election",
+   "detail": "Havas Germany orders November and December 2026 digital advertising at $4.5 million each. Cumulative orders: $40.5 million. Filed October 5.",
+   "docs": [
+    "ctxnovdec",
+    "ctxam3"
+   ],
+   "draft": true
+  },
+  {
+   "date": "Sep 25 2026",
+   "cat": "money",
+   "title": "$907,687 for 'Iowa Mailers'",
+   "detail": "Paid to Cavalier Communications per Clock Tower's own appendix, six weeks before the midterms; Item 18 adds iowa4israel.com to the campaign's URL list.",
+   "docs": [
+    "ctxsupp2"
+   ],
+   "draft": true
+  },
+  {
+   "date": "Oct 13 2026",
+   "cat": "money",
+   "title": "LDRS hires Starboard: a $500K persuasion pilot",
+   "detail": "Signed by LDRS Group LLC's CFO in New York 'on behalf of the State of Israel.' 120 days, polling-measured, 'Cost-Per-Converted-Voice.'",
+   "docs": [
+    "star2"
+   ],
+   "draft": true
+  },
+  {
+   "date": "Oct 19 2026",
+   "cat": "reg",
+   "title": "Bridges swears six months of nothing",
+   "detail": "Zero receipts, zero disbursements, no services. The $700K hole stays open.",
+   "docs": [
+    "bri3"
+   ],
+   "draft": true
+  },
+  {
+   "date": "Oct 21 2026",
+   "cat": "money",
+   "title": "Piro adds $440,000 in two orders",
+   "detail": "A $240K continuation and a $200K short-video pilot, both via Havas Germany for the Foreign Ministry; filed October 27.",
+   "docs": [
+    "piro2",
+    "piro3"
+   ],
+   "draft": true
+  },
+  {
+   "date": "Oct 28 2026",
+   "cat": "reg",
+   "title": "Leg nine: Starboard registers (#7788)",
+   "detail": "Fifteen days after its contract. Ryan Coyne, Arlington. Second operator on the L.D.R.S. pipe.",
+   "docs": [
+    "star1",
+    "star3"
+   ],
+   "draft": true
+  },
+  {
+   "date": "Oct 30 2026",
+   "cat": "money",
+   "title": "Clock Tower: $25.5M in, $18.4M out",
+   "detail": "Six wires from Havas Germany, April to September. Cumulative receipts now $40.5 million. Sparkfire Technologies alone took roughly $11.4 million* for 'Direct Engagement.'",
+   "docs": [
+    "ctxsupp2"
+   ],
+   "draft": true
+  },
+  {
+   "date": "Oct 30 2026",
+   "cat": "flag",
+   "title": "Show Faith's new ledger is straight; the old one still isn't",
+   "detail": "$977,658 more received; $1.49M disbursed; no doubling this time. The May supplemental's 742 duplicated lines were never amended.",
+   "docs": [
+    "sfw3"
+   ],
+   "draft": true
+  },
+  {
+   "date": "Nov 3 2026",
+   "cat": "press",
+   "title": "Midterm Election Day",
+   "detail": "Clock Tower's order, originally ending October 31, now runs through December 31.",
+   "docs": [
+    "ctxnovdec"
+   ],
+   "draft": true
+  }
+ ],
+ "money": [
+  {
+   "registrant": "Clock Tower X (7649)",
+   "instrument": "Work orders, Apr-Dec 2026 (nine months at $4.5M)",
+   "amount": "$40,500,000.00",
+   "basis": "sworn order",
+   "doc": "ctxnovdec",
+   "draft": true
+  },
+  {
+   "registrant": "Clock Tower X (7649)",
+   "instrument": "Received, six months ending 9/30/26",
+   "amount": "$25,500,000.00",
+   "basis": "sworn receipts",
+   "doc": "ctxsupp2",
+   "draft": true
+  },
+  {
+   "registrant": "Clock Tower X (7649)",
+   "instrument": "Received, six months ending 3/31/26",
+   "amount": "$15,000,000.00",
+   "basis": "sworn receipts",
+   "doc": "ctx4"
+  },
+  {
+   "registrant": "Clock Tower X (7649)",
+   "instrument": "Disbursed, six months ending 9/30/26",
+   "amount": "$18,388,988.90",
+   "basis": "sworn disbursements",
+   "doc": "ctxsupp2",
+   "draft": true
+  },
+  {
+   "registrant": "Targeted Communications Global (7553)",
+   "instrument": "Retroactive work order, Sept-Dec 2025",
+   "amount": "$9,892,336.58",
+   "basis": "sworn order",
+   "doc": "tcg3"
+  },
+  {
+   "registrant": "Show Faith by Works (7653)",
+   "instrument": "Received from the Ministry, through 3/31/26",
+   "amount": "$2,313,791.50",
+   "basis": "sworn receipts",
+   "doc": "sfw2"
+  },
+  {
+   "registrant": "Show Faith by Works (7653)",
+   "instrument": "Received, six months ending 9/30/26 (cumulative $3,291,449.50)",
+   "amount": "$977,658.00",
+   "basis": "sworn receipts",
+   "doc": "sfw3",
+   "draft": true
+  },
+  {
+   "registrant": "Show Faith by Works (7653)",
+   "instrument": "Actual 2025-26 spending (dedup of doubled ledger)",
+   "amount": "$1,666,595.93*",
+   "basis": "our calculation",
+   "doc": "sfw2"
+  },
+  {
+   "registrant": "Show Faith by Works (7653)",
+   "instrument": "Disbursed, six months ending 9/30/26 (not doubled)",
+   "amount": "$1,492,226.12",
+   "basis": "sworn disbursements",
+   "doc": "sfw3",
+   "draft": true
+  },
+  {
+   "registrant": "Piro, Inc. (7732)",
+   "instrument": "Digital Storytelling Pilot + $240K continuation + $200K video order",
+   "amount": "$1,340,000.00",
+   "basis": "sworn order",
+   "doc": "piro3",
+   "draft": true
+  },
+  {
+   "registrant": "Bridges Partners (7652)",
+   "instrument": "Esther Project work order",
+   "amount": "$900,000.00",
+   "basis": "sworn order",
+   "doc": "bri1"
+  },
+  {
+   "registrant": "Bridges Partners (7652)",
+   "instrument": "Actually on its books (zero since)",
+   "amount": "$199,985.00",
+   "basis": "sworn receipts",
+   "doc": "bri3"
+  },
+  {
+   "registrant": "Starboard / Olympic Media (7788)",
+   "instrument": "120-day persuasion pilot via LDRS Group LLC",
+   "amount": "$500,000.00",
+   "basis": "sworn order",
+   "doc": "star2",
+   "draft": true
+  },
+  {
+   "registrant": "Genesis 21 (7631)",
+   "instrument": "Oral, 1 year, terms TBD",
+   "amount": "undisclosed",
+   "basis": "sworn",
+   "doc": "g21"
+  },
+  {
+   "registrant": "Davis Media NY (7662)",
+   "instrument": "Amounts undisclosed to date",
+   "amount": "undisclosed",
+   "basis": "sworn",
+   "doc": "dav"
+  },
+  {
+   "registrant": "Sniper (7745)",
+   "instrument": "Volume-based, per campaign; no campaigns running per platform owner",
+   "amount": "undisclosed",
+   "basis": "sworn",
+   "doc": "sni1"
+  }
+ ],
+ "cast": [
+  {
+   "name": "Brad Parscale",
+   "role": "Owner, Clock Tower X LLC",
+   "bio": "Trump's 2016 digital director and 2020 campaign manager; Salem Media Group's Chief Strategy Officer since January 2025, per Salem's own announcement. Sole member of Clock Tower X, a single-member Delaware LLC formed June 11, 2025, ninety-nine days before it registered as an agent of the State of Israel. Contracted through Havas Media Germany to deliver, per the filed services agreement: 100 root creative assets and 5,000 variants per month, 50 million paid impressions monthly, SEO via the MarketBrew AI platform, and 'deployment of websites and content to deliver GPT framing results on GPT conversations.' The December 2025 agreement restructured the launch budget to a $9 million pool and added monthly 'influence and network maps'; a June 2026 order added $31.5 million for April through October. The May supplemental shows $15 million received and a $750,000 repayment of his personal loan to the company. He signs every filing on the docket. Detailed questions sent August 7, 2026, deadline August 13; no response to any inquiry in this investigation to date.",
+   "docs": [
+    "ctx1",
+    "ctxsa",
+    "ctxc",
+    "ctxdec",
+    "ctx4",
+    "ctx3",
+    "hpsci"
+   ]
+  },
+  {
+   "name": "Havas Media Germany GmbH (managing directors: Sven Traichel, Gavin Jonderko, Andreas Lutzel, Christian Gaffal, Jan Altmeyer)",
+   "role": "The Frankfurt buffer",
+   "bio": "The intermediary between the State of Israel and the American operators. Sworn in Clock Tower's exhibit as 'Supervised by: State of Israel' for this engagement. Contracts and pays Clock Tower X (the $9 million pool, then the $31.5 million order) and wired Show Faith by Works' church campaign. Files nothing in the United States itself; its US sister agency, Havas Media USA, has been separately registered since 2022 on the tourism account. The five managing directors are named on the letterhead of the June 2026 order inside a DOJ filing (Frankfurt registry HRB 57024). Professional records only; no individual conduct asserted.",
+   "docs": [
+    "ctxsa",
+    "ctx4",
+    "hav"
+   ]
+  },
+  {
+   "name": "Guy Getz",
+   "role": "Head of Advertising, LAPAM (Israel's Government Advertising Agency)",
+   "bio": "The connective signature across the whole pipeline, 2023 to 2026: named government-side official on Havas USA's 2023 tourism exhibit, on TCG's re-papering under the tourism pipe, and recurring as the procurement counterpart as engagements expand. LAPAM is the state agency that awards the advertising work the buffer then distributes; where Getz signs, the state's ad machinery is the client.",
+   "docs": [
+    "hav",
+    "tcg2"
+   ]
+  },
+  {
+   "name": "Eran Shayovich",
+   "role": "Strategic communications chief, Ministry of Foreign Affairs",
+   "bio": "Named on Piro's Exhibit A as the ministry-side contact, and reported by Israeli press as an architect of the 545 million shekel campaign, a characterization attributed to that reporting. The MFA-side hub where the opinion budget meets its vendors.",
+   "docs": [
+    "piro"
+   ]
+  },
+  {
+   "name": "Oren Marmorstein",
+   "role": "Spokesperson, Ministry of Foreign Affairs",
+   "bio": "Named in TCG's filings as supervising the pipeline's first documented engagement, the February 2025 TCG contract that predates the public campaign. The earliest ministry name in the record.",
+   "docs": [
+    "tcg1"
+   ]
+  },
+  {
+   "name": "Gideon Sa'ar",
+   "role": "Foreign Minister of Israel",
+   "bio": "Named in Sniper Advertising's 2026 exhibit as a party to the oral agreement, the only minister-level name in any of the eight legs' filings. Being named in a registrant's description of an oral agreement is the filing's characterization; it does not establish personal negotiation.",
+   "docs": [
+    "sni2"
+   ]
+  },
+  {
+   "name": "Chad Schnitger",
+   "role": "Owner, Show Faith by Works",
+   "bio": "Riverside County political consultant; president of a regional Faith and Freedom Coalition chapter. Contracted through Havas for the church-focused campaign: audience work aimed at American congregations. His sworn expense ledger lists all 742 transaction lines exactly twice, doubling roughly $1.67 million of actual activity into a sworn $3,333,191.86, with zero advertising purchases anywhere in it and $352,949 for a trailer. The discrepancy is documented from his own filing; no charges exist and none are suggested. Walked back his public characterizations twice when contacted by press. Has not responded to comment requests.",
+   "docs": [
+    "sfw1",
+    "sfw2"
+   ]
+  },
+  {
+   "name": "Uri Steinberg and Yair Levy",
+   "role": "Founders, Bridges Partners",
+   "bio": "Former Israeli Tourism Ministry officials; Steinberg served as tourism commissioner for North America. Their firm took the Esther Project engagement: a $900,000 order of which roughly $700,000 is unaccounted for in the filings, with about twelve weeks of documented pre-registration activity. The tourism-side counterpart to the MFA legs. Silent to all inquiries.",
+   "docs": [
+    "bri1",
+    "bri2"
+   ]
+  },
+  {
+   "name": "Nadav Shtrauchler",
+   "role": "Consultant, Bridges Partners",
+   "bio": "Appears in Bridges' pre-registration disbursements with a $15,000 consultant fee. Israeli political strategist with Netanyahu-campaign background, per Israeli press profiles, attributed as such. The strategy layer above the Esther Project's execution.",
+   "docs": [
+    "bri2"
+   ]
+  },
+  {
+   "name": "Tzahi Daboush",
+   "role": "Owner, Genesis 21",
+   "bio": "Former Army Radio military correspondent and communications chief in ministerial offices. Registered the same day as his handshake agreement, the pipeline's fastest paper. The smallest leg by money, and the cleanest by timeline.",
+   "docs": [
+    "g21"
+   ]
+  },
+  {
+   "name": "Yoav Davis",
+   "role": "Owner, Davis Media NY",
+   "bio": "Founder of the Jews of NY platform; Israeli-born, formerly IDF. Registered October 12, 2025 running the L.D.R.S. dual pipe, the pipeline's clearest example of one operator serving parallel principal chains. His filings put the broader L.D.R.S. program's floor above $58 million.",
+   "docs": [
+    "dav"
+   ]
+  },
+  {
+   "name": "Daniel Rosenberg and Tim Piper",
+   "role": "Founders, Piro",
+   "bio": "A Hollywood producer and a Time 100 advertising director: the prestige leg. Contracted for a $900,000 pilot for the Tourism Ministry, with MFA communications chief Shayovich named on their exhibit. The pipeline's bid for entertainment-grade production values.",
+   "docs": [
+    "piro"
+   ]
+  },
+  {
+   "name": "Frederick T. Hickerson III and Larry Kerschenbaum",
+   "role": "Owners, Sniper Advertising Services",
+   "bio": "Fifty-fifty owners per their registration: Hickerson in Key Largo, Florida; Kerschenbaum a dual US-Israeli citizen living in Israel. Their firm holds the pipeline's only oral agreement with BOTH ministries, Tourism and Foreign Affairs, with Foreign Minister Sa'ar named, on volume-contingent fees: they earn only if the ministries order campaigns. Registered promptly and compliantly. The corporate chain runs through a Wyoming registered-agent nesting that ends at Wyoming Corporate Services, the bulk mail-drop operation NPR profiled. Their website copied GeoDataScience's older site, privacy policy included, per GeoDataScience's own account; the platform their offering resells is GeoDataScience's, whose CEO says no campaigns are running. Their August 4 comment deadline passed without response; a follow-up email is documented.",
+   "docs": [
+    "sni1",
+    "sni2",
+    "npr",
+    "careg"
+   ]
+  },
+  {
+   "name": "Roger Heaston",
+   "role": "President and CEO, GeoDataScience Inc. dba Refinition",
+   "bio": "Signed the Texas assumed-name certificate that connected Refinition to GeoDataScience. On August 1, 2026, became the first company principal in this investigation to respond on the record: confirmed Sniper is a reseller of his platform, said GeoDataScience was unaware of the FARA registration until our inquiry, said no campaigns are running and no foreign-government agreements exist, and stated that any campaign contracted by a reseller 'is executed solely by us,' meaning ministry campaigns ordered through Sniper would run through his firm's hands. Career: NetSuite, Placewise, Supply Strategies. His account is reported as his account; no wrongdoing asserted.",
+   "docs": [
+    "careg"
+   ]
+  },
+  {
+   "name": "GeoDataScience Inc. (dba Refinition)",
+   "role": "Location-data platform, Austin TX (Delaware corporation)",
+   "bio": "The platform behind Sniper's offering: same opt-out email, near-identical services copy, and Sniper's privacy policy was Refinition's verbatim. Texas assumed name filed June 4, 2021; California data broker registration #552962 (2022); marketing claims reach into most US adult mobile devices with multi-year location history. Confirmed the reseller relationship August 1, 2026, and says current operations no longer require data broker registration, a position noted as theirs. If the ministries ever order campaigns through Sniper, this is the company that would execute them, by its own description of its architecture.",
+   "docs": [
+    "careg"
+   ]
+  },
+  {
+   "name": "Katherine Reynolds",
+   "role": "Signer, TCG",
+   "bio": "Signs TCG's filings on the twin $1,545,000 monthly rate and the $9.89 million retroactive order. Identification and role within SKDK/TCG still being verified; listed here because her signature appears on the money.",
+   "docs": [
+    "tcg1",
+    "tcg3"
+   ]
+  },
+  {
+   "name": "Ryan Patrick Coyne",
+   "role": "CEO and owner, Olympic Media LLC dba Starboard",
+   "bio": "Sole owner of the ninth registered leg, per his own registration. Arlington, Virginia; born 1987; company formed through LegalZoom in January 2017. Contracted October 13, 2026 by LDRS Group LLC for a $500,000, 120-day persuasion pilot measured by polling and 'Cost-Per-Converted-Voice,' and swears he will personally handle audience construction, content distribution and measurement. Disclosed a $7,000 contribution to Bernie Moreno for Senate eleven days before signing; lawful with disclosure. Registered fifteen days after the contract. Comment request pending.",
+   "docs": [
+    "star1",
+    "star2",
+    "star3"
+   ],
+   "draft": true
+  },
+  {
+   "name": "Udi Mendelovits",
+   "role": "CFO, LDRS Group LLC (New York)",
+   "bio": "Signs the Starboard contract for LDRS Group LLC, One World Trade Center, as the party acting 'on behalf of the State of Israel.' The first named officer of the second pipe to surface in a US filing. The relationship between LDRS Group LLC of New York and L.D.R.S Group LTD of Tel Aviv, named on Davis Media's 2025 short form, is unexamined. Professional record only; no conduct asserted.",
+   "docs": [
+    "star2"
+   ],
+   "draft": true
+  }
+ ],
+ "updates": [
+  {
+   "date": "Nov 10, 2026",
+   "text": "Site overhauled: filings now sync daily from DOJ's FARA bulk data; a Filings database, per-registrant pages and a live Israel-registrant index were added. Dockets pulled: a ninth leg, Olympic Media LLC dba Starboard (#7788), registered October 28 under LDRS Group LLC 'on behalf of the State of Israel' for a $500,000 persuasion pilot. Clock Tower's October 30 supplemental: $25.5 million received April-September, $18.39 million disbursed, cumulative receipts $40.5 million; an October 5 order extends the $4.5 million monthly rate through December 2026. Piro added $440,000 in two orders. Show Faith received $977,658 more and filed an undoubled ledger. Bridges filed six months of nothing. Everything new is marked DRAFT until verified against the PDFs; comment requests for the new material have not yet been sent.",
+   "draft": true
+  },
+  {
+   "date": "Aug 7, 2026",
+   "text": "The original services agreement read in full: production quotas of 100 assets and 5,000 variants per month, monthly SEO via the MarketBrew AI platform, a matching-funds provision, and the deliverable quoted verbatim: deployment of websites and content to deliver GPT framing results on GPT conversations. The December exhibit read: the launch budget restructured to a $9 million pool with monthly influence and network maps added. Corporate identity resolved: a single-member Delaware LLC formed June 11, 2025, confirmed against the state registry. Detailed questions sent to Clock Tower X with a deadline of August 13. New article published: Before You Ask ChatGPT About Israel, in the Articles tab. Prior reporting credited throughout: Poulson, Responsible Statecraft, TIME, Axios."
+  },
+  {
+   "date": "Aug 6, 2026",
+   "text": "Major docket and corpus findings. The content mesh enumerated from Clock Tower's own filings: eleven confirmed properties (allyvia, cognitura, alliesforpeace, factsignal, TheTruthAboutIran, justorium, paxpoint, culturavia, innovascope, econora, compassionpulse) plus two candidates under verification; roughly 97% of the mesh's citations point at its own sibling sites, and 25 passages describe sister-site content as our analysis. The $31.5M order's ad campaign entered the record July 18: Strong Allies. Safer America., on Trump and Netanyahu imagery. Sampling across 179 content filings indicates five to seven thousand pages filed in nine months; June 2 batch filings carry internal content dates of April 30 and May 8 against a 48-hour filing statute, while July filings run same-day. Personnel: three new short-forms July 31 including the roster's first web developer; Alexander Miller's termination reported in one day on August 4, against the prior termination's eight-and-a-half-month lag. Sniper's August 4 comment deadline passed without response. New: a Beyond 545 tab documenting Israel's other registered influence campaigns, kept deliberately separate from the Project 545 count."
+  },
+  {
+   "date": "Aug 1, 2026",
+   "text": "Clock Tower X docket check: fourth exhibit formally papers the $31.5M April-October order under an agreement dated June 2 (April and May ran first); a July 14 amendment reports an October 2025 staff departure eight and a half months late; two new short-form registrants filed July 9; informational materials continue every two days, about 169 filings since October 2025. And a first: GeoDataScience (dba Refinition), the platform behind Sniper's site, responded on the record, confirming the reseller arrangement and stating it was unaware of the FARA registration until our inquiry. Supplemental link swapped to the official DOJ copy. Articles tab added, collecting the full Feral America series. Full write-up at feralamerica.substack.com."
+  },
+  {
+   "date": "Jul 30, 2026",
+   "text": "Expanded comment requests sent to Sniper Advertising Services and to the platform vendor whose legal language appears on its site; response deadlines August 4, 2026. Full archives of both companies' websites captured via the Wayback Machine. Sniper's Wyoming registered-agent chain documented, with the 2011 NPR reporting on Wyoming Corporate Services added to the document library."
+  },
+  {
+   "date": "Jul 28, 2026",
+   "text": "All outstanding comment windows closed without response, including Clock Tower X (July 22) and the DOJ FARA Unit (July 24, covering both the questions and the document request for the broken supplemental link). Contact address live: <a href='mailto:localtip@proton.me'>localtip@proton.me</a>. Late responses will be added in full and logged here."
+  },
+  {
+   "date": "Jul 18, 2026",
+   "text": "Leg eight added: Sniper Advertising Services (#7745), direct-to-ministries location-capture advertising; Wyoming registry chain documented; comment requested."
+  },
+  {
+   "date": "Jul 17, 2026",
+   "text": "Clock Tower supplemental analyzed (via DCNF mirror; DOJ link broken): $15M receipts, Havas loan, personal loan repayment, the Israel-erasure statements, the Carlson/Owens/Kent content ledger, the disclosed congressional contribution."
+  },
+  {
+   "date": "Jul 16-17, 2026",
+   "text": "Show Faith doubled ledger verified computationally: 742 lines, zero non-duplicates, actual spending exactly $1,666,595.93. Referral transmitted to congressional oversight staff. No response from Show Faith by stated deadline."
+  },
+  {
+   "date": "Jul 15, 2026",
+   "text": "Legs five through seven documented: Piro, Genesis 21, TCG/SKDK (the true origin, Feb 18, 2025); the Havas both-sides finding; Getz identified as the throughline; twin-rate finding."
+  },
+  {
+   "date": "Jul 14, 2026",
+   "text": "Bridges and Davis Media dockets pulled: the twelve-week gap, the $700K hole, the no-role claim, the second pipe."
+  }
+ ],
+ "beyond": [
+  {
+   "fara": "7518",
+   "n": "GlobalPoint International, for Stark Aerospace / IAI",
+   "role": "The defense track",
+   "text": "A Virginia firm registered to build the relationship of Israel Aerospace Industries, via its Mississippi subsidiary Stark Aerospace, with \"the Trump-Vance Administration, Congress and across the US government,\" at $45,000 a month plus a $100,000 expense pool, with a named-agency target list including the Missile Defense Agency and a provision for op-eds under \"influential third-party voices.\" The filing's appendix describes IAI as a state owned enterprise of the Government of Israel. Responded on the record August 5, 2026: confirms the engagement, frames its registration as elected \"out of an abundance of caution,\" and declines per firm policy to discuss specifics. New Stark exhibit filed September 18, 2026 (draft: not yet read)."
+  },
+  {
+   "fara": "7107",
+   "n": "PLUS Communications, for the Ministry of Finance",
+   "role": "The credit desk",
+   "text": "Published rates and political activity marked yes; investor-relations work around Israel's debt offerings. The audience is bond markets: the campaign to keep the borrowing cheap. Comment deadline August 7, 2026 passed; silence documented."
+  },
+  {
+   "fara": "7394",
+   "n": "Weber Shandwick (IPG DXTRA), for the Ministry of Finance",
+   "role": "The credit desk, part two",
+   "text": "An Interpublic Group agency handling investor relations around Israel's debt offerings, rates sealed, political activity marked no, with an accompanying media buy. The same senior deputy accountant general appears across both Finance files. New supplemental filed September 29, 2026 (draft: not yet read)."
+  },
+  {
+   "fara": "6170",
+   "n": "Mercury Public Affairs, for the Misgav Institute",
+   "role": "The $5,000 blueprint (terminated 7/24/26)",
+   "text": "A one-month, $5,000 engagement, signed for Mercury by former US Senator David Vitter: distribute a report co-authored by Gilad Erdan, Israel's former Ambassador to the UN, arguing for American disengagement from the United Nations, to the foreign-policy committees, both Appropriations subcommittees, the NSC, State, OMB, and the US Mission to the UN, followed by a three-day Washington fly-in in late July 2026. The filing swears Misgav is an independent think tank. The Misgav principal was terminated July 24, 2026 per DOJ's principal list."
+  },
+  {
+   "fara": "7768",
+   "n": "Pearson Unlimited, LLC, for Xtend Reality, Inc.",
+   "role": "The influencer file (private principal)",
+   "text": "Coreco 'CJ' Pearson's company registered September 10, 2026 for Xtend Reality, Inc., an Israeli private company, not a government organ. Listed here because DOJ tags the principal's country as Israel; kept out of the Project 545 count. Reported separately in the Feral America video series.",
+   "draft": true
+  },
+  {
+   "fara": "7597",
+   "n": "K&L Gates, for Alexander Morgulchik",
+   "role": "Private individual",
+   "text": "A law firm registration for an Israeli individual, principal added February 23, 2026. Logged for completeness; outside the opinion campaign.",
+   "draft": true
+  },
+  {
+   "fara": "7639",
+   "n": "Jonathan Charles Goldstein, for M.N. Target Consultants",
+   "role": "Private principal",
+   "text": "Individual registrant, principal added September 2, 2025, one informational-material filing. Unexamined.",
+   "draft": true
+  }
+ ],
+ "articles": [
+  {
+   "t": "Project 545: How Trump's Campaign Manager Ended Up Working for Israel",
+   "role": "The series opener",
+   "p": "The map of the campaign: a 545 million shekel budget, eight registered foreign agents, five money routes, and the documents that connect them. Start here.",
+   "url": "https://feralamerica.substack.com/p/project-545-how-trump-campaign-manager"
+  },
+  {
+   "t": "\"We Help Determine Who Prevails\"",
+   "role": "Clock Tower X and Brad Parscale",
+   "p": "The biggest leg: $15 million received, a $31.5 million order ending the month before the midterms, the registration that erased Israel \"in error,\" and a content ledger aimed at American commentators.",
+   "url": "https://feralamerica.substack.com/p/we-help-determine-who-prevails-israel"
+  },
+  {
+   "t": "Israel's US Church Influence Campaign",
+   "role": "Show Faith by Works",
+   "p": "The geofencing contract aimed at American churches, and the sworn expense ledger that lists every transaction exactly twice, doubling a $1.67 million campaign into a $3.33 million one under oath.",
+   "url": "https://feralamerica.substack.com/p/israels-us-church-influence-campaign"
+  },
+  {
+   "t": "The Other Pipelines: What Else Israel Buys in America",
+   "role": "Beyond Project 545",
+   "p": "The defense track, the credit desk, and the watchtower that catches nothing: three more channels from one evening in the database, deliberately fenced from the Project 545 count.",
+   "url": "https://feralamerica.substack.com/p/the-other-pipelines-what-else-israel"
+  },
+  {
+   "t": "\"Entirely Unaware\": Data Firm Behind Israel's Newest Foreign Agent Says It Didn't Know",
+   "role": "The Refinition chase",
+   "p": "An empty search box, a trademark serial, an assumed-name certificate, and the first on-the-record company response of the entire investigation.",
+   "url": "https://feralamerica.substack.com/p/entirely-unaware-data-firm-behind"
+  },
+  {
+   "t": "Before You Ask ChatGPT About Israel",
+   "role": "The machine audience",
+   "p": "Eleven fake research institutes, a 97 percent self-citation rate, production quotas in the contract, and the deliverable in Clock Tower's own filing: GPT framing results on GPT conversations. The flagship investigation of the content network.",
+   "url": "https://feralamerica.substack.com/p/before-you-ask-chatgpt-about-israel"
+  }
+ ]
+}

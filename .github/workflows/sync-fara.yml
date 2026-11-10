@@ -1,0 +1,48 @@
+# Daily FARA sync: pulls DOJ bulk data, rebuilds data/fara/israel.json,
+# commits it if anything changed, then kicks the Pages deploy.
+name: Sync FARA data
+
+on:
+  schedule:
+    - cron: "17 11 * * *"   # 11:17 UTC daily (DOJ posts overnight US time)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: "fara-sync"
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pull DOJ bulk data and rebuild israel.json
+        run: python3 scripts/sync_fara.py
+      - name: Commit if changed
+        id: commit
+        run: |
+          git config user.name "project545-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet -- data/fara/israel.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No change in FARA data."
+          else
+            git add data/fara/israel.json
+            git commit -m "data: FARA sync $(date -u +%Y-%m-%d)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows, so start
+      # the Pages deploy explicitly (workflow_dispatch is allowed).
+      - name: Deploy to Pages
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run static.yml --ref main
