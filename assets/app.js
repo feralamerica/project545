@@ -33,7 +33,7 @@ Promise.all([
   if (F) F.registrants.forEach(r => REG[r.reg] = r);
   renderHeader(); renderDashboard(); renderFilingsSetup(); renderRegistrants();
   renderNetwork(); renderTimeline('all',''); renderMoney(); renderCast(); renderDocs('');
-  renderUpdates(); renderArticles(); renderBeyond();
+  renderUpdates(); renderArticles(); renderBeyond(); renderCtxNet();
   $('#asof').textContent = C.asof;
   $('#asof2').textContent = F ? fmtD(F.synced_at.slice(0,10)) : 'unavailable';
   route();
@@ -311,6 +311,31 @@ function renderBeyond(){
   $('#beyondbox').innerHTML = (C.beyond||[]).map(b => { const r = REG[b.fara]; return `<div class="pcard"><h3><a href="#registrant=${b.fara}">${esc(b.n)}</a></h3><span class="role">${esc(b.role)}, FARA #${b.fara}</span>${draft(b)}<p>${esc(b.text)}</p>${r ? `<p class="note" style="margin:4px 0 0">Docket: ${r.docs.length} Israel-tagged or registrant-level filings · latest ${esc(fmtD(r.latest_doc))} · <a href="#registrant=${b.fara}">registrant page</a></p>` : ''}</div>`; }).join('');
 }
 
+
+/* ---------- Clock Tower X content network ---------- */
+function renderCtxNet(){
+  const N = C.ctx_network, box = $('#ctxbox'); if (!N) return; box.classList.remove('loading');
+  const T = N.totals, sum = k => N[k].reduce((a,x)=>a+(x.reported||0),0);
+  const pct = (a,b) => b ? Math.round(100*a/b)+'%' : '';
+  box.innerHTML = `<h2>Clock Tower X: The Content Network ${draft(N)}</h2>
+  <p class="lede">Clock Tower X LLC (FARA #<a href="#registrant=7649">7649</a>) runs nine branded websites, places pieces in outside outlets and posts on five main social platforms, all filed as informational materials “on behalf of” HAVAS Media Network under the label “Combat Anti-Semitism.” Below, each site with the item count the company itself reports, and what the filed copies show.</p>
+  <div class="stats"><div class="stat"><b>${T.all.toLocaleString()}</b><span>items reported Apr-Sep 2026</span></div><div class="stat"><b>${T.websites}</b><span>website items</span></div><div class="stat"><b>${T.outlets}</b><span>third-party outlet pieces</span></div><div class="stat"><b>${T.social}</b><span>social posts</span></div><div class="stat"><b>${T.filed_ginsberg}/${T.filed_distinct}</b><span>filed articles under Ginsberg (${pct(T.filed_ginsberg,T.filed_distinct)})</span></div></div>
+  <h3>The nine sites</h3>
+  <div class="twrap"><table><thead><tr><th>Site</th><th>Domain (as filed)</th><th>Reported items</th><th>Distinct pages in filings</th><th>Ginsberg</th><th>First filed</th><th>What it publishes</th></tr></thead><tbody>
+  ${N.sites.map(s=>`<tr><td><b>${esc(s.n)}</b></td><td>${esc(s.domain)}</td><td>${s.reported}</td><td>${s.filed}</td><td>${s.ginsberg}</td><td>${esc(s.first)}</td><td>${esc(s.theme)}</td></tr>`).join('')}
+  <tr><td><b>Total</b></td><td></td><td><b>${sum('sites')}</b></td><td><b>${N.sites.reduce((a,x)=>a+x.filed,0)}</b></td><td><b>${N.sites.reduce((a,x)=>a+x.ginsberg,0)}</b></td><td></td><td></td></tr></tbody></table></div>
+  <h3>Third-party outlets</h3>
+  <div class="twrap"><table><thead><tr><th>Outlet</th><th>Reported items</th><th>Distinct pieces in filings</th><th>Ginsberg</th></tr></thead><tbody>
+  ${N.outlets.map(o=>`<tr><td>${esc(o.n)}</td><td>${o.reported}</td><td>${o.filed??''}</td><td>${o.ginsberg??''}</td></tr>`).join('')}</tbody></table></div>
+  <h3>Social posts by platform</h3>
+  <div class="twrap"><table><thead><tr><th>Platform</th><th>Reported posts</th></tr></thead><tbody>${N.social.map(o=>`<tr><td>${esc(o.n)}</td><td>${o.reported}</td></tr>`).join('')}</tbody></table></div>
+  <p class="note">The nine sites sum to ${sum('sites')}; the 630 website total also includes one unclassified TikTok link.</p>
+  <p class="note">Account names are cut off in the filing, so social posts cannot be split by account.</p>
+  <h3>Mark Ginsberg</h3><p>${esc(N.ginsberg)}</p>
+  <h3>The “peace” brands and Sparkfire</h3><p>${esc(N.brands)}</p>
+  <div class="alert"><b>Read this first:</b> ${esc(N.note)}</div>`;
+}
+
 /* ---------- global search ---------- */
 function globalSearch(q){
   q = q.trim().toLowerCase();
@@ -340,7 +365,7 @@ function route(){
   const h = location.hash.replace('#','') || 'dashboard';
   const [tab, sel] = h.split('=');
   if (tab === 'registrant') { showTab('registrants'); renderRegistrants(sel); return; }
-  const known = ['dashboard','filings','registrants','network','timeline','money','cast','docs','updates','articles','beyond','method'];
+  const known = ['dashboard','filings','registrants','network','ctxnet','timeline','money','cast','docs','updates','articles','beyond','method'];
   // legacy hashes from the August site
   const legacy = {regs:'registrants'};
   const t = known.includes(tab) ? tab : (legacy[tab] || 'dashboard');

@@ -384,7 +384,11 @@
     "NEW 10/30/26: $25.5M received Apr-Sep 2026; cumulative $40.5M. $18.39M disbursed; Sparkfire ~$11.4M*, Portman Road ~$4.3M*, Cavalier 'Iowa Mailers' $907,687 (draft)",
     "NEW 10/5/26: order extended through Nov and Dec 2026 at $4.5M/month; campaign now runs past the midterms (draft)",
     "NEW: $5,000 contribution by Michael Shields to Friends of Jimmy Patronis disclosed; First Church of the Bible $25,000 'Event, Charitable' (draft)",
-    "Asterisked recipients in the ledger: Campaign Nucleus LLC, CloudLogics LLC (asterisk unexplained in filing; verify) (draft)"
+    "Asterisked recipients in the ledger: Campaign Nucleus LLC, CloudLogics LLC (asterisk unexplained in filing; verify) (draft)",
+    "NEW 11/20/26: Order terms read from the 6/7/26 Exhibit AB: Havas order dated 2/6/26, “Digital Advertising” $4.5M a month Apr-Oct 2026 ($31.5M); 9/24/26 order adds Nov-Dec ($9M). With the $9M launch pool the instruments sum to $49.5M; reconcile with the “$40.5M ordered” figure above (draft)",
+    "NEW 11/20/26: Content network mapped: nine Clock Tower X-run sites plus third-party placements; 1,431 items reported for Apr-Sep 2026 (630 website, 21 outlet, 780 social). See the Network tab (draft)",
+    "NEW 11/20/26: Mark Ginsberg bylines first appear Sep 2026; about 42 of 461 distinct filed articles carry his name or bio (machine-read; draft)",
+    "NEW 11/20/26: Social posts labeled “Engagement Question (Sparkfire)” appear in published-socials reports from Sep 4, 2026 (draft)"
    ],
    "docs": [
     "ctx1",
@@ -1370,9 +1374,34 @@
     "star2"
    ],
    "draft": true
+  },
+  {
+   "name": "Mark Ginsberg",
+   "role": "Subcontractor (Havas-linked), start date 02/01/2026",
+   "bio": "Listed in the May 18, 2026 supplemental as a subcontractor with details on file with DOJ. His name appears as article byline or author bio on about 42 of 461 distinct filed articles, all from September 2026 onward, concentrated on Justorium and Times of Israel Blogs. No filing itemizes his pay.",
+   "docs": [
+    "ctx4",
+    "ctxsupp2"
+   ],
+   "draft": true
+  },
+  {
+   "name": "Sparkfire Technologies",
+   "role": "Largest disclosed recipient: “Direct Engagement”",
+   "bio": "AI texting and engagement-software vendor. Clock Tower X reports $6.5M to Sparkfire for Nov 2025 - Mar 2026 (17 payments) and further payments in Apr-Sep 2026. Its site names Jeremy Haile (CEO) and Tree McGlown (president) as co-founders (company-side claim). Not itself FARA-registered; known through Clock Tower X's disclosures. Reporting by The Intercept and Responsible Statecraft describes texts sent under “peace” brands.",
+   "docs": [
+    "ctx4",
+    "ctxsupp2"
+   ],
+   "draft": true
   }
  ],
  "updates": [
+  {
+   "date": "Nov 20, 2026",
+   "draft": true,
+   "text": "Clock Tower X content network added (new Network tab): every site laid out with the item count Clock Tower X reports for it, the distinct pages found in 268 informational-materials PDFs, and Mark Ginsberg's byline counts. Order terms re-read from the 6/7/26 Exhibit AB ($4.5M a month, Apr-Dec 2026). Sparkfire profile added. All new figures are machine-read and marked DRAFT."
+  },
   {
    "date": "Nov 10, 2026",
    "text": "Site overhauled: filings now sync daily from DOJ's FARA bulk data; a Filings database, per-registrant pages and a live Israel-registrant index were added. Dockets pulled: a ninth leg, Olympic Media LLC dba Starboard (#7788), registered October 28 under LDRS Group LLC 'on behalf of the State of Israel' for a $500,000 persuasion pilot. Clock Tower's October 30 supplemental: $25.5 million received April-September, $18.39 million disbursed, cumulative receipts $40.5 million; an October 5 order extends the $4.5 million monthly rate through December 2026. Piro added $440,000 in two orders. Show Faith received $977,658 more and filed an undoubled ledger. Bridges filed six months of nothing. Everything new is marked DRAFT until verified against the PDFs; comment requests for the new material have not yet been sent.",
@@ -1503,5 +1532,173 @@
    "p": "Eleven fake research institutes, a 97 percent self-citation rate, production quotas in the contract, and the deliverable in Clock Tower's own filing: GPT framing results on GPT conversations. The flagship investigation of the content network.",
    "url": "https://feralamerica.substack.com/p/before-you-ask-chatgpt-about-israel"
   }
- ]
+ ],
+ "ctx_network": {
+  "asof": "Nov 20, 2026",
+  "draft": true,
+  "note": "“Reported items” are the entries Clock Tower X itself listed in Item 12 of its Oct 30, 2026 supplemental (period Apr 6 – Sep 30, 2026), read by OCR from a scanned PDF (about ±2%). Website items include landing, About and category pages as well as articles; the filing does not separate them. “Filed pages” are distinct page or article titles found in the informational-materials filings from Oct 2025 to Nov 2026 (268 PDFs machine-read, duplicates merged by title; roughly one byline in nine missed in validation). Ginsberg = byline or author bio naming Mark Ginsberg. All figures are DRAFT pointers to the documents, not findings.",
+  "sites": [
+   {
+    "n": "FactSignal",
+    "domain": "factsignal.o… (truncated in filing)",
+    "theme": "Gaza casualty, famine and Hamas claims; labeled “Friends for Peace” in its navigation",
+    "reported": 192,
+    "filed": 68,
+    "ginsberg": 7,
+    "first": "Dec 2025"
+   },
+   {
+    "n": "Allyvia",
+    "domain": "allyvia.org",
+    "theme": "US-Israel alliance, security and prosperity; Hamas, ceasefire and UNRWA pieces; also a Salem “Partners in Peace” digital master in its first filing",
+    "reported": 107,
+    "filed": 90,
+    "ginsberg": 5,
+    "first": "Oct 2025"
+   },
+   {
+    "n": "PaxPoint",
+    "domain": "paxpoint.org",
+    "theme": "Peace accords history (Abraham, Camp David), Israel-Morocco, civilian protection and aid",
+    "reported": 90,
+    "filed": 77,
+    "ginsberg": 2,
+    "first": "Nov 2025"
+   },
+   {
+    "n": "Cognitura",
+    "domain": "cognitura.or… (truncated)",
+    "theme": "Counter-radicalization, terror networks, Iran missile program, antisemitism analysis",
+    "reported": 82,
+    "filed": 54,
+    "ginsberg": 1,
+    "first": "Dec 2025"
+   },
+   {
+    "n": "Justorium",
+    "domain": "justorium.org",
+    "theme": "International law, genocide-claim rebuttals, Judea and Samaria, Jewish refugees from Arab countries",
+    "reported": 65,
+    "filed": 37,
+    "ginsberg": 13,
+    "first": "Nov 2025"
+   },
+   {
+    "n": "Culturavia",
+    "domain": "culturavia.o… (truncated)",
+    "theme": "Cultural diplomacy, academic exchange, ancient Jewish history and archaeology",
+    "reported": 40,
+    "filed": 33,
+    "ginsberg": 4,
+    "first": "Nov 2025"
+   },
+   {
+    "n": "Innovascope",
+    "domain": "innovascope.org",
+    "theme": "Israeli innovation in US industry, security, space and medicine",
+    "reported": 21,
+    "filed": 23,
+    "ginsberg": 4,
+    "first": "Jan 2026"
+   },
+   {
+    "n": "Compassion Pulse",
+    "domain": "compassionpulse.org",
+    "theme": "Aid convoys, civilian protection, cross-border relief",
+    "reported": 20,
+    "filed": 32,
+    "ginsberg": 0,
+    "first": "Dec 2025"
+   },
+   {
+    "n": "Econora",
+    "domain": "econora.org",
+    "theme": "US-Israel trade, defense economics, agriculture and water technology; hosts SMS opt-in terms (filed Jan 2, 2026)",
+    "reported": 12,
+    "filed": 24,
+    "ginsberg": 1,
+    "first": "Jan 2026"
+   }
+  ],
+  "outlets": [
+   {
+    "n": "Times of Israel Blogs",
+    "reported": 11,
+    "filed": 6,
+    "ginsberg": 5
+   },
+   {
+    "n": "WGI.world",
+    "reported": 2
+   },
+   {
+    "n": "Boulder Jewish News",
+    "reported": 2
+   },
+   {
+    "n": "Breaking Defense",
+    "reported": 1
+   },
+   {
+    "n": "eJewishPhilanthropy",
+    "reported": 1
+   },
+   {
+    "n": "Jerusalem Post",
+    "reported": 1
+   },
+   {
+    "n": "Aish",
+    "reported": 1
+   },
+   {
+    "n": "Other Jewish news",
+    "reported": 1
+   },
+   {
+    "n": "nikk.agency",
+    "reported": 1
+   }
+  ],
+  "social": [
+   {
+    "n": "Facebook",
+    "reported": 267
+   },
+   {
+    "n": "TikTok",
+    "reported": 243
+   },
+   {
+    "n": "Instagram",
+    "reported": 158
+   },
+   {
+    "n": "YouTube",
+    "reported": 63
+   },
+   {
+    "n": "X",
+    "reported": 32
+   },
+   {
+    "n": "LinkedIn",
+    "reported": 1
+   },
+   {
+    "n": "Unclassified",
+    "reported": 16
+   }
+  ],
+  "totals": {
+   "websites": 630,
+   "outlets": 21,
+   "social": 780,
+   "all": 1431,
+   "filed_distinct": 461,
+   "filed_ginsberg": 42
+  },
+  "ginsberg": "Mark Ginsberg is listed as a Havas-linked subcontractor starting 02/01/2026 (May 18 supplemental). In the filed copies his name appears on no articles before September 2026: 6 of 19 new articles in Sep, 23 of 56 in Oct, 13 of 31 in Nov. No filing itemizes his pay.",
+  "brands": "Allies for Peace (site, YouTube, Rumble) first appears in the Oct 27, 2025 filing; “Friends for Peace” is the FactSignal navigation label; Sparkfire-labeled “Engagement Question” social posts appear Sep 4 – Oct 4, 2026."
+ }
 }
