@@ -1,5 +1,5 @@
 {
- "asof": "November 10, 2026",
+ "asof": "November 20, 2026",
  "docs": [
   {
    "id": "tcg1",
@@ -244,7 +244,7 @@
    "id": "ctxnovdec",
    "label": "Clock Tower X, Exhibit A/B: work order extending the $4.5M/month rate through December 2026 (agreement 9/24/26, filed 10/5/26)",
    "url": "https://efile.fara.gov/docs/7649-Exhibit-AB-20261005-1.pdf",
-   "note": "Havas Media Germany order dated 24/09/2026: Digital Advertising 01.11-30.11.26, $4,500,000.00; 01.12-31.12.26, $4,500,000.00. Nine million more, carrying the campaign past the November 3 midterms. Cumulative orders on the docket: $6M, $9M pool, $31.5M, now $40.5M. Havas's footer: it acts 'solely in the capacity of a booking agent' and 'is not responsible for the content of the campaigns.'",
+   "note": "Havas Media Germany order dated 24/09/2026: Digital Advertising 01.11-30.11.26, $4,500,000.00; 01.12-31.12.26, $4,500,000.00. Nine million more, carrying the campaign past the November 3 midterms. Ad orders on the docket now run $31.5M (Apr-Oct) plus $9M (Nov-Dec) = $40.5M, on top of the $9M launch pool from the December 2025 amendment ($49.5M of instruments in all). Havas's footer: it acts 'solely in the capacity of a booking agent' and 'is not responsible for the content of the campaigns.'",
    "tags": "clock tower november december extension 9 million 40.5 booking agent",
    "draft": true
   },
@@ -373,7 +373,7 @@
    "fara": "7649",
    "who": "Brad Parscale (Trump 2016 digital director, 2020 campaign manager; Salem Media CSO)",
    "route": "Havas Frankfurt",
-   "money": "$40.5M ordered through Dec 2026; $40.5M received through 9/30/26",
+   "money": "$49.5M ordered ($9M launch pool + $40.5M of $4.5M/month ad orders, Apr-Dec 2026); $40.5M received through 9/30/26",
    "facts": [
     "Homepage: 'We help determine who prevails. Elections. Narratives. Markets.'",
     "10/20/25: State of Israel registration 'was in error'; principal becomes HAVAS Media Network (flag)",
@@ -385,7 +385,7 @@
     "NEW 10/5/26: order extended through Nov and Dec 2026 at $4.5M/month; campaign now runs past the midterms (draft)",
     "NEW: $5,000 contribution by Michael Shields to Friends of Jimmy Patronis disclosed; First Church of the Bible $25,000 'Event, Charitable' (draft)",
     "Asterisked recipients in the ledger: Campaign Nucleus LLC, CloudLogics LLC (asterisk unexplained in filing; verify) (draft)",
-    "NEW 11/20/26: Order terms read from the 6/7/26 Exhibit AB: Havas order dated 2/6/26, “Digital Advertising” $4.5M a month Apr-Oct 2026 ($31.5M); 9/24/26 order adds Nov-Dec ($9M). With the $9M launch pool the instruments sum to $49.5M; reconcile with the “$40.5M ordered” figure above (draft)",
+    "NEW 11/20/26: Order terms read from the 6/7/26 Exhibit AB: Havas order dated 2/6/26, “Digital Advertising” $4.5M a month Apr-Oct 2026 ($31.5M); 9/24/26 order adds Nov-Dec ($9M). The $40.5M of ad orders (nine months at $4.5M) sits on top of the $9M launch pool from the Dec 2025 amendment, so instruments total $49.5M; $40.5M has been received through 9/30/26 (draft)",
     "NEW 11/20/26: Content network mapped: nine Clock Tower X-run sites plus third-party placements; 1,431 items reported for Apr-Sep 2026 (630 website, 21 outlet, 780 social). See the Network tab (draft)",
     "NEW 11/20/26: Mark Ginsberg bylines first appear Sep 2026; about 42 of 461 distinct filed articles carry his name or bio (machine-read; draft)",
     "NEW 11/20/26: Social posts labeled “Engagement Question (Sparkfire)” appear in published-socials reports from Sep 4, 2026 (draft)"
@@ -1000,7 +1000,7 @@
    "date": "Sep 24 2026",
    "cat": "money",
    "title": "Clock Tower's order is extended past the election",
-   "detail": "Havas Germany orders November and December 2026 digital advertising at $4.5 million each. Cumulative orders: $40.5 million. Filed October 5.",
+   "detail": "Havas Germany orders November and December 2026 digital advertising at $4.5 million each. The $4.5 million monthly ad orders now total $40.5 million (April-December), on top of the $9 million launch pool: $49.5 million of instruments. Filed October 5.",
    "docs": [
     "ctxnovdec",
     "ctxam3"
@@ -1097,6 +1097,14 @@
    "amount": "$40,500,000.00",
    "basis": "sworn order",
    "doc": "ctxnovdec",
+   "draft": true
+  },
+  {
+   "registrant": "Clock Tower X (7649)",
+   "instrument": "Launch pool, Dec 2025 amendment ($6M lump sum + $3M digital advertising)",
+   "amount": "$9,000,000.00",
+   "basis": "sworn order",
+   "doc": "ctxdec",
    "draft": true
   },
   {
