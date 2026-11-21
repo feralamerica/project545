@@ -33,7 +33,7 @@ Promise.all([
   if (F) F.registrants.forEach(r => REG[r.reg] = r);
   renderHeader(); renderDashboard(); renderFilingsSetup(); renderRegistrants();
   renderNetwork(); renderTimeline('all',''); renderMoney(); renderCast(); renderDocs('');
-  renderUpdates(); renderArticles(); renderBeyond(); renderCtxNet();
+  renderUpdates(); renderArticles(); renderBeyond(); renderCtxNet(); renderShock(); renderPayouts();
   $('#asof').textContent = C.asof;
   $('#asof2').textContent = F ? fmtD(F.synced_at.slice(0,10)) : 'unavailable';
   route();
@@ -81,8 +81,10 @@ function renderDashboard(){
   const lead = Object.entries(byReg).sort((a,b) => b[1]-a[1]);
   const newest = F.registrants.filter(r => r.israel_active).sort((a,b) => (b.registered||'').localeCompare(a.registered||'')).slice(0,6);
   box.innerHTML = `
-  <h2>Dashboard</h2>
-  <p class="lede">What the record says today. The left column is DOJ's docket as of the last sync; the right column is the curated money and the newest registrants. Everything links to its filing.</p>
+  <div class="sechead"><h3>Start anywhere</h3></div>
+  <div class="paths">${paths()}</div>
+  <div class="sechead"><h3>What DOJ has on file today</h3></div>
+  <p class="lede">The left column is DOJ's docket as of the last sync; the right column is the curated money and the newest registrants. Everything links to its filing.</p>
   <div class="grid2">
     <div>
       <div class="panel"><h3>Recent filings (45 days, excluding informational materials) <a class="more" href="#filings=recent">full database →</a></h3>
@@ -262,7 +264,7 @@ function routeBadge(route){
 window.flowGo = (kind, id) => { location.hash = '#network=' + kind + '-' + id; };
 
 /* ---------- timeline ---------- */
-const tlColors = {money:'#5aa2f7', reg:'#4ade80', flag:'#f0564a', press:'#f0a24a'};
+const tlColors = {money:'#6f9bea', reg:'#c6cedd', flag:'#e4141b', press:'#f0a24a'};
 function renderTimeline(filter, q){
   const box = $('#tlbox'); let html = ''; let open = false;
   C.timeline.forEach(ev => {
@@ -291,6 +293,108 @@ function renderMoney(){
   rows += `<tr class="total"><td>Sworn receipts (money actually reported received)</td><td></td><td class="amt">${fmtMoney(received)}</td><td colspan="2">sum of receipt rows, excluding cumulative restatements</td></tr>`;
   $('#moneyT').innerHTML = rows;
 }
+
+
+/* ---------- hero shock numbers, start-here paths ---------- */
+const fmtM = n => '$' + (n/1e6).toFixed(1) + 'M';
+function renderShock(){
+  const P = C.payouts, N = C.ctx_network; if (!P || !N) return;
+  const sp = P.recipients.find(r => r.name.startsWith('Sparkfire'));
+  const share = Math.round(sp.total / P.read_total * 100);
+  const unitem = P.received - P.filed_total;
+  const tiles = [
+    {href:'#registrant=7649', n:'$4.5', suf:'M', l:'A month', d:"Israel's advertising order to one firm, Clock Tower X, April to December 2026. Sworn work orders.", draft:true, to:4.5, dec:1, pre:'$', sf:'M'},
+    {href:'#payouts', n:share, suf:'%', l:'To one company', d:`Sparkfire Technologies took ${fmtM(sp.total)} of the ${fmtM(P.read_total)} itemized as paid out in 12 months. Every payment is labeled "Direct Engagement."`, draft:true, to:share, dec:0, pre:'', sf:'%', hot:true},
+    {href:'#ctxnet', n:N.totals.live_g, suf:'', l:'Posts, one name', d:`Of ${N.totals.live.toLocaleString()} live posts on nine Clock Tower X sites, ${N.totals.live_g.toLocaleString()} name the same author. About ${(N.totals.ginsberg_words/1e6).toFixed(2)} million words.`, to:N.totals.live_g, dec:0, pre:'', sf:'', small:' of '+N.totals.live.toLocaleString()},
+    {href:'#payouts', n:(unitem/1e6).toFixed(2), l:'Not itemized', d:`${fmtM(P.received)} reported received, ${fmtM(P.filed_total)} itemized as paid out. By my calculation the filings do not say where the difference sits.`, draft:true, to:unitem/1e6, dec:2, pre:'$', sf:'M'},
+  ];
+  $('#shock').innerHTML = `<div class="shock">${tiles.map(t => `<a class="sk${t.hot?' hot':''}" href="${t.href}">${t.draft?'<span class="badge b-amber">Draft</span>':''}<div class="n"><span class="cu" data-to="${t.to}" data-dec="${t.dec}" data-pre="${t.pre}" data-sf="${t.sf}">${t.pre}${Number(t.to).toFixed(t.dec)}${t.sf}</span>${t.small?`<small>${t.small}</small>`:''}</div><div class="l">${esc(t.l)}</div><div class="d">${esc(t.d)}</div></a>`).join('')}</div>
+  <div class="shocknote">Sources: FARA #7649 supplemental statements and Exhibit A/Bs; live site scan, Nov 2026. DRAFT = read from post-August 2026 filings, pending hand verification.</div>
+  <div class="ctas"><a class="btn btn-red" href="#payouts">Follow the money</a><a class="btn btn-ghost" href="#network">Trace the pipeline</a><a class="btn btn-ghost" href="#ctxnet">Open the CTX network</a></div>`;
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  document.querySelectorAll('.cu').forEach(el => {
+    const to = +el.dataset.to, dec = +el.dataset.dec, pre = el.dataset.pre, sf = el.dataset.sf; const t0 = performance.now(), dur = 1400;
+    const tick = t => { const k = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-k,3); el.textContent = pre + (to*e).toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, dec ? '$&' : ',') + sf; if (k<1) requestAnimationFrame(tick); else el.textContent = pre + (dec ? to.toFixed(dec) : Math.round(to).toLocaleString('en-US')) + sf; };
+    requestAnimationFrame(tick);
+  });
+}
+function paths(){
+  const nDocs = F ? F.stats.documents.toLocaleString() : 'Thousands of';
+  const P = C.payouts;
+  const items = [
+    ['#payouts','Follow the money','The Payouts', P ? `Who got the ${fmtM(P.filed_total)} Clock Tower X paid out, and when.` : 'Who got paid, and when.'],
+    ['#network','Map the routes','The Pipeline', 'Nine registered legs, three ways the money travels.'],
+    ['#ctxnet','Read the output','CTX Network', 'Nine sites, 1,431 reported items, one dominant byline.'],
+    ['#cast','Meet them','The Cast', 'The people and firms the filings put on the record.'],
+    ['#timeline','Replay it','The Timeline', 'From the 545 million shekel budget to this week.'],
+    ['#filings','Check my work',`${nDocs} Filings`, 'Every document DOJ holds on Israel registrants, searchable and linked.'],
+  ];
+  return items.map(([h,k,t,d]) => `<a class="path" href="${h}"><div class="k">${esc(k)}</div><h3>${esc(t)}</h3><p>${esc(d)}</p><span class="go">Open →</span></a>`).join('');
+}
+
+/* ---------- payouts ---------- */
+let PAYSEL = '';
+function renderPayouts(){
+  const P = C.payouts, box = $('#paybox'); if (!P) return; box.classList.remove('loading');
+  const max = P.recipients[0].total;
+  const cls = n => n.startsWith('Sparkfire') ? 'sp' : n.startsWith('Portman') ? 'pm' : '';
+  const sp = P.recipients.find(r => r.name.startsWith('Sparkfire'));
+  const spRows = P.ledger.filter(l => l[1].startsWith('Sparkfire'));
+  const big = spRows.reduce((a,b) => b[3] > a[3] ? b : a);
+  const mmax = Math.max(...P.months.map(m => m.sparkfire + m.portman + m.other));
+  const mon = m => { const [y,mm] = m.split('-'); return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+mm-1] + (mm === '01' || m === P.months[0].m ? " '" + y.slice(2) : ''); };
+  const p1 = P.recipients.reduce((s,r) => s + r.p1, 0), p2 = P.recipients.reduce((s,r) => s + r.p2, 0);
+  const rate1 = p1/6, rate2 = p2/6, unitem = P.received - P.filed_total;
+  const three = P.recipients.find(r => r.name.startsWith('Three Tech')), cloud = P.recipients.find(r => r.name.startsWith('CloudLogics'));
+  box.innerHTML = `
+  <div class="eyebrow">Clock Tower X LLC · FARA #7649</div>
+  <h2 class="title">The Payout Trail</h2>
+  <p class="lede">Clock Tower X is the registrant Israel's ad dollars flow through. Twice a year it has to swear to DOJ who it paid. This page is those two lists, read line by line: ${P.ledger.length} payments to ${P.recipients.length} recipients between September 2025 and September 2026.</p>
+  <div class="alert amber"><b>DRAFT.</b> The second list (filed October 30, 2026) is a scan, read by OCR, and pending hand verification. The first list (May 18, 2026) has a text layer and ties to the filed total to the cent. My read of the second list falls ${fmtMoney(P.gap).replace('.00','')} short of the filed total.</div>
+  <div class="pstrip">
+    <div><b>${fmtMoney(P.filed_total).replace('.40','')}</b><span>Filed as paid out</span></div>
+    <div><b>${P.ledger.length}</b><span>Itemized payments</span></div>
+    <div><b>${P.recipients.length}</b><span>Recipients</span></div>
+    <div><b>${share(sp.total, P.read_total)}%</b><span>To Sparkfire</span></div>
+  </div>
+
+  <div class="sechead"><h3>Who got paid</h3></div>
+  <p class="note" style="margin-top:0">Tap a recipient to filter the payment ledger below. Recipient names are normalized across spelling variants.</p>
+  <div class="pbars" id="pbars">${P.recipients.map(r => `<button class="pbar ${cls(r.name)}" data-n="${esc(r.name)}"><span class="nm">${esc(r.name)}<small>${esc(r.purpose)} · ${r.n} payment${r.n>1?'s':''}</small></span><span class="tr"><span class="fi" data-w="${(r.total/max*100).toFixed(2)}"></span></span><span class="am">${fmtM(r.total)}<small>${share(r.total,P.read_total)}% of itemized</small></span></button>`).join('')}</div>
+
+  <div class="sechead"><h3>When</h3></div>
+  <div class="legend"><span><i style="background:var(--red-bright)"></i>Sparkfire Technologies</span><span><i style="background:var(--silver)"></i>Portman Road Strategies</span><span><i style="background:#3c64a8"></i>Everyone else</span></div>
+  <div class="mchart-wrap"><div class="mchart">${P.months.map(m => { const t = m.sparkfire+m.portman+m.other; return `<div class="mcol" title="${esc(mon(m.m))}: ${fmtMoney(t)} (Sparkfire ${fmtMoney(m.sparkfire)}, Portman Road ${fmtMoney(m.portman)}, others ${fmtMoney(m.other)})"><div class="tot">${fmtM(t)}</div><div class="stk" style="height:calc((100% - 20px) * ${(t/mmax).toFixed(4)})"><i class="s" style="flex:${m.sparkfire} 1 0"></i><i class="p" style="flex:${m.portman} 1 0"></i><i class="o" style="flex:${m.other} 1 0"></i></div></div>`; }).join('')}</div>
+  <div class="mlabels">${P.months.map(m => `<span>${esc(mon(m.m))}</span>`).join('')}</div></div>
+
+  <div class="sechead"><h3>What stands out</h3></div>
+  <div class="callouts">
+    <div class="callout"><h4>Sparkfire Technologies <span class="draft">DRAFT</span></h4><div class="big">${fmtM(sp.total)}</div><p>${sp.n} payments from ${esc(fmtD(sp.first))} to ${esc(fmtD(sp.last))}. Every one is labeled "Direct Engagement" in the filings. The largest single payment, ${fmtMoney(big[3]).replace('.00','')}, is dated ${esc(fmtD(big[0]))}.</p><p><a href="#payouts=Sparkfire%20Technologies">Filter the ledger to Sparkfire ↓</a> · <a href="#cast">Cast entry →</a></p></div>
+    <div class="callout"><h4>The pace is rising <span class="draft">DRAFT</span></h4><div class="big">+${Math.round((rate2/rate1-1)*100)}%</div><p>Average monthly payouts went from about ${fmtM(rate1)} in the first filed six months to about ${fmtM(rate2)} in the second.</p></div>
+    <div class="callout"><h4>Not itemized <span class="draft">DRAFT</span></h4><div class="big">$${(unitem/1e6).toFixed(2)}M</div><p>The filings report ${fmtM(P.received)} received through 9/30/26 and ${fmtM(P.filed_total)} paid out. By my calculation, the filings do not say where the difference sits. Mark Ginsberg, listed as a subcontractor, does not appear as a payee in either appendix.</p><p><a href="#ctxnet">What he is credited with →</a></p></div>
+    <div class="callout"><h4>Open questions <span class="draft">DRAFT</span></h4><p><b style="color:#fff">${esc(three.name)}</b>: ${fmtMoney(three.total).replace('.00','')} in ${three.n} payments, labeled "${esc(three.purpose)}." The filings I have read do not say who owns it.</p><p><b style="color:#fff">${esc(cloud.name)}</b>: ${fmtMoney(cloud.total)}, purpose illegible in the scan.</p></div>
+  </div>
+
+  <div class="sechead"><h3>The ledger</h3></div>
+  <div class="filters"><select id="payrec" aria-label="Filter by recipient"><option value="">All recipients</option>${P.recipients.map(r => `<option value="${esc(r.name)}">${esc(r.name)}</option>`).join('')}</select><span class="count" id="paycount"></span></div>
+  <div class="twrap" style="max-height:620px;overflow-y:auto"><table id="payT"></table></div>
+  <p class="note">Sources: ${docLink('ctx4')} (Oct 2025 to Mar 2026) and ${docLink('ctxsupp2')} (Apr to Sep 2026), Item 15(a) appendices. Download the full ledger as a spreadsheet on request: localtip@proton.me.</p>`;
+  const fill = () => {
+    const rows = P.ledger.filter(l => !PAYSEL || l[1] === PAYSEL).sort((a,b) => b[0].localeCompare(a[0]));
+    const tot = rows.reduce((s,l) => s + l[3], 0);
+    $('#payT').innerHTML = `<tr><th>Date</th><th>Recipient</th><th>Purpose (as filed)</th><th style="text-align:right">Amount</th><th>Filing</th></tr>` + rows.map(l => `<tr><td class="nw">${esc(fmtD(l[0]))}</td><td>${esc(l[1])}</td><td>${esc(l[2])}</td><td class="amt">${fmtMoney(l[3])}</td><td>${docLink(l[4])}</td></tr>`).join('') + `<tr class="total"><td>${rows.length} payments</td><td></td><td></td><td class="amt">${fmtMoney(tot)}</td><td></td></tr>`;
+    $('#paycount').textContent = PAYSEL ? PAYSEL : 'All recipients';
+    document.querySelectorAll('.pbar').forEach(b => b.classList.toggle('on', b.dataset.n === PAYSEL));
+    $('#payrec').value = PAYSEL;
+  };
+  window._paySelect = n => { PAYSEL = n; fill(); const t = $('#payT'); if (n && t) t.closest('.twrap').scrollIntoView({behavior:'smooth', block:'center'}); };
+  $('#pbars').addEventListener('click', e => { const b = e.target.closest('.pbar'); if (!b) return; window._paySelect(PAYSEL === b.dataset.n ? '' : b.dataset.n); });
+  $('#payrec').addEventListener('change', e => { PAYSEL = e.target.value; fill(); });
+  fill();
+  requestAnimationFrame(() => requestAnimationFrame(() => document.querySelectorAll('.pbar .fi').forEach(f => f.style.width = f.dataset.w + '%')));
+}
+const share = (a,b) => Math.round(a/b*100);
 
 /* ---------- cast / docs / updates / articles / beyond ---------- */
 function renderCast(){
@@ -357,6 +461,7 @@ $('#q').addEventListener('input', e => { const v = e.target.value; if (!v) { sho
 
 /* ---------- routing ---------- */
 function showTab(id){
+  document.body.classList.toggle('home', id === 'dashboard');
   document.querySelectorAll('main section').forEach(s => s.classList.toggle('active', s.id === id));
   document.querySelectorAll('nav a.tab').forEach(b => b.classList.toggle('active', b.dataset.s === id));
   window.scrollTo({top: 0});
@@ -365,12 +470,13 @@ function route(){
   const h = location.hash.replace('#','') || 'dashboard';
   const [tab, sel] = h.split('=');
   if (tab === 'registrant') { showTab('registrants'); renderRegistrants(sel); return; }
-  const known = ['dashboard','filings','registrants','network','ctxnet','timeline','money','cast','docs','updates','articles','beyond','method'];
+  const known = ['dashboard','payouts','filings','registrants','network','ctxnet','timeline','money','cast','docs','updates','articles','beyond','method'];
   // legacy hashes from the August site
   const legacy = {regs:'registrants'};
   const t = known.includes(tab) ? tab : (legacy[tab] || 'dashboard');
   showTab(t);
   if (t === 'registrants') renderRegistrants();
+  if (t === 'payouts' && sel) setTimeout(() => window._paySelect && window._paySelect(decodeURIComponent(sel)), 50);
   if (t === 'filings' && sel) setFilingsPreset(sel);
   if (t === 'network' && sel) { const [kind, id] = sel.split('-'); if (window._netSelect && id) window._netSelect(id, kind === 'hub'); }
 }

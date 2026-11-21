@@ -5,32 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Project 545 Tracker | Feral America</title>
 <meta name="description" content="A document-based tracker of Israel's Project 545 influence pipeline, synced daily from DOJ FARA filings: every registrant, every dollar, every date, every filing linked. Compiled by Feral America.">
-<meta name="theme-color" content="#0a0f1a">
+<meta name="theme-color" content="#011032">
 <meta property="og:title" content="The Project 545 Tracker">
 <meta property="og:description" content="Israel's ~$145M campaign to shape American opinion, mapped from sworn FARA filings and synced daily from DOJ data.">
-<link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&family=Saira+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body>
 <header>
-  <h1>THE PROJECT <span class="accent">545</span> TRACKER</h1>
-  <div class="sub">Israel's ~$145M campaign to shape American opinion, mapped from sworn FARA filings. Every claim links to a document. Filings sync daily from DOJ's own data.</div>
-  <div class="sync" id="syncline">Loading DOJ data…</div>
-  <div class="stats" id="stats"></div>
+  <svg class="claws l" viewBox="0 0 300 300" aria-hidden="true"><path d="M30 0 C 90 90 90 190 40 300" stroke="rgba(200,16,46,.14)" stroke-width="14"/><path d="M95 0 C 155 90 155 190 105 300" stroke="rgba(200,16,46,.14)" stroke-width="14"/><path d="M160 0 C 220 90 220 190 170 300" stroke="rgba(200,16,46,.14)" stroke-width="14"/></svg>
+  <svg class="claws r" viewBox="0 0 300 300" aria-hidden="true"><path d="M30 0 C 90 90 90 190 40 300" stroke="rgba(255,255,255,.05)" stroke-width="14"/><path d="M95 0 C 155 90 155 190 105 300" stroke="rgba(255,255,255,.05)" stroke-width="14"/><path d="M160 0 C 220 90 220 190 170 300" stroke="rgba(255,255,255,.05)" stroke-width="14"/></svg>
+  <div class="hero">
+    <div class="brandrow"><a href="https://stayferalamerica.com" aria-label="Feral America"><img src="assets/feral-logo.png" alt="Feral America" width="46" height="46"></a><div class="bn"><b>Feral America</b>Investigates</div></div>
+    <div class="eyebrow">FARA record · synced daily from DOJ</div>
+    <h1><span class="stroke">The Project</span> <span class="red">545</span> Tracker</h1>
+    <div class="sub">Israel's ~$145M plan to shape American opinion, <b>told in its own sworn filings</b>. Every number below links to a document at DOJ. Claims are labeled as claims.</div>
+    <div id="shock"></div>
+    <div class="sync" id="syncline">Loading DOJ data…</div>
+    <div class="stats" id="stats"></div>
+  </div>
 </header>
 <nav id="nav">
-  <a class="tab" href="#dashboard" data-s="dashboard">Dashboard</a>
-  <a class="tab" href="#filings" data-s="filings">Filings</a>
-  <a class="tab" href="#registrants" data-s="registrants">Registrants</a>
+  <a class="navlogo" href="https://stayferalamerica.com" aria-label="Feral America"><img src="assets/favicon-32.png" alt="" width="30" height="30"></a>
+  <a class="tab" href="#dashboard" data-s="dashboard">Start</a>
+  <a class="tab hot" href="#payouts" data-s="payouts">The Payouts</a>
   <a class="tab" href="#network" data-s="network">Pipeline</a>
   <a class="tab" href="#ctxnet" data-s="ctxnet">CTX Network</a>
-  <a class="tab" href="#timeline" data-s="timeline">Timeline</a>
-  <a class="tab" href="#money" data-s="money">Money</a>
   <a class="tab" href="#cast" data-s="cast">Cast</a>
+  <a class="tab" href="#timeline" data-s="timeline">Timeline</a>
+  <a class="tab" href="#filings" data-s="filings">Filings</a>
+  <a class="tab" href="#registrants" data-s="registrants">Registrants</a>
   <a class="tab" href="#docs" data-s="docs">Documents</a>
+  <a class="tab" href="#money" data-s="money">Contracts</a>
   <a class="tab" href="#updates" data-s="updates">Updates</a>
   <a class="tab" href="#articles" data-s="articles">Articles</a>
   <a class="tab" href="#beyond" data-s="beyond">Beyond 545</a>
-  <a class="tab" href="#method" data-s="method">Methodology</a>
+  <a class="tab" href="#method" data-s="method">Method</a>
   <input id="q" placeholder="Search the record…" aria-label="search">
 </nav>
 <main>
@@ -64,6 +78,10 @@
   <div id="detail"><h3>Select any card above</h3><p>Details, flags, comment status, and direct FARA document links will appear here. The page address updates as you click, so any view can be shared or cited.</p></div>
 </section>
 
+<section id="payouts">
+  <div id="paybox" class="loading">Loading…</div>
+</section>
+
 <section id="ctxnet">
   <div id="ctxbox" class="loading">Loading…</div>
 </section>
@@ -89,23 +107,23 @@
     <g stroke-width="2" fill="none">
       <path d="M120 64 V96" stroke="var(--line)"/>
       <path d="M270 64 V96" stroke="var(--line)"/>
-      <path d="M97 152 V200" stroke="#5aa2f7"/>
-      <path d="M282 152 V166 H189 V200" stroke="#5aa2f7"/>
-      <path d="M97 152 V176 H312 V200" stroke="#f0a24a"/>
-      <path d="M67 256 V372" stroke="#5aa2f7"/>
-      <path d="M67 256 V300 H284 V372" stroke="#5aa2f7"/>
-      <path d="M189 256 V310 H100 V452" stroke="#5aa2f7"/>
-      <path d="M312 256 V452" stroke="#f0a24a"/>
-      <path d="M312 256 V300 H374 V724 H368" stroke="#f0a24a"/>
-      <path d="M282 152 H360 V532 H284" stroke="#4ade80"/>
-      <path d="M282 152 H360 V612 H284" stroke="#4ade80"/>
-      <path d="M282 152 H360 V550 H100 V532" stroke="#4ade80"/>
+      <path d="M97 152 V200" stroke="#6f9bea"/>
+      <path d="M282 152 V166 H189 V200" stroke="#6f9bea"/>
+      <path d="M97 152 V176 H312 V200" stroke="#e4141b"/>
+      <path d="M67 256 V372" stroke="#6f9bea"/>
+      <path d="M67 256 V300 H284 V372" stroke="#6f9bea"/>
+      <path d="M189 256 V310 H100 V452" stroke="#6f9bea"/>
+      <path d="M312 256 V452" stroke="#e4141b"/>
+      <path d="M312 256 V300 H374 V724 H368" stroke="#e4141b"/>
+      <path d="M282 152 H360 V532 H284" stroke="#c6cedd"/>
+      <path d="M282 152 H360 V612 H284" stroke="#c6cedd"/>
+      <path d="M282 152 H360 V550 H100 V532" stroke="#c6cedd"/>
       <path d="M97 152 H4 V636 H12" stroke="#6b7688" stroke-dasharray="5 4"/>
       <path d="M360 590 V612" stroke="#6b7688" stroke-dasharray="5 4"/>
     </g>
     <!-- STATE OF ISRAEL -->
     <g class="fnode" onclick="flowGo('hub','mfa')">
-      <rect x="12" y="8" width="356" height="56" rx="10" style="fill:var(--card);stroke:#f0564a;stroke-width:1.5"/>
+      <rect x="12" y="8" width="356" height="56" rx="10" style="fill:var(--card);stroke:#e4141b;stroke-width:1.5"/>
       <text x="190" y="31" text-anchor="middle" class="fl-name">STATE OF ISRAEL</text>
       <text x="190" y="49" text-anchor="middle" class="fl-sub">545M shekel opinion budget (about $145M)</text>
     </g>
@@ -122,17 +140,17 @@
     </g>
     <!-- buffers -->
     <g class="fnode" onclick="flowGo('hub','hg')">
-      <rect x="12" y="200" width="110" height="56" rx="10" style="fill:var(--card);stroke:#5aa2f7"/>
+      <rect x="12" y="200" width="110" height="56" rx="10" style="fill:var(--card);stroke:#6f9bea"/>
       <text x="67" y="223" text-anchor="middle" class="fl-name">Havas DE</text>
       <text x="67" y="241" text-anchor="middle" class="fl-sub">the buffer</text>
     </g>
     <g class="fnode" onclick="flowGo('hub','hu')">
-      <rect x="134" y="200" width="110" height="56" rx="10" style="fill:var(--card);stroke:#5aa2f7"/>
+      <rect x="134" y="200" width="110" height="56" rx="10" style="fill:var(--card);stroke:#6f9bea"/>
       <text x="189" y="223" text-anchor="middle" class="fl-name">Havas USA</text>
       <text x="189" y="241" text-anchor="middle" class="fl-sub">tourism acct</text>
     </g>
     <g class="fnode" onclick="flowGo('hub','ldrs')">
-      <rect x="256" y="200" width="112" height="56" rx="10" style="fill:var(--card);stroke:#f0a24a"/>
+      <rect x="256" y="200" width="112" height="56" rx="10" style="fill:var(--card);stroke:#e4141b"/>
       <text x="312" y="223" text-anchor="middle" class="fl-name">L.D.R.S.</text>
       <text x="312" y="241" text-anchor="middle" class="fl-sub">$58M+ program</text>
     </g>
@@ -186,18 +204,18 @@
       <text x="284" y="668" text-anchor="middle" class="fl-sub">per campaign, both ministries</text>
     </g>
     <g class="fnode" onclick="flowGo('leg','star')">
-      <rect x="196" y="692" width="172" height="64" rx="10" style="fill:var(--card);stroke:#f0a24a"/>
+      <rect x="196" y="692" width="172" height="64" rx="10" style="fill:var(--card);stroke:#e4141b"/>
       <text x="284" y="715" text-anchor="middle" class="fl-name">Starboard</text>
       <text x="284" y="733" text-anchor="middle" class="fl-money">$500K pilot</text>
       <text x="284" y="748" text-anchor="middle" class="fl-sub">LDRS pipe · leg nine</text>
     </g>
     <!-- legend -->
     <g>
-      <line x1="16" y1="774" x2="34" y2="774" stroke="#5aa2f7" stroke-width="2.5"/>
+      <line x1="16" y1="774" x2="34" y2="774" stroke="#6f9bea" stroke-width="2.5"/>
       <text x="38" y="778" class="fl-sub">via Havas</text>
-      <line x1="106" y1="774" x2="124" y2="774" stroke="#4ade80" stroke-width="2.5"/>
+      <line x1="106" y1="774" x2="124" y2="774" stroke="#c6cedd" stroke-width="2.5"/>
       <text x="128" y="778" class="fl-sub">direct ministry</text>
-      <line x1="212" y1="774" x2="230" y2="774" stroke="#f0a24a" stroke-width="2.5"/>
+      <line x1="212" y1="774" x2="230" y2="774" stroke="#e4141b" stroke-width="2.5"/>
       <text x="234" y="778" class="fl-sub">program pipe</text>
       <line x1="306" y1="774" x2="324" y2="774" stroke="#6b7688" stroke-width="2.5" stroke-dasharray="5 4"/>
       <text x="328" y="778" class="fl-sub">contingent</text>
@@ -269,10 +287,11 @@
 
 </main>
 <footer>
+  <div class="fl">Stay feral.</div>
   A Feral America project · <a href="https://feralamerica.substack.com">feralamerica.substack.com</a> · All documents: <a href="https://efile.fara.gov/ords/fara/f?p=1235:10">efile.fara.gov</a> · Data: <a href="https://efile.fara.gov/ords/fara/f?p=API:BULKDATA">DOJ FARA bulk files</a><br>
   Independent journalism analyzing public records. Curated as of <span id="asof"></span>; filings synced <span id="asof2"></span>. Share any view: the address updates as you click.<br>
-  Tips and corrections: <a href="mailto:localtip@proton.me">localtip@proton.me</a> · Stay feral.
+  Tips and corrections: <a href="mailto:localtip@proton.me">localtip@proton.me</a>
 </footer>
-<script src="assets/app.js?v=2"></script>
+<script src="assets/app.js?v=3"></script>
 </body>
 </html>

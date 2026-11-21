@@ -1,5 +1,5 @@
 {
- "asof": "November 20, 2026",
+ "asof": "November 21, 2026",
  "docs": [
   {
    "id": "tcg1",
@@ -1408,6 +1408,11 @@
   {
    "date": "Nov 21, 2026",
    "draft": true,
+   "text": "Site rehaul in the Feral America design. New front page with the headline numbers, a new Payout Trail page itemizing Clock Tower X's 128 filed payments to 12 recipients (Sparkfire Technologies $17.9M, Portman Road Strategies $9.3M), a monthly chart, and a filterable ledger. Second-period figures are read by OCR from the Oct 30 supplemental and are DRAFT; my read is about $76,000 short of the filed total."
+  },
+  {
+   "date": "Nov 21, 2026",
+   "draft": true,
    "text": "Mark Ginsberg's numbers added to the CTX Network tab and Cast: 919 of 1,121 live posts name him, about 2.19 million words in 13 months and roughly 11,800 words a day since July. Bulk edits (80 PaxPoint posts on Sep 9, 215 posts on Nov 4) and two ChatGPT-tagged citation links are noted, with the caveat that the public feed does not show what changed or how the posts were written."
   },
   {
@@ -1749,5 +1754,1111 @@
   },
   "ginsberg": "Mark Ginsberg is listed as a Havas-linked subcontractor with a start date of 02/01/2026 (May 18 supplemental). Today 919 of the 1,121 posts across the nine sites (82%) name him as author, including every post on FactSignal, PaxPoint, Justorium, Innovascope, Compassion Pulse and Econora; the earliest is a PaxPoint post dated Oct 29, 2025, three months before his listed start date. Output: those 919 posts total about 2.19 million words (average 2,379 per post). Since July 2026 the sites carry 499 of them, about 1.68 million words in 143 days, roughly 11,800 words a day including weekends, with weeks of 33 to 35 posts. Nineteen posts share a single publish minute (Dec 19, 2025, 15:43). Timing: in the filed copies his name appears only from September 2026 (62 of 483 distinct articles; earliest filing with a byline Sep 25, 2026), and a Dec 26, 2025 filed copy of a FactSignal article shows no byline on its first or last page. The sites' feeds show bulk edits: all 80 PaxPoint posts modified on Sep 9, 2026 and 215 posts across five sites on Nov 4, 2026. The public feed does not show what those edits changed, and the edit history is login-only, so when authorship was assigned and how the posts were drafted are not established. Two posts (PaxPoint, Nov 12, 2025; Innovascope, May 18, 2026) carry citation links tagged utm_source=chatgpt.com. No filing itemizes his pay.",
   "brands": "Allies for Peace (site, YouTube, Rumble) first appears in the Oct 27, 2025 filing; “Friends for Peace” is the FactSignal navigation label; Sparkfire-labeled “Engagement Question” social posts appear Sep 4 – Oct 4, 2026."
+ },
+ "payouts": {
+  "filed_total": 31450791.4,
+  "read_total": 31374791.4,
+  "gap": 76000,
+  "received": 40500000,
+  "recipients": [
+   {
+    "name": "Sparkfire Technologies",
+    "p1": 6500000,
+    "p2": 11419023,
+    "total": 17919023,
+    "n": 31,
+    "first": "2025-11-03",
+    "last": "2026-09-02",
+    "purpose": "Direct Engagement"
+   },
+   {
+    "name": "Portman Road Strategies",
+    "p1": 4952000,
+    "p2": 4304084.5,
+    "total": 9256084.5,
+    "n": 31,
+    "first": "2025-10-30",
+    "last": "2026-09-02",
+    "purpose": "Media Placement"
+   },
+   {
+    "name": "Cavalier Communications",
+    "p1": 0,
+    "p2": 967019.93,
+    "total": 967019.93,
+    "n": 3,
+    "first": "2026-08-04",
+    "last": "2026-09-25",
+    "purpose": "Iowa Mailers"
+   },
+   {
+    "name": "Three Tech Managed Services",
+    "p1": 466800,
+    "p2": 491375,
+    "total": 958175,
+    "n": 15,
+    "first": "2025-10-29",
+    "last": "2026-09-04",
+    "purpose": "Website"
+   },
+   {
+    "name": "Salem Media",
+    "p1": 566002.5,
+    "p2": 0,
+    "total": 566002.5,
+    "n": 5,
+    "first": "2025-10-29",
+    "last": "2026-01-14",
+    "purpose": "Advertising"
+   },
+   {
+    "name": "Situation Management Group",
+    "p1": 162500,
+    "p2": 364000,
+    "total": 526500,
+    "n": 7,
+    "first": "2025-09-26",
+    "last": "2026-09-11",
+    "purpose": "War Room"
+   },
+   {
+    "name": "Eyesover",
+    "p1": 136000,
+    "p2": 232000,
+    "total": 368000,
+    "n": 11,
+    "first": "2025-10-29",
+    "last": "2026-09-04",
+    "purpose": "Sentiment Analytics"
+   },
+   {
+    "name": "SEO Engine",
+    "p1": 150000,
+    "p2": 202482,
+    "total": 352482,
+    "n": 9,
+    "first": "2025-10-29",
+    "last": "2026-09-04",
+    "purpose": "Content Optimization"
+   },
+   {
+    "name": "Stratus Intelligence",
+    "p1": 128500,
+    "p2": 145000,
+    "total": 273500,
+    "n": 8,
+    "first": "2025-10-29",
+    "last": "2026-08-18",
+    "purpose": "Polling"
+   },
+   {
+    "name": "Campaign Nucleus LLC",
+    "p1": 0,
+    "p2": 120002.7,
+    "total": 120002.7,
+    "n": 6,
+    "first": "2026-05-09",
+    "last": "2026-09-04",
+    "purpose": "Software"
+   },
+   {
+    "name": "CloudLogics LLC",
+    "p1": 0,
+    "p2": 43001.77,
+    "total": 43001.77,
+    "n": 1,
+    "first": "2026-05-04",
+    "last": "2026-05-04",
+    "purpose": "(not legible)"
+   },
+   {
+    "name": "First Church of the Bible",
+    "p1": 0,
+    "p2": 25000,
+    "total": 25000,
+    "n": 1,
+    "first": "2026-09-28",
+    "last": "2026-09-28",
+    "purpose": "Event, Charitable"
+   }
+  ],
+  "months": [
+   {
+    "m": "2025-09",
+    "sparkfire": 0,
+    "portman": 0,
+    "other": 62500.0
+   },
+   {
+    "m": "2025-10",
+    "sparkfire": 0,
+    "portman": 100000.0,
+    "other": 723000.0
+   },
+   {
+    "m": "2025-11",
+    "sparkfire": 1400000.0,
+    "portman": 1250000.0,
+    "other": 81500.0
+   },
+   {
+    "m": "2025-12",
+    "sparkfire": 1350000.0,
+    "portman": 1613000.0,
+    "other": 390500.0
+   },
+   {
+    "m": "2026-01",
+    "sparkfire": 1250000.0,
+    "portman": 669500.0,
+    "other": 198502.5
+   },
+   {
+    "m": "2026-02",
+    "sparkfire": 1250000.0,
+    "portman": 669500.0,
+    "other": 76900.0
+   },
+   {
+    "m": "2026-03",
+    "sparkfire": 1250000.0,
+    "portman": 650000.0,
+    "other": 76900.0
+   },
+   {
+    "m": "2026-04",
+    "sparkfire": 1500000.0,
+    "portman": 725000.0,
+    "other": 69450.0
+   },
+   {
+    "m": "2026-05",
+    "sparkfire": 1500000.0,
+    "portman": 725000.0,
+    "other": 326295.77
+   },
+   {
+    "m": "2026-06",
+    "sparkfire": 3000000.0,
+    "portman": 725000.0,
+    "other": 168647.04
+   },
+   {
+    "m": "2026-07",
+    "sparkfire": 1000000.0,
+    "portman": 871500.0,
+    "other": 270873.2
+   },
+   {
+    "m": "2026-08",
+    "sparkfire": 2500000.0,
+    "portman": 845000.0,
+    "other": 307129.9
+   },
+   {
+    "m": "2026-09",
+    "sparkfire": 1919023.0,
+    "portman": 412584.5,
+    "other": 1447485.49
+   }
+  ],
+  "ledger": [
+   [
+    "2025-09-26",
+    "Situation Management Group",
+    "Consulting",
+    62500.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-29",
+    "Eyesover",
+    "Sentiment Analytics",
+    100000.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-29",
+    "SEO Engine",
+    "Content Optimization",
+    50000.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-29",
+    "SEO Engine",
+    "Content Optimization",
+    50000.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-29",
+    "Salem Media",
+    "Advertising",
+    250000.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-29",
+    "Salem Media",
+    "Advertising",
+    66000.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-29",
+    "Stratus Intelligence",
+    "Polling",
+    80000.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-29",
+    "Three Tech Managed Services",
+    "Content Creation",
+    84000.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-29",
+    "Three Tech Managed Services",
+    "Content Creation",
+    43000.0,
+    "ctx4"
+   ],
+   [
+    "2025-10-30",
+    "Portman Road Strategies",
+    "Consulting",
+    100000.0,
+    "ctx4"
+   ],
+   [
+    "2025-11-03",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    600000.0,
+    "ctx4"
+   ],
+   [
+    "2025-11-10",
+    "Portman Road Strategies",
+    "Media Placement",
+    150000.0,
+    "ctx4"
+   ],
+   [
+    "2025-11-10",
+    "Portman Road Strategies",
+    "Media Placement",
+    700000.0,
+    "ctx4"
+   ],
+   [
+    "2025-11-17",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    500000.0,
+    "ctx4"
+   ],
+   [
+    "2025-11-20",
+    "Three Tech Managed Services",
+    "Content Creation",
+    81500.0,
+    "ctx4"
+   ],
+   [
+    "2025-11-21",
+    "Portman Road Strategies",
+    "Media Placement",
+    400000.0,
+    "ctx4"
+   ],
+   [
+    "2025-11-25",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    300000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-11",
+    "Portman Road Strategies",
+    "Media Placement",
+    150000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-11",
+    "Portman Road Strategies",
+    "Media Placement",
+    300000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-11",
+    "SEO Engine",
+    "Content Optimization",
+    50000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-11",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    400000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Portman Road Strategies",
+    "Media Placement",
+    250000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Portman Road Strategies",
+    "Consulting",
+    100000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Portman Road Strategies",
+    "Splash Page Development",
+    5000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Portman Road Strategies",
+    "Advertisment edits",
+    23000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Portman Road Strategies",
+    "Consulting",
+    100000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Situation Management Group",
+    "Consulting",
+    100000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    400000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Three Tech Managed Services",
+    "Content Creation",
+    97500.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-12",
+    "Three Tech Managed Services",
+    "Content Creation",
+    43000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-15",
+    "Portman Road Strategies",
+    "Media Placement",
+    150000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-15",
+    "Portman Road Strategies",
+    "Media Placement",
+    150000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-15",
+    "Portman Road Strategies",
+    "Media Placement",
+    150000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-19",
+    "Salem Media",
+    "Advertising",
+    100000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-19",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    400000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-22",
+    "Portman Road Strategies",
+    "Media Placement",
+    235000.0,
+    "ctx4"
+   ],
+   [
+    "2025-12-22",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    150000.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-07",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-13",
+    "Portman Road Strategies",
+    "Media Placement",
+    600000.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-13",
+    "Portman Road Strategies",
+    "Polling",
+    19500.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-13",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-14",
+    "Salem Media",
+    "Advertising",
+    100000.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-14",
+    "Salem Media",
+    "Advertising",
+    50002.5,
+    "ctx4"
+   ],
+   [
+    "2026-01-16",
+    "Portman Road Strategies",
+    "Consulting",
+    50000.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-16",
+    "Stratus Intelligence",
+    "Polling",
+    48500.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-19",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-01-26",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-05",
+    "Eyesover",
+    "Sentiment Analytics",
+    18000.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-05",
+    "Portman Road Strategies",
+    "Polling",
+    19500.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-05",
+    "Portman Road Strategies",
+    "Consulting",
+    50000.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-05",
+    "Portman Road Strategies",
+    "Media Placement",
+    600000.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-05",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-09",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-11",
+    "Three Tech Managed Services",
+    "Content Creation",
+    58900.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-18",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-02-24",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-03-02",
+    "Portman Road Strategies",
+    "Media Placement",
+    600000.0,
+    "ctx4"
+   ],
+   [
+    "2026-03-02",
+    "Portman Road Strategies",
+    "Consulting",
+    50000.0,
+    "ctx4"
+   ],
+   [
+    "2026-03-03",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    312500.0,
+    "ctx4"
+   ],
+   [
+    "2026-03-09",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    937500.0,
+    "ctx4"
+   ],
+   [
+    "2026-03-11",
+    "Eyesover",
+    "Sentiment Analytics",
+    18000.0,
+    "ctx4"
+   ],
+   [
+    "2026-03-11",
+    "Three Tech Managed Services",
+    "Content Creation",
+    58900.0,
+    "ctx4"
+   ],
+   [
+    "2026-04-10",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    375000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-04-13",
+    "Portman Road Strategies",
+    "Consulting",
+    50000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-04-13",
+    "Situation Management Group",
+    "War Room",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-04-14",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    375000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-04-15",
+    "Stratus Intelligence",
+    "Israel Monthly Models + Support",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-04-17",
+    "Portman Road Strategies",
+    "Media Placement",
+    675000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-04-21",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    375000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-04-23",
+    "Three Tech Managed Services",
+    "Website",
+    29450.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-04-28",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    375000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-02",
+    "SEO Engine",
+    "Content Optimization",
+    33747.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-04",
+    "CloudLogics LLC",
+    "(purpose not legible in scan)",
+    43001.77,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-04",
+    "Eyesover",
+    "Sentiment Analytics",
+    18000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-05",
+    "Portman Road Strategies",
+    "Media Placement",
+    725000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-06",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    750000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-09",
+    "Campaign Nucleus LLC",
+    "Software",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-09",
+    "Campaign Nucleus LLC",
+    "Software",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-09",
+    "SEO Engine",
+    "Content Optimization",
+    33747.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-19",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    750000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-19",
+    "Three Tech Managed Services",
+    "Website",
+    58900.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-19",
+    "Three Tech Managed Services",
+    "Website",
+    58900.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-28",
+    "Stratus Intelligence",
+    "Israel Monthly Models + Support",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-05-29",
+    "Situation Management Group",
+    "War Room",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-04",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    750000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-11",
+    "Portman Road Strategies",
+    "Media Placement",
+    725000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-15",
+    "Campaign Nucleus LLC",
+    "Software",
+    20000.04,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-15",
+    "Eyesover",
+    "Sentiment Analytics",
+    18000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-15",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    750000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-26",
+    "SEO Engine",
+    "Content Optimization",
+    33747.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-27",
+    "Eyesover",
+    "Sentiment Analytics",
+    18000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-27",
+    "Three Tech Managed Services",
+    "Website",
+    58900.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-28",
+    "Stratus Intelligence",
+    "Israel Monthly Models + Support",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-30",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    750000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-06-30",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    750000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-02",
+    "Portman Road Strategies",
+    "Media Placement",
+    725000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-02",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    1000000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-05",
+    "SEO Engine",
+    "Content Optimization",
+    33747.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-05",
+    "Three Tech Managed Services",
+    "Website",
+    85875.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-07",
+    "Campaign Nucleus LLC",
+    "Software",
+    20001.2,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-10",
+    "Situation Management Group",
+    "War Room",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-14",
+    "Eyesover",
+    "Sentiment Analytics",
+    40000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-14",
+    "Eyesover",
+    "Sentiment Analytics",
+    40000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-22",
+    "Stratus Intelligence",
+    "Israel Monthly Models + Support",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-22",
+    "Three Tech Managed Services",
+    "Website",
+    11250.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-07-28",
+    "Portman Road Strategies",
+    "Media Placement",
+    146500.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-03",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    1500000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-04",
+    "Cavalier Communications",
+    "Consulting",
+    34332.9,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-06",
+    "Portman Road Strategies",
+    "Media Placement",
+    845000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-06",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    1000000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-18",
+    "Campaign Nucleus LLC",
+    "Software",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-18",
+    "Eyesover",
+    "Sentiment Analytics",
+    40000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-18",
+    "SEO Engine",
+    "Content Optimization",
+    33747.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-18",
+    "Situation Management Group",
+    "War Room",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-18",
+    "Stratus Intelligence",
+    "Polling",
+    45000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-18",
+    "Stratus Intelligence",
+    "Israel Monthly Models + Support",
+    20000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-08-18",
+    "Three Tech Managed Services",
+    "Website",
+    94050.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-02",
+    "Cavalier Communications",
+    "Consulting",
+    25000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-02",
+    "Portman Road Strategies",
+    "Media Placement",
+    412584.5,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-02",
+    "Sparkfire Technologies",
+    "Direct Engagement",
+    1919023.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-04",
+    "Campaign Nucleus LLC",
+    "Software",
+    20001.46,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-04",
+    "Eyesover",
+    "Sentiment Analytics",
+    40000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-04",
+    "Eyesover",
+    "Sentiment Analytics",
+    18000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-04",
+    "SEO Engine",
+    "Content Optimization",
+    33747.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-04",
+    "Three Tech Managed Services",
+    "Website",
+    94050.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-11",
+    "Situation Management Group",
+    "War Room",
+    284000.0,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-25",
+    "Cavalier Communications",
+    "Iowa Mailers",
+    907687.03,
+    "ctxsupp2"
+   ],
+   [
+    "2026-09-28",
+    "First Church of the Bible",
+    "Event, Charitable",
+    25000.0,
+    "ctxsupp2"
+   ]
+  ]
  }
 }
