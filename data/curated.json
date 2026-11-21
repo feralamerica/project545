@@ -387,7 +387,7 @@
     "Asterisked recipients in the ledger: Campaign Nucleus LLC, CloudLogics LLC (asterisk unexplained in filing; verify) (draft)",
     "NEW 11/20/26: Order terms read from the 6/7/26 Exhibit AB: Havas order dated 2/6/26, “Digital Advertising” $4.5M a month Apr-Oct 2026 ($31.5M); 9/24/26 order adds Nov-Dec ($9M). The $40.5M of ad orders (nine months at $4.5M) sits on top of the $9M launch pool from the Dec 2025 amendment, so instruments total $49.5M; $40.5M has been received through 9/30/26 (draft)",
     "NEW 11/20/26: Content network mapped: nine Clock Tower X-run sites plus third-party placements; 1,431 items reported for Apr-Sep 2026 (630 website, 21 outlet, 780 social). See the Network tab (draft)",
-    "NEW 11/21/26: Mark Ginsberg is named as author on 919 of 1,121 live posts across the nine sites (earliest Oct 29, 2025, before his 2/1/26 listed start); in the filed copies his name appears only from Sep 2026 (62 of 483 articles). Timing of the attribution is unresolved (draft)",
+    "NEW 11/21/26: Mark Ginsberg is named as author on 919 of 1,121 live posts across the nine sites (about 2.19M words; earliest Oct 29, 2025, before his 2/1/26 listed start), about 11,800 words a day since July 2026; in the filed copies his name appears only from Sep 2026 (62 of 483 articles). Timing of the attribution and how the posts were drafted are unresolved (draft)",
     "NEW 11/20/26: Social posts labeled “Engagement Question (Sparkfire)” appear in published-socials reports from Sep 4, 2026 (draft)"
    ],
    "docs": [
@@ -1386,7 +1386,7 @@
   {
    "name": "Mark Ginsberg",
    "role": "Subcontractor (Havas-linked), start date 02/01/2026",
-   "bio": "Listed in the May 18, 2026 supplemental as a subcontractor with details on file with DOJ. Today 919 of 1,121 posts on the nine Clock Tower X sites name him as author, the earliest dated Oct 29, 2025. In the filed copies his name appears on 62 of 483 distinct articles, all from September 2026 onward. No filing itemizes his pay.",
+   "bio": "Listed in the May 18, 2026 supplemental as a subcontractor with details on file with DOJ. Today 919 of 1,121 posts on the nine Clock Tower X sites name him as author (about 2.19 million words, averaging 2,379 words a post), the earliest dated Oct 29, 2025. Since July 2026 that is roughly 11,800 words a day, every day of the week. In the filed copies his name appears on 62 of 483 distinct articles, all from September 2026 onward. No filing itemizes his pay.",
    "docs": [
     "ctx4",
     "ctxsupp2"
@@ -1405,6 +1405,11 @@
   }
  ],
  "updates": [
+  {
+   "date": "Nov 21, 2026",
+   "draft": true,
+   "text": "Mark Ginsberg's numbers added to the CTX Network tab and Cast: 919 of 1,121 live posts name him, about 2.19 million words in 13 months and roughly 11,800 words a day since July. Bulk edits (80 PaxPoint posts on Sep 9, 215 posts on Nov 4) and two ChatGPT-tagged citation links are noted, with the caveat that the public feed does not show what changed or how the posts were written."
+  },
   {
    "date": "Nov 21, 2026",
    "draft": true,
@@ -1738,9 +1743,11 @@
    "filed_distinct": 483,
    "filed_ginsberg": 62,
    "live": 1121,
-   "live_g": 919
+   "live_g": 919,
+   "ginsberg_words": 2186310,
+   "ginsberg_words_jul_nov": 1681410
   },
-  "ginsberg": "Mark Ginsberg is listed as a Havas-linked subcontractor with a start date of 02/01/2026 (May 18 supplemental). Today, 919 of the 1,121 posts across the nine sites (82%) name him as author, including every post on FactSignal, PaxPoint, Justorium, Innovascope, Compassion Pulse and Econora. The earliest is a PaxPoint post dated Oct 29, 2025, three months before his listed start date. In the filed copies, his name shows up only from September 2026 (62 of 483 distinct filed articles); a Dec 26, 2025 filed copy of a FactSignal article shows no byline on its first or last page, while the same post now names him. Whether authorship was assigned later or the bylines were simply not printed is not established. No filing itemizes his pay.",
+  "ginsberg": "Mark Ginsberg is listed as a Havas-linked subcontractor with a start date of 02/01/2026 (May 18 supplemental). Today 919 of the 1,121 posts across the nine sites (82%) name him as author, including every post on FactSignal, PaxPoint, Justorium, Innovascope, Compassion Pulse and Econora; the earliest is a PaxPoint post dated Oct 29, 2025, three months before his listed start date. Output: those 919 posts total about 2.19 million words (average 2,379 per post). Since July 2026 the sites carry 499 of them, about 1.68 million words in 143 days, roughly 11,800 words a day including weekends, with weeks of 33 to 35 posts. Nineteen posts share a single publish minute (Dec 19, 2025, 15:43). Timing: in the filed copies his name appears only from September 2026 (62 of 483 distinct articles; earliest filing with a byline Sep 25, 2026), and a Dec 26, 2025 filed copy of a FactSignal article shows no byline on its first or last page. The sites' feeds show bulk edits: all 80 PaxPoint posts modified on Sep 9, 2026 and 215 posts across five sites on Nov 4, 2026. The public feed does not show what those edits changed, and the edit history is login-only, so when authorship was assigned and how the posts were drafted are not established. Two posts (PaxPoint, Nov 12, 2025; Innovascope, May 18, 2026) carry citation links tagged utm_source=chatgpt.com. No filing itemizes his pay.",
   "brands": "Allies for Peace (site, YouTube, Rumble) first appears in the Oct 27, 2025 filing; “Friends for Peace” is the FactSignal navigation label; Sparkfire-labeled “Engagement Question” social posts appear Sep 4 – Oct 4, 2026."
  }
 }
