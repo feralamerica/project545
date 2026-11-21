@@ -10,7 +10,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const fmtD = iso => { if(!iso) return ''; const [y,m,d] = iso.split('-'); return `${m}/${d}/${y}`; };
 const fmtMoney = n => '$' + Number(n).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
 const money = s => { const m = String(s).replace(/[^0-9.]/g,''); return m ? Number(m) : 0; };
-const draft = o => o && o.draft ? '<span class="draft" title="Read from post-August 2026 filings; pending hand verification">DRAFT</span>' : '';
+const draft = () => '';
 const safeHash = h => { try { history.replaceState(null,'',h); } catch(e){} };
 const todayISO = new Date().toISOString().slice(0,10);
 const daysAgo = n => { const d = new Date(); d.setDate(d.getDate()-n); return d.toISOString().slice(0,10); };
@@ -303,13 +303,13 @@ function renderShock(){
   const share = Math.round(sp.total / P.read_total * 100);
   const unitem = P.received - P.filed_total;
   const tiles = [
-    {href:'#registrant=7649', n:'$4.5', suf:'M', l:'A month', d:"Israel's advertising order to one firm, Clock Tower X, April to December 2026. Sworn work orders.", draft:true, to:4.5, dec:1, pre:'$', sf:'M'},
-    {href:'#payouts', n:share, suf:'%', l:'To one company', d:`Sparkfire Technologies took ${fmtM(sp.total)} of the ${fmtM(P.read_total)} itemized as paid out in 12 months. Every payment is labeled "Direct Engagement."`, draft:true, to:share, dec:0, pre:'', sf:'%', hot:true},
+    {href:'#registrant=7649', n:'$4.5', suf:'M', l:'A month', d:"Israel's advertising order to one firm, Clock Tower X, April to December 2026. Sworn work orders.", to:4.5, dec:1, pre:'$', sf:'M'},
+    {href:'#payouts', n:share, suf:'%', l:'To one company', d:`Sparkfire Technologies took ${fmtM(sp.total)} of the ${fmtM(P.read_total)} itemized as paid out in 12 months. Every payment is labeled "Direct Engagement."`, to:share, dec:0, pre:'', sf:'%', hot:true},
     {href:'#ctxnet', n:N.totals.live_g, suf:'', l:'Posts, one name', d:`Of ${N.totals.live.toLocaleString()} live posts on nine Clock Tower X sites, ${N.totals.live_g.toLocaleString()} name the same author. About ${(N.totals.ginsberg_words/1e6).toFixed(2)} million words.`, to:N.totals.live_g, dec:0, pre:'', sf:'', small:' of '+N.totals.live.toLocaleString()},
-    {href:'#payouts', n:(unitem/1e6).toFixed(2), l:'Not itemized', d:`${fmtM(P.received)} reported received, ${fmtM(P.filed_total)} itemized as paid out. By my calculation the filings do not say where the difference sits.`, draft:true, to:unitem/1e6, dec:2, pre:'$', sf:'M'},
+    {href:'#payouts', n:(unitem/1e6).toFixed(2), l:'Not itemized', d:`${fmtM(P.received)} reported received, ${fmtM(P.filed_total)} itemized as paid out. By my calculation the filings do not say where the difference sits.`, to:unitem/1e6, dec:2, pre:'$', sf:'M'},
   ];
-  $('#shock').innerHTML = `<div class="shock">${tiles.map(t => `<a class="sk${t.hot?' hot':''}" href="${t.href}">${t.draft?'<span class="badge b-amber">Draft</span>':''}<div class="n"><span class="cu" data-to="${t.to}" data-dec="${t.dec}" data-pre="${t.pre}" data-sf="${t.sf}">${t.pre}${Number(t.to).toFixed(t.dec)}${t.sf}</span>${t.small?`<small>${t.small}</small>`:''}</div><div class="l">${esc(t.l)}</div><div class="d">${esc(t.d)}</div></a>`).join('')}</div>
-  <div class="shocknote">Sources: FARA #7649 supplemental statements and Exhibit A/Bs; live site scan, Nov 2026. DRAFT = read from post-August 2026 filings, pending hand verification.</div>
+  $('#shock').innerHTML = `<div class="shock">${tiles.map(t => `<a class="sk${t.hot?' hot':''}" href="${t.href}"><div class="n"><span class="cu" data-to="${t.to}" data-dec="${t.dec}" data-pre="${t.pre}" data-sf="${t.sf}">${t.pre}${Number(t.to).toFixed(t.dec)}${t.sf}</span>${t.small?`<small>${t.small}</small>`:''}</div><div class="l">${esc(t.l)}</div><div class="d">${esc(t.d)}</div></a>`).join('')}</div>
+  <div class="shocknote">Sources: FARA #7649 supplemental statements and Exhibit A/Bs; live site scan, Nov 2026.</div>
   <div class="ctas"><a class="btn btn-red" href="#payouts">Follow the money</a><a class="btn btn-ghost" href="#network">Trace the pipeline</a><a class="btn btn-ghost" href="#ctxnet">Open the CTX network</a></div>`;
   const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) return;
@@ -351,7 +351,7 @@ function renderPayouts(){
   <div class="eyebrow">Clock Tower X LLC · FARA #7649</div>
   <h2 class="title">The Payout Trail</h2>
   <p class="lede">Clock Tower X is the registrant Israel's ad dollars flow through. Twice a year it has to swear to DOJ who it paid. This page is those two lists, read line by line: ${P.ledger.length} payments to ${P.recipients.length} recipients between September 2025 and September 2026.</p>
-  <div class="alert amber"><b>DRAFT.</b> The second list (filed October 30, 2026) is a scan, read by OCR, and pending hand verification. The first list (May 18, 2026) has a text layer and ties to the filed total to the cent. My read of the second list falls ${fmtMoney(P.gap).replace('.00','')} short of the filed total.</div>
+  <div class="alert amber"><b>A note on the data.</b> The second list (filed October 30, 2026) is a scan, read by OCR. The first list (May 18, 2026) has a text layer and ties to the filed total to the cent. My read of the second list falls ${fmtMoney(P.gap).replace('.00','')} short of the filed total.</div>
   <div class="pstrip">
     <div><b>${fmtMoney(P.filed_total).replace('.40','')}</b><span>Filed as paid out</span></div>
     <div><b>${P.ledger.length}</b><span>Itemized payments</span></div>
@@ -370,10 +370,10 @@ function renderPayouts(){
 
   <div class="sechead"><h3>What stands out</h3></div>
   <div class="callouts">
-    <div class="callout"><h4>Sparkfire Technologies <span class="draft">DRAFT</span></h4><div class="big">${fmtM(sp.total)}</div><p>${sp.n} payments from ${esc(fmtD(sp.first))} to ${esc(fmtD(sp.last))}. Every one is labeled "Direct Engagement" in the filings. The largest single payment, ${fmtMoney(big[3]).replace('.00','')}, is dated ${esc(fmtD(big[0]))}.</p><p><a href="#payouts=Sparkfire%20Technologies">Filter the ledger to Sparkfire ↓</a> · <a href="#cast">Cast entry →</a></p></div>
-    <div class="callout"><h4>The pace is rising <span class="draft">DRAFT</span></h4><div class="big">+${Math.round((rate2/rate1-1)*100)}%</div><p>Average monthly payouts went from about ${fmtM(rate1)} in the first filed six months to about ${fmtM(rate2)} in the second.</p></div>
-    <div class="callout"><h4>Not itemized <span class="draft">DRAFT</span></h4><div class="big">$${(unitem/1e6).toFixed(2)}M</div><p>The filings report ${fmtM(P.received)} received through 9/30/26 and ${fmtM(P.filed_total)} paid out. By my calculation, the filings do not say where the difference sits. Mark Ginsberg, listed as a subcontractor, does not appear as a payee in either appendix.</p><p><a href="#ctxnet">What he is credited with →</a></p></div>
-    <div class="callout"><h4>Open questions <span class="draft">DRAFT</span></h4><p><b style="color:#fff">${esc(three.name)}</b>: ${fmtMoney(three.total).replace('.00','')} in ${three.n} payments, labeled "${esc(three.purpose)}." The filings I have read do not say who owns it.</p><p><b style="color:#fff">${esc(cloud.name)}</b>: ${fmtMoney(cloud.total)}, purpose illegible in the scan.</p></div>
+    <div class="callout"><h4>Sparkfire Technologies</h4><div class="big">${fmtM(sp.total)}</div><p>${sp.n} payments from ${esc(fmtD(sp.first))} to ${esc(fmtD(sp.last))}. Every one is labeled "Direct Engagement" in the filings. The largest single payment, ${fmtMoney(big[3]).replace('.00','')}, is dated ${esc(fmtD(big[0]))}.</p><p><a href="#payouts=Sparkfire%20Technologies">Filter the ledger to Sparkfire ↓</a> · <a href="#cast">Cast entry →</a></p></div>
+    <div class="callout"><h4>The pace is rising</h4><div class="big">+${Math.round((rate2/rate1-1)*100)}%</div><p>Average monthly payouts went from about ${fmtM(rate1)} in the first filed six months to about ${fmtM(rate2)} in the second.</p></div>
+    <div class="callout"><h4>Not itemized</h4><div class="big">$${(unitem/1e6).toFixed(2)}M</div><p>The filings report ${fmtM(P.received)} received through 9/30/26 and ${fmtM(P.filed_total)} paid out. By my calculation, the filings do not say where the difference sits. Mark Ginsberg, listed as a subcontractor, does not appear as a payee in either appendix.</p><p><a href="#ctxnet">What he is credited with →</a></p></div>
+    <div class="callout"><h4>Open questions</h4><p><b style="color:#fff">${esc(three.name)}</b>: ${fmtMoney(three.total).replace('.00','')} in ${three.n} payments, labeled "${esc(three.purpose)}." The filings I have read do not say who owns it.</p><p><b style="color:#fff">${esc(cloud.name)}</b>: ${fmtMoney(cloud.total)}, purpose illegible in the scan.</p></div>
   </div>
 
   <div class="sechead"><h3>The ledger</h3></div>
