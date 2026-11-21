@@ -315,6 +315,13 @@
    "url": "https://efile.fara.gov/docs/7652-Supplemental-Statement-20261019-2.pdf",
    "note": "No receipts, no disbursements, no activity: 'the registrant did not provide any services to or on behalf of the foreign principal during the reporting period.' Still registered, still silent. The ~$700K gap in the Esther Project order is unchanged.",
    "tags": "bridges supplemental dormant zero esther"
+  },
+  {
+   "id": "ctxsfg",
+   "label": "Clock Tower X, Short-Form Registration Statement of Mark Ginsberg (filed March 3, 2026)",
+   "url": "https://efile.fara.gov/docs/7649-Short-Form-20260303-32.pdf",
+   "note": "Sworn short form: nationality and citizenship United States; occupation 'subcontractor, consultant'; foreign principal HAVAS Media Network; part-time basis; compensation checked as salary 'not based solely on services rendered to the foreign principal(s),' no amount; residence address on file with DOJ.",
+   "tags": "short form ginsberg subcontractor salary havas"
   }
  ],
  "legs": [
@@ -1352,9 +1359,10 @@
   },
   {
    "name": "Mark Ginsberg",
-   "role": "Subcontractor (Havas-linked), start date 02/01/2026",
-   "bio": "Listed in the May 18, 2026 supplemental as a subcontractor with details on file with DOJ. Today 919 of 1,121 posts on the nine Clock Tower X sites name him as author (about 2.19 million words, averaging 2,379 words a post), the earliest dated Oct 29, 2025. Since July 2026 that is roughly 11,800 words a day, every day of the week. In the filed copies his name appears on 62 of 483 distinct articles, all from September 2026 onward. No filing itemizes his pay.",
+   "role": "Subcontractor (Havas-linked), start date 02/01/2026; short form filed 03/03/2026",
+   "bio": "Listed in the May 18, 2026 supplemental as a subcontractor with details on file with DOJ. Today 919 of 1,121 posts on the nine Clock Tower X sites name him as author (about 2.19 million words, averaging 2,379 words a post), the earliest dated Oct 29, 2025. Since July 2026 that is roughly 11,800 words a day, every day of the week. In the filed copies his name appears on 62 of 483 distinct articles, all from September 2026 onward. No filing itemizes his pay. He filed his own short form on March 3, 2026, about a month after the listed start date, swearing that he is a United States national and citizen, that his occupation is 'subcontractor, consultant,' that his services are part time, and that his compensation is a salary 'not based solely on services rendered to the foreign principal(s),' with no amount and no payer named. The services he describes are 'strategic communications, planning, and media services'; the form does not mention writing articles.",
    "docs": [
+    "ctxsfg",
     "ctx4",
     "ctxsupp2"
    ]
@@ -1370,6 +1378,10 @@
   }
  ],
  "updates": [
+  {
+   "date": "Nov 21, 2026",
+   "text": "Mark Ginsberg's own short form (filed 3/3/26) added to the Cast entry: United States nationality and citizenship, 'subcontractor, consultant,' part time, compensation reported as a salary with no amount or payer. It is one of 26 individual short forms filed under Clock Tower X's registration."
+  },
   {
    "date": "Nov 21, 2026",
    "text": "Site rehaul in the Feral America design. New front page with the headline numbers, a new Payout Trail page itemizing Clock Tower X's 128 filed payments to 12 recipients (Sparkfire Technologies $17.9M, Portman Road Strategies $9.3M), a monthly chart, and a filterable ledger. Second-period figures are read by OCR from the Oct 30 supplemental; my read is about $76,000 short of the filed total."
