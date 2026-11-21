@@ -387,7 +387,7 @@
     "Asterisked recipients in the ledger: Campaign Nucleus LLC, CloudLogics LLC (asterisk unexplained in filing; verify) (draft)",
     "NEW 11/20/26: Order terms read from the 6/7/26 Exhibit AB: Havas order dated 2/6/26, “Digital Advertising” $4.5M a month Apr-Oct 2026 ($31.5M); 9/24/26 order adds Nov-Dec ($9M). The $40.5M of ad orders (nine months at $4.5M) sits on top of the $9M launch pool from the Dec 2025 amendment, so instruments total $49.5M; $40.5M has been received through 9/30/26 (draft)",
     "NEW 11/20/26: Content network mapped: nine Clock Tower X-run sites plus third-party placements; 1,431 items reported for Apr-Sep 2026 (630 website, 21 outlet, 780 social). See the Network tab (draft)",
-    "NEW 11/20/26: Mark Ginsberg bylines first appear Sep 2026; about 42 of 461 distinct filed articles carry his name or bio (machine-read; draft)",
+    "NEW 11/21/26: Mark Ginsberg is named as author on 919 of 1,121 live posts across the nine sites (earliest Oct 29, 2025, before his 2/1/26 listed start); in the filed copies his name appears only from Sep 2026 (62 of 483 articles). Timing of the attribution is unresolved (draft)",
     "NEW 11/20/26: Social posts labeled “Engagement Question (Sparkfire)” appear in published-socials reports from Sep 4, 2026 (draft)"
    ],
    "docs": [
@@ -1386,7 +1386,7 @@
   {
    "name": "Mark Ginsberg",
    "role": "Subcontractor (Havas-linked), start date 02/01/2026",
-   "bio": "Listed in the May 18, 2026 supplemental as a subcontractor with details on file with DOJ. His name appears as article byline or author bio on about 42 of 461 distinct filed articles, all from September 2026 onward, concentrated on Justorium and Times of Israel Blogs. No filing itemizes his pay.",
+   "bio": "Listed in the May 18, 2026 supplemental as a subcontractor with details on file with DOJ. Today 919 of 1,121 posts on the nine Clock Tower X sites name him as author, the earliest dated Oct 29, 2025. In the filed copies his name appears on 62 of 483 distinct articles, all from September 2026 onward. No filing itemizes his pay.",
    "docs": [
     "ctx4",
     "ctxsupp2"
@@ -1405,6 +1405,11 @@
   }
  ],
  "updates": [
+  {
+   "date": "Nov 21, 2026",
+   "draft": true,
+   "text": "CTX Network updated: every post on the nine Clock Tower X sites was pulled from the sites' own feeds (1,121 posts). 919 name Mark Ginsberg as author, the earliest dated Oct 29, 2025, three months before the start date listed in the May 18 supplemental. The filed copies show his name only from September 2026, so the table now carries both counts, with the caveat that live authorship may postdate the filings. The Nov 19 informational filing (6 articles, 4 with Ginsberg) was added."
+  },
   {
    "date": "Nov 20, 2026",
    "draft": true,
@@ -1542,27 +1547,33 @@
   }
  ],
  "ctx_network": {
-  "asof": "Nov 20, 2026",
+  "asof": "Nov 21, 2026",
   "draft": true,
-  "note": "“Reported items” are the entries Clock Tower X itself listed in Item 12 of its Oct 30, 2026 supplemental (period Apr 6 – Sep 30, 2026), read by OCR from a scanned PDF (about ±2%). Website items include landing, About and category pages as well as articles; the filing does not separate them. “Filed pages” are distinct page or article titles found in the informational-materials filings from Oct 2025 to Nov 2026 (268 PDFs machine-read, duplicates merged by title; roughly one byline in nine missed in validation). Ginsberg = byline or author bio naming Mark Ginsberg. All figures are DRAFT pointers to the documents, not findings.",
+  "note": "“Reported items” are the entries Clock Tower X listed in Item 12 of its Oct 30, 2026 supplemental (Apr 6 – Sep 30, 2026), read by OCR from a scanned PDF (about ±2%); website items include landing, About and category pages. “Live posts” are every post published on each site's WordPress feed as of Nov 21, 2026, with the author named on the page today. “Filed pages” are distinct article titles found in 269 informational-materials PDFs (Oct 2025 – Nov 19, 2026; machine-read, duplicates merged by title, plus three filings read by hand); roughly one byline in nine is missed. Live authorship shows who a page names now, not what it said on the day it was filed. All figures are DRAFT pointers to the documents, not findings.",
   "sites": [
    {
     "n": "FactSignal",
     "domain": "factsignal.org",
     "theme": "Gaza casualty, famine and Hamas claims; labeled “Friends for Peace” in its navigation",
     "reported": 192,
-    "filed": 68,
-    "ginsberg": 7,
-    "first": "Dec 2025"
+    "filed": 69,
+    "ginsberg": 8,
+    "first": "Dec 2025",
+    "live": 255,
+    "live_g": 255,
+    "live_g_first": "Dec 2025"
    },
    {
     "n": "Allyvia",
     "domain": "allyvia.org",
     "theme": "US-Israel alliance, security and prosperity; Hamas, ceasefire and UNRWA pieces; also a Salem “Partners in Peace” digital master in its first filing",
     "reported": 107,
-    "filed": 90,
-    "ginsberg": 5,
-    "first": "Oct 2025"
+    "filed": 93,
+    "ginsberg": 8,
+    "first": "Oct 2025",
+    "live": 179,
+    "live_g": 68,
+    "live_g_first": "Jun 2026"
    },
    {
     "n": "PaxPoint",
@@ -1571,43 +1582,58 @@
     "reported": 90,
     "filed": 77,
     "ginsberg": 2,
-    "first": "Nov 2025"
+    "first": "Nov 2025",
+    "live": 170,
+    "live_g": 170,
+    "live_g_first": "Oct 2025"
    },
    {
     "n": "Cognitura",
     "domain": "cognitura.org",
     "theme": "Counter-radicalization, terror networks, Iran missile program, antisemitism analysis",
     "reported": 82,
-    "filed": 54,
+    "filed": 56,
     "ginsberg": 1,
-    "first": "Dec 2025"
+    "first": "Dec 2025",
+    "live": 156,
+    "live_g": 88,
+    "live_g_first": "Feb 2026"
    },
    {
     "n": "Justorium",
     "domain": "justorium.org",
     "theme": "International law, genocide-claim rebuttals, Judea and Samaria, Jewish refugees from Arab countries",
     "reported": 65,
-    "filed": 37,
-    "ginsberg": 13,
-    "first": "Nov 2025"
+    "filed": 40,
+    "ginsberg": 16,
+    "first": "Nov 2025",
+    "live": 146,
+    "live_g": 146,
+    "live_g_first": "Nov 2025"
    },
    {
     "n": "Culturavia",
     "domain": "culturavia.org",
     "theme": "Cultural diplomacy, academic exchange, ancient Jewish history and archaeology",
     "reported": 40,
-    "filed": 33,
-    "ginsberg": 4,
-    "first": "Nov 2025"
+    "filed": 35,
+    "ginsberg": 6,
+    "first": "Nov 2025",
+    "live": 86,
+    "live_g": 63,
+    "live_g_first": "Jan 2026"
    },
    {
     "n": "Innovascope",
     "domain": "innovascope.org",
     "theme": "Israeli innovation in US industry, security, space and medicine",
     "reported": 21,
-    "filed": 23,
-    "ginsberg": 4,
-    "first": "Jan 2026"
+    "filed": 25,
+    "ginsberg": 6,
+    "first": "Jan 2026",
+    "live": 47,
+    "live_g": 47,
+    "live_g_first": "Jan 2026"
    },
    {
     "n": "Compassion Pulse",
@@ -1616,24 +1642,30 @@
     "reported": 20,
     "filed": 32,
     "ginsberg": 0,
-    "first": "Dec 2025"
+    "first": "Dec 2025",
+    "live": 50,
+    "live_g": 50,
+    "live_g_first": "Dec 2025"
    },
    {
     "n": "Econora",
     "domain": "econora.org",
     "theme": "US-Israel trade, defense economics, agriculture and water technology; hosts SMS opt-in terms (filed Jan 2, 2026)",
     "reported": 12,
-    "filed": 24,
-    "ginsberg": 1,
-    "first": "Jan 2026"
+    "filed": 26,
+    "ginsberg": 2,
+    "first": "Jan 2026",
+    "live": 32,
+    "live_g": 32,
+    "live_g_first": "Dec 2025"
    }
   ],
   "outlets": [
    {
     "n": "Times of Israel Blogs",
     "reported": 11,
-    "filed": 6,
-    "ginsberg": 5
+    "filed": 11,
+    "ginsberg": 10
    },
    {
     "n": "WGI.world",
@@ -1703,10 +1735,12 @@
    "outlets": 21,
    "social": 780,
    "all": 1431,
-   "filed_distinct": 461,
-   "filed_ginsberg": 42
+   "filed_distinct": 483,
+   "filed_ginsberg": 62,
+   "live": 1121,
+   "live_g": 919
   },
-  "ginsberg": "Mark Ginsberg is listed as a Havas-linked subcontractor starting 02/01/2026 (May 18 supplemental). In the filed copies his name appears on no articles before September 2026: 6 of 19 new articles in Sep, 23 of 56 in Oct, 13 of 31 in Nov. No filing itemizes his pay.",
+  "ginsberg": "Mark Ginsberg is listed as a Havas-linked subcontractor with a start date of 02/01/2026 (May 18 supplemental). Today, 919 of the 1,121 posts across the nine sites (82%) name him as author, including every post on FactSignal, PaxPoint, Justorium, Innovascope, Compassion Pulse and Econora. The earliest is a PaxPoint post dated Oct 29, 2025, three months before his listed start date. In the filed copies, his name shows up only from September 2026 (62 of 483 distinct filed articles); a Dec 26, 2025 filed copy of a FactSignal article shows no byline on its first or last page, while the same post now names him. Whether authorship was assigned later or the bylines were simply not printed is not established. No filing itemizes his pay.",
   "brands": "Allies for Peace (site, YouTube, Rumble) first appears in the Oct 27, 2025 filing; “Friends for Peace” is the FactSignal navigation label; Sparkfire-labeled “Engagement Question” social posts appear Sep 4 – Oct 4, 2026."
  }
 }
