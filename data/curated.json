@@ -1,5 +1,5 @@
 {
- "asof": "November 21, 2026",
+ "asof": "November 25, 2026",
  "docs": [
   {
    "id": "tcg1",
@@ -1379,6 +1379,10 @@
  ],
  "updates": [
   {
+   "date": "Nov 25, 2026",
+   "text": "Two new Informational Materials filings dated Nov 23, 2026 (docs 107 and 108). Doc 107 is a Published Socials Report covering Nov 20 to Nov 23: 10 posts in three image sets across TikTok, Instagram, Facebook and a website, including a new brand, Stand Together for Truth (standtogetherfortruth.com, TikTok handle standtogether4truth). Doc 108 files six full articles: FactSignal (2), Allyvia, Innovascope, Cognitura and PaxPoint. Four of the filed copies carry Mark Ginsberg's byline. The CTX Network totals on this site are still from the Nov 21 scan and do not yet count these newer posts."
+  },
+  {
    "date": "Nov 21, 2026",
    "text": "Mark Ginsberg's own short form (filed 3/3/26) added to the Cast entry: United States nationality and citizenship, 'subcontractor, consultant,' part time, compensation reported as a salary with no amount or payer. It is one of 26 individual short forms filed under Clock Tower X's registration."
   },
@@ -1527,7 +1531,7 @@
  ],
  "ctx_network": {
   "asof": "Nov 21, 2026",
-  "note": "“Reported items” are the entries Clock Tower X listed in Item 12 of its Oct 30, 2026 supplemental (Apr 6 – Sep 30, 2026), read by OCR from a scanned PDF (about ±2%); website items include landing, About and category pages. “Live posts” are every post published on each site's WordPress feed as of Nov 21, 2026, with the author named on the page today. “Filed pages” are distinct article titles found in 269 informational-materials PDFs (Oct 2025 – Nov 19, 2026; machine-read, duplicates merged by title, plus three filings read by hand); roughly one byline in nine is missed. Live authorship shows who a page names now, not what it said on the day it was filed. Treat the figures as pointers to the documents.",
+  "note": "“Reported items” are the entries Clock Tower X listed in Item 12 of its Oct 30, 2026 supplemental (Apr 6 – Sep 30, 2026), read by OCR from a scanned PDF (about ±2%); website items include landing, About and category pages. “Live posts” are every post published on each site's WordPress feed as of Nov 21, 2026, with the author named on the page today. “Filed pages” are distinct article titles found in 269 informational-materials PDFs (Oct 2025 – Nov 19, 2026; machine-read, duplicates merged by title, plus three filings read by hand); roughly one byline in nine is missed. Live authorship shows who a page names now, not what it said on the day it was filed. Treat the figures as pointers to the documents. Totals reflect the Nov 21, 2026 scan. The Nov 23 filing (doc 108) adds six articles, four with a Ginsberg byline, not yet counted here.",
   "sites": [
    {
     "n": "FactSignal",
@@ -1721,7 +1725,7 @@
    "ginsberg_words_jul_nov": 1681410
   },
   "ginsberg": "Mark Ginsberg is listed as a Havas-linked subcontractor with a start date of 02/01/2026 (May 18 supplemental). Today 919 of the 1,121 posts across the nine sites (82%) name him as author, including every post on FactSignal, PaxPoint, Justorium, Innovascope, Compassion Pulse and Econora; the earliest is a PaxPoint post dated Oct 29, 2025, three months before his listed start date. Output: those 919 posts total about 2.19 million words (average 2,379 per post). Since July 2026 the sites carry 499 of them, about 1.68 million words in 143 days, roughly 11,800 words a day including weekends, with weeks of 33 to 35 posts. Nineteen posts share a single publish minute (Dec 19, 2025, 15:43). Timing: in the filed copies his name appears only from September 2026 (62 of 483 distinct articles; earliest filing with a byline Sep 25, 2026), and a Dec 26, 2025 filed copy of a FactSignal article shows no byline on its first or last page. The sites' feeds show bulk edits: all 80 PaxPoint posts modified on Sep 9, 2026 and 215 posts across five sites on Nov 4, 2026. The public feed does not show what those edits changed, and the edit history is login-only, so when authorship was assigned and how the posts were drafted are not established. Two posts (PaxPoint, Nov 12, 2025; Innovascope, May 18, 2026) carry citation links tagged utm_source=chatgpt.com. No filing itemizes his pay.",
-  "brands": "Allies for Peace (site, YouTube, Rumble) first appears in the Oct 27, 2025 filing; “Friends for Peace” is the FactSignal navigation label; Sparkfire-labeled “Engagement Question” social posts appear Sep 4 – Oct 4, 2026."
+  "brands": "Allies for Peace (site, YouTube, Rumble) first appears in the Oct 27, 2025 filing; “Friends for Peace” is the FactSignal navigation label; Sparkfire-labeled “Engagement Question” social posts appear Sep 4 – Oct 4, 2026. Stand Together for Truth (standtogetherfortruth.com, TikTok handle standtogether4truth) first appears in the Nov 23, 2026 filing (doc 107)."
  },
  "payouts": {
   "filed_total": 31450791.4,
